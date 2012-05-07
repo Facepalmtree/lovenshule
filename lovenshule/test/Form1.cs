@@ -16,5 +16,6 @@ namespace test
             InitializeComponent();
         }
         //emil er nice
+        //Chris er nice'ere
     }
 }
