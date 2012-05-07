@@ -15,5 +15,6 @@ namespace test
         {
             InitializeComponent();
         }
+        //emil er nice
     }
 }
