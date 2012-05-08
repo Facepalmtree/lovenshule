@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Model
 {
-    class UnitRed : Unit
+    class UnitStar : Unit
     {
-        public UnitRed(Hole currentHole)
+        public UnitStar(Hole currentHole)
             : base(currentHole)
         {
             //revise this!!!!!!!!!!!!!!!!
