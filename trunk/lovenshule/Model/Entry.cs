@@ -13,5 +13,13 @@ namespace Model
         public int time { get; set; }
         public int levelCount { get; set; }
         public int entryID { public get; set; }
+
+        public Entry(int scor, int tim, int levelC, int entry)
+        {
+            score = scor;
+            time = tim;
+            levelCount = levelC;
+            entryID = entry;
+        }
     }
 }
