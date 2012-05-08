@@ -8,11 +8,10 @@ namespace Model
     class Entry
     {
         //Declaring class variables
-        private int score {get; set;}
+        public int score { get; set; }
         //private Img Picture {get; set;}
-        private int time { get; set; }
-        private int levelCount { get; set; }
-        private int entryID { get; set; }
-        
+        public int time { get; set; }
+        public int levelCount { get; set; }
+        public int entryID { public get; set; }
     }
 }
