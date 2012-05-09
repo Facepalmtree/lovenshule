@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Threading;
+
+
 namespace Model
 {
-    class Hole
+    public class Hole
     {
         Unit currentUnit;
-        
+        DateTime timestamp;
+        int spawnTime = 0;
+
+        //Constructor
+        public Hole()
+        {
+            this.currentUnit = null;
+        }
+
+
+        #region timer 1
         //Get these values however you like.
         static DateTime timeEnd = DateTime.Parse("20/5/2012 12:00:01 AM");
         static DateTime timeStart = DateTime.Now;
@@ -16,12 +29,75 @@ namespace Model
         //Calculate countdown timer.
         static TimeSpan t = timeEnd - timeStart;
         string countDown = string.Format("{0} Days, {1} Hours, {2} Minutes, {3} Seconds til launch.", t.Days, t.Hours, t.Minutes, t.Seconds);
+        #endregion
+        #region timer 2
 
+        //public void StartTimer()
+        //{
+        //    System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
-        public Hole()
+        //    timer.Tick += OnTimerTick();
+        //    timer.Interval = 10000;
+        //    timer.Start();
+        //}
+        //private void OnTimerTick(object sender, EventArgs e)
+        //{
+        //    // Modify GUI here.
+        //}
+        //private void OnTimerTick()
+        //{
+        //    // Modify GUI here.
+        //}
+
+        #endregion
+        #region timer 3
+
+        ////Console.WriteLine("Main thread: starting a timer"); 
+        //Timer t = new Timer(ComputeBoundOp, 5, 0, 2000); 
+        ////Console.WriteLine("Main thread: Doing other work here...");
+        //Thread.Sleep(10000); // Simulating other work (10 seconds)
+        //t.Dispose(); // Cancel the timer now
+
+        //// This method's signature must match the TimerCallback delega
+        //private static void ComputeBoundOp(Object state)
+        //{
+        //    // This method is executed by a thread pool thread 
+        //    Console.WriteLine("In ComputeBoundOp: state={0}", state);
+        //    Thread.Sleep(1000); // Simulates other work (1 second)
+        //    // When this method returns, the thread goes back 
+        //    // to the pool and waits for another task 
+        //}
+
+        #endregion
+        #region timer 4
+        
+        static public void Tick(Object stateInfo)
         {
-            this.currentUnit = null;
+            //Console.WriteLine("Tick: {0}", DateTime.Now.ToString("h:mm:ss"));                                         
         }
+
+        static void Spawn(int spawnTime)
+        {                                    
+            TimerCallback callback = new TimerCallback(Tick);
+
+            Console.WriteLine("Creating timer: {0}\n", 
+                                DateTime.Now.ToString("h:mm:ss"));
+
+            // create a one second timer tick
+            Timer stateTimer = new Timer(callback, null, 0, 1000);
+
+            // loop here forever
+            for (int countdown = spawnTime ;countdown>0 ;countdown--)
+            { 
+            }
+        }
+
+
+        #endregion
+
+
+
+
 
         public void SpawnUnit(int type)
         {
@@ -30,7 +106,9 @@ namespace Model
                 //NORMAL
                 case 1:
                     currentUnit = new UnitNormal(this);
-
+                    Timer timer1 = new Timer(TimerCallback, null, 0, 100);
+                    spawnTime = currentUnit.SpawnTime;
+                    Thread.Sleep(spawnTime*1000);
                     break;
                 //AVOID
                 case 2:
@@ -66,6 +144,15 @@ namespace Model
                     break;
                 default:
                     break;
+            }
+        }
+
+        public void TimerCallback(Object o)
+        {
+            TimeSpan span = DateTime.Now.Subtract(timestamp);
+            if (span.Seconds >= spawnTime)
+            {
+                currentUnit = null;
             }
         }
 
