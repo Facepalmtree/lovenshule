@@ -71,26 +71,26 @@ namespace Model
         #endregion
         #region timer 4
         
-        static public void Tick(Object stateInfo)
-        {
-            //Console.WriteLine("Tick: {0}", DateTime.Now.ToString("h:mm:ss"));                                         
-        }
+        //static public void Tick(Object stateInfo)
+        //{
+        //    //Console.WriteLine("Tick: {0}", DateTime.Now.ToString("h:mm:ss"));                                         
+        //}
 
-        static void Spawn(int spawnTime)
-        {                                    
-            TimerCallback callback = new TimerCallback(Tick);
+        //static void Spawn(int spawnTime)
+        //{                                    
+        //    TimerCallback callback = new TimerCallback(Tick);
 
-            Console.WriteLine("Creating timer: {0}\n", 
-                                DateTime.Now.ToString("h:mm:ss"));
+        //    Console.WriteLine("Creating timer: {0}\n", 
+        //                        DateTime.Now.ToString("h:mm:ss"));
 
-            // create a one second timer tick
-            Timer stateTimer = new Timer(callback, null, 0, 1000);
+        //    // create a one second timer tick
+        //    Timer stateTimer = new Timer(callback, null, 0, 1000);
 
-            // loop here forever
-            for (int countdown = spawnTime ;countdown>0 ;countdown--)
-            { 
-            }
-        }
+        //    // loop here forever
+        //    for (int countdown = spawnTime ;countdown>0 ;countdown--)
+        //    { 
+        //    }
+        //}
 
 
         #endregion
