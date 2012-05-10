@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    class Highscore
+    public class Highscore
     {
         //Declaring class variables
         private List<Entry> entries = new List<Entry>();
