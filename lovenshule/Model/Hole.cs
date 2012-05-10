@@ -13,6 +13,7 @@ namespace Model
         Unit currentUnit;
         DateTime timestamp;
         int spawnTime = 0;
+        bool clicked = false;
 
         //Constructor
         public Hole()
@@ -145,17 +146,20 @@ namespace Model
             }
             if(currentUnit != null)
             {
+                clicked = false;
                 Timer timer1 = new Timer(TimerCallback, null, 0, 100);
-                    spawnTime = currentUnit.SpawnTime;
-                    Thread.Sleep(spawnTime*1000);
+                spawnTime = currentUnit.SpawnTime;
+                Thread.Sleep(spawnTime*1000);
             }
         }
 
+        //Check if the moles timer has run out or if it has been clicked
         public void TimerCallback(Object o)
         {
             TimeSpan span = DateTime.Now.Subtract(timestamp);
-            if (span.Seconds >= spawnTime)
+            if (span.Seconds >= spawnTime || clicked == true)
             {
+                Attack();
                 currentUnit = null;
             }
         }
