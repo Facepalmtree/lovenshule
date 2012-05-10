@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    class PlayerData
+    public class PlayerData
     {
         public int score { get; set; }
         public string picture { get; set; }
