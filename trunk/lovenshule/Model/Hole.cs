@@ -105,10 +105,7 @@ namespace Model
             {
                 //NORMAL
                 case 1:
-                    currentUnit = new UnitNormal(this);
-                    Timer timer1 = new Timer(TimerCallback, null, 0, 100);
-                    spawnTime = currentUnit.SpawnTime;
-                    Thread.Sleep(spawnTime*1000);
+                    currentUnit = new UnitNormal(this);                    
                     break;
                 //AVOID
                 case 2:
@@ -143,7 +140,14 @@ namespace Model
                     currentUnit = new UnitYellow(this);
                     break;
                 default:
+                    currentUnit = new UnitNormal(this);
                     break;
+            }
+            if(currentUnit != null)
+            {
+                Timer timer1 = new Timer(TimerCallback, null, 0, 100);
+                    spawnTime = currentUnit.SpawnTime;
+                    Thread.Sleep(spawnTime*1000);
             }
         }
 
