@@ -10,5 +10,20 @@ namespace Controller
 {
     public class ModelController
     {
+        //sessionvariables
+        PlayerData currentPlayer = null;
+        Highscore highscore = null;
+
+        //methods
+        public void HitMole(/*id på hul*/)
+        {
+
+        }
+
+
+        public void LoadHighscore()
+        {
+            //DBController...
+        }
     }
 }
