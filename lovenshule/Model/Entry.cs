@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    class Entry
+    public class Entry
     {
         //Declaring class variables
         public int score { get; set; }
