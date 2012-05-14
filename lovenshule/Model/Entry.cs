@@ -23,5 +23,14 @@ namespace Model
             this.entryID = entryID;
             this.entryTime = DateTime.Now;
         }
+
+        public Entry(int score, int playTime, int levelCount, int entryID, DateTime entryTime)
+        {
+            this.score = score;
+            this.playTime = playTime;
+            this.levelCount = levelCount;
+            this.entryID = entryID;
+            this.entryTime = entryTime;
+        }
     }
 }
