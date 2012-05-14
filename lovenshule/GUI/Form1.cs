@@ -202,5 +202,10 @@ namespace GUI
                 this.label1.Text = Points.ToString();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Controller.AddEntry();
+        }
     }
 }
