@@ -33,23 +33,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Mole4 = new GUI.TransparentHack();
+            this.Mole3 = new GUI.TransparentHack();
+            this.Mole2 = new GUI.TransparentHack();
+            this.Mole1 = new GUI.TransparentHack();
+            this.Hole4 = new GUI.TransparentHack();
+            this.Hole3 = new GUI.TransparentHack();
+            this.Hole2 = new GUI.TransparentHack();
+            this.Hole1 = new GUI.TransparentHack();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,13 +102,24 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(178, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(284, 282);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.pictureBox7);
-            this.tabPage2.Controls.Add(this.pictureBox6);
-            this.tabPage2.Controls.Add(this.pictureBox5);
-            this.tabPage2.Controls.Add(this.pictureBox4);
-            this.tabPage2.Controls.Add(this.pictureBox3);
+            this.tabPage2.Controls.Add(this.Mole4);
+            this.tabPage2.Controls.Add(this.Mole3);
+            this.tabPage2.Controls.Add(this.Mole2);
+            this.tabPage2.Controls.Add(this.Mole1);
+            this.tabPage2.Controls.Add(this.Hole4);
+            this.tabPage2.Controls.Add(this.Hole3);
+            this.tabPage2.Controls.Add(this.Hole2);
+            this.tabPage2.Controls.Add(this.Hole1);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -120,59 +129,81 @@
             this.tabPage2.Text = "Gamepage";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // Mole4
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(178, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 282);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Mole4.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Mole4.Image = global::GUI.Properties.Resources.molecut;
+            this.Mole4.Location = new System.Drawing.Point(843, 391);
+            this.Mole4.Name = "Mole4";
+            this.Mole4.Size = new System.Drawing.Size(152, 118);
+            this.Mole4.TabIndex = 14;
+            this.Mole4.Click += new System.EventHandler(this.Mole4_Click);
             // 
-            // pictureBox7
+            // Mole3
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Location = new System.Drawing.Point(537, 81);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(169, 112);
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.Mole3.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Mole3.Image = global::GUI.Properties.Resources.molecut;
+            this.Mole3.Location = new System.Drawing.Point(647, 481);
+            this.Mole3.Name = "Mole3";
+            this.Mole3.Size = new System.Drawing.Size(173, 138);
+            this.Mole3.TabIndex = 13;
+            this.Mole3.Click += new System.EventHandler(this.Mole3_Click);
             // 
-            // pictureBox6
+            // Mole2
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(627, 615);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.Mole2.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Mole2.Image = global::GUI.Properties.Resources.molecut;
+            this.Mole2.Location = new System.Drawing.Point(396, 481);
+            this.Mole2.Name = "Mole2";
+            this.Mole2.Size = new System.Drawing.Size(173, 138);
+            this.Mole2.TabIndex = 12;
+            this.Mole2.Click += new System.EventHandler(this.Mole2_Click);
             // 
-            // pictureBox5
+            // Mole1
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(1194, 153);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.Mole1.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Mole1.Image = global::GUI.Properties.Resources.molecut;
+            this.Mole1.Location = new System.Drawing.Point(221, 391);
+            this.Mole1.Name = "Mole1";
+            this.Mole1.Size = new System.Drawing.Size(152, 118);
+            this.Mole1.TabIndex = 11;
+            this.Mole1.Click += new System.EventHandler(this.Mole1_Click);
             // 
-            // pictureBox4
+            // Hole4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(300, 458);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(292, 207);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.Hole4.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Hole4.Image = global::GUI.Properties.Resources.holecut;
+            this.Hole4.Location = new System.Drawing.Point(843, 447);
+            this.Hole4.Name = "Hole4";
+            this.Hole4.Size = new System.Drawing.Size(152, 80);
+            this.Hole4.TabIndex = 10;
             // 
-            // pictureBox3
+            // Hole3
             // 
-            this.pictureBox3.BackgroundImage = global::GUI.Properties.Resources.transparentpng;
-            this.pictureBox3.Image = global::GUI.Properties.Resources.holecut;
-            this.pictureBox3.Location = new System.Drawing.Point(51, 329);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(136, 76);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.Hole3.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Hole3.Image = global::GUI.Properties.Resources.holecut;
+            this.Hole3.Location = new System.Drawing.Point(627, 538);
+            this.Hole3.Name = "Hole3";
+            this.Hole3.Size = new System.Drawing.Size(211, 110);
+            this.Hole3.TabIndex = 9;
+            // 
+            // Hole2
+            // 
+            this.Hole2.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Hole2.Image = global::GUI.Properties.Resources.holecut;
+            this.Hole2.Location = new System.Drawing.Point(379, 538);
+            this.Hole2.Name = "Hole2";
+            this.Hole2.Size = new System.Drawing.Size(211, 110);
+            this.Hole2.TabIndex = 7;
+            // 
+            // Hole1
+            // 
+            this.Hole1.BackgroundImage = global::GUI.Properties.Resources.holefront;
+            this.Hole1.Image = global::GUI.Properties.Resources.holecut;
+            this.Hole1.Location = new System.Drawing.Point(221, 447);
+            this.Hole1.Name = "Hole1";
+            this.Hole1.Size = new System.Drawing.Size(152, 80);
+            this.Hole1.TabIndex = 6;
             // 
             // pictureBox2
             // 
@@ -195,13 +226,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -216,12 +242,15 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private TransparentHack Hole1;
+        private TransparentHack Hole4;
+        private TransparentHack Hole3;
+        private TransparentHack Hole2;
+        private TransparentHack Mole1;
+        private TransparentHack Mole4;
+        private TransparentHack Mole3;
+        private TransparentHack Mole2;
     }
 }
 
