@@ -13,6 +13,7 @@ namespace Model
         public int playTime { get; set; }
         public int levelCount { get; set; }
         public int entryID { get; set; }
+        public DateTime entryTime { get; set; }
 
         public Entry(int score, int playTime, int levelCount, int entryID)
         {
@@ -20,6 +21,7 @@ namespace Model
             this.playTime = playTime;
             this.levelCount = levelCount;
             this.entryID = entryID;
+            this.entryTime = DateTime.Now;
         }
     }
 }
