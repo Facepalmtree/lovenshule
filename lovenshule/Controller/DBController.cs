@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Model;
+
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
@@ -57,7 +59,7 @@ namespace Controller
                     entryTime = (DateTime)datareader["entryTime"];
 
                     //Not implemented yet!!!!!!!!!!
-                    //controller.DB_AddEntry(score, playTime, levelCount, entryID, entryTime);
+                    controller.DB_AddEntry(score, playTime, levelCount, entryID, entryTime);
                 }
             }
             catch (SqlException ex)
@@ -73,6 +75,56 @@ namespace Controller
                 }
 
                 //close the connection
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        public int AddEntry(int score, int playTime, int levelCount, DateTime entryTime)
+        {
+            int entryID = -1;
+
+            cmd.CommandText = "AddEntry"; //angiv  stored procedure
+
+            cmd.Parameters.Clear(); //tøm parameterlisten
+
+            //sæt værdier ind i parametrene
+            SqlParameter par = new SqlParameter("@score", SqlDbType.Int);
+            par.Value = score;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@playTime", SqlDbType.Int);
+            par.Value = playTime;
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@levelCount", SqlDbType.Int);
+            par.Value = levelCount;
+            cmd.Parameters.Add(par);
+            
+            par = new SqlParameter("@entryID", SqlDbType.Int);
+            par.Direction = ParameterDirection.Output;            
+            cmd.Parameters.Add(par);
+
+            par = new SqlParameter("@entryTime", SqlDbType.DateTime);
+            par.Value = entryTime;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                con.Open(); // opens connections
+                cmd.ExecuteNonQuery(); //executes command
+                entryID = (int)cmd.Parameters["@entryID"].Value; //returns entryID
+
+                return entryID;
+            }
+            catch //(SqlException e)
+            {
+                return entryID;
+            }
+            finally //if connections is open, close it
+            {
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
