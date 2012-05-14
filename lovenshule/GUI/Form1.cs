@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace GUI
 {
@@ -14,6 +15,15 @@ namespace GUI
         public Form1()
         {
             InitializeComponent();
+
+            Thread t = new Thread(MainLoop);          // Kick off a new thread
+            t.Start();                               // running WriteY()
+
+            //Simultaneously, do something on the main thread.
+            for (int i = 0; i < 1000; i++)
+            {
+                //textBox1.Text+="x";
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,6 +71,19 @@ namespace GUI
         private void Mole4_Click(object sender, EventArgs e)
         {
             Mole4.Visible = false;
+        }
+
+        public void MainLoop()
+        {
+            //This variable will be false, when the game is quit, to stop our loop.
+            bool play = true;
+
+
+            while (play)
+            {
+                //Sleep, to not consume endless CPU power.
+                Thread.Sleep(1000 / 1);
+            }
         }
     }
 }
