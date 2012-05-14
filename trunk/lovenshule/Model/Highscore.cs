@@ -7,9 +7,16 @@ namespace Model
 {
     public class Highscore
     {
-        //Declaring class variables
-        private List<Entry> entries = new List<Entry>();
+        
 
+        //Declaring class variables
+        private List<Entry> entries;
+
+        //constructor
+        public Highscore()
+        {
+            entries = new List<Entry>();
+        }
         //Function to delete an entry from the list.
         public bool DeleteEntry(Entry E)
         {
