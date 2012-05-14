@@ -35,6 +35,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.HEJ = new GUI.TransparentHack();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.Mole4 = new GUI.TransparentHack();
             this.Mole3 = new GUI.TransparentHack();
@@ -45,7 +47,7 @@
             this.Hole2 = new GUI.TransparentHack();
             this.Hole1 = new GUI.TransparentHack();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,6 +116,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.HEJ);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.Mole4);
@@ -133,6 +137,23 @@
             this.tabPage2.Text = "Gamepage";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // HEJ
+            // 
+            this.HEJ.Image = global::GUI.Properties.Resources.molimation;
+            this.HEJ.Location = new System.Drawing.Point(40, 327);
+            this.HEJ.Name = "HEJ";
+            this.HEJ.Size = new System.Drawing.Size(152, 118);
+            this.HEJ.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "label1";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(18, 21);
@@ -145,47 +166,46 @@
             // 
             // Mole4
             // 
-            this.Mole4.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Mole4.Image = global::GUI.Properties.Resources.molecut;
             this.Mole4.Location = new System.Drawing.Point(843, 391);
             this.Mole4.Name = "Mole4";
             this.Mole4.Size = new System.Drawing.Size(152, 118);
             this.Mole4.TabIndex = 14;
+            this.Mole4.Visible = false;
             this.Mole4.Click += new System.EventHandler(this.Mole4_Click);
             // 
             // Mole3
             // 
-            this.Mole3.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Mole3.Image = global::GUI.Properties.Resources.molecut;
             this.Mole3.Location = new System.Drawing.Point(647, 481);
             this.Mole3.Name = "Mole3";
             this.Mole3.Size = new System.Drawing.Size(173, 138);
             this.Mole3.TabIndex = 13;
+            this.Mole3.Visible = false;
             this.Mole3.Click += new System.EventHandler(this.Mole3_Click);
             // 
             // Mole2
             // 
-            this.Mole2.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Mole2.Image = global::GUI.Properties.Resources.molecut;
             this.Mole2.Location = new System.Drawing.Point(396, 481);
             this.Mole2.Name = "Mole2";
             this.Mole2.Size = new System.Drawing.Size(173, 138);
             this.Mole2.TabIndex = 12;
+            this.Mole2.Visible = false;
             this.Mole2.Click += new System.EventHandler(this.Mole2_Click);
             // 
             // Mole1
             // 
-            this.Mole1.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Mole1.Image = global::GUI.Properties.Resources.molecut;
             this.Mole1.Location = new System.Drawing.Point(221, 391);
             this.Mole1.Name = "Mole1";
             this.Mole1.Size = new System.Drawing.Size(152, 118);
             this.Mole1.TabIndex = 11;
+            this.Mole1.Visible = false;
             this.Mole1.Click += new System.EventHandler(this.Mole1_Click);
             // 
             // Hole4
             // 
-            this.Hole4.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Hole4.Image = global::GUI.Properties.Resources.holecut;
             this.Hole4.Location = new System.Drawing.Point(843, 447);
             this.Hole4.Name = "Hole4";
@@ -194,7 +214,6 @@
             // 
             // Hole3
             // 
-            this.Hole3.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Hole3.Image = global::GUI.Properties.Resources.holecut;
             this.Hole3.Location = new System.Drawing.Point(627, 538);
             this.Hole3.Name = "Hole3";
@@ -203,7 +222,6 @@
             // 
             // Hole2
             // 
-            this.Hole2.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Hole2.Image = global::GUI.Properties.Resources.holecut;
             this.Hole2.Location = new System.Drawing.Point(379, 538);
             this.Hole2.Name = "Hole2";
@@ -212,7 +230,6 @@
             // 
             // Hole1
             // 
-            this.Hole1.BackgroundImage = global::GUI.Properties.Resources.holefront;
             this.Hole1.Image = global::GUI.Properties.Resources.holecut;
             this.Hole1.Location = new System.Drawing.Point(221, 447);
             this.Hole1.Name = "Hole1";
@@ -229,14 +246,15 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // button3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "label1";
+            this.button3.Location = new System.Drawing.Point(99, 21);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -278,6 +296,8 @@
         private TransparentHack Mole2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private TransparentHack HEJ;
+        private System.Windows.Forms.Button button3;
     }
 }
 
