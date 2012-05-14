@@ -15,15 +15,6 @@ namespace Model
         public int entryID { get; set; }
         public DateTime entryTime { get; set; }
 
-        public Entry(int score, int playTime, int levelCount, int entryID)
-        {
-            this.score = score;
-            this.playTime = playTime;
-            this.levelCount = levelCount;
-            this.entryID = entryID;
-            this.entryTime = DateTime.Now;
-        }
-
         public Entry(int score, int playTime, int levelCount, int entryID, DateTime entryTime)
         {
             this.score = score;
