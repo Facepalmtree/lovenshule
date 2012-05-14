@@ -9,9 +9,35 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    class TransparentHack : System.Windows.Forms.Panel
+    class TransparentHack : Control
     {
-        [Browsable(false)]
+        private Image _image = null;
+
+        public Image Image
+        {
+            get
+            {
+                return _image;
+            }
+            set
+            {
+                _image = value;
+            }
+        }
+        
+        /*public void TransPictureBox()
+        {
+        }*/
+
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+        }
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            if(Image != null)
+                pe.Graphics.DrawImage(Image, 0, 0, this.Width, this.Height);
+        }
         protected override CreateParams CreateParams
         {
             get
@@ -20,10 +46,6 @@ namespace GUI
                 cp.ExStyle |= 0x20;
                 return cp;
             }
-        }
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            // Do Nothing
         }
     }
 }

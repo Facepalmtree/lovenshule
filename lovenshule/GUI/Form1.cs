@@ -42,5 +42,25 @@ namespace GUI
         {
 
         }
+
+        private void Mole1_Click(object sender, EventArgs e)
+        {
+            Mole1.Visible = false;
+        }
+
+        private void Mole2_Click(object sender, EventArgs e)
+        {
+            Mole2.Visible = false;
+        }
+
+        private void Mole3_Click(object sender, EventArgs e)
+        {
+            Mole3.Visible = false;
+        }
+
+        private void Mole4_Click(object sender, EventArgs e)
+        {
+            Mole4.Visible = false;
+        }
     }
 }
