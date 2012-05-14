@@ -8,12 +8,11 @@ using Interface;
 
 namespace Controller
 {
-    public class ModelController
+    public class ModelControllerHej
     {
         //sessionvariables
         PlayerData currentPlayer = null;
         Highscore highscore = null;
-
 
         //methods
         public void HitMole(/*id på hul*/)
