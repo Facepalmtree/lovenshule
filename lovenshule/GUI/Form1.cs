@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
+using Controller;
+
 namespace GUI
 {
     public partial class Form1 : Form
@@ -18,18 +20,14 @@ namespace GUI
         Thread main;          // Kick off a new thread
         int Points = 0;
 
+        ModelController Controller = new ModelController();
+
         public Form1()
         {
             InitializeComponent();
 
             main = new Thread(MainLoop);
             main.Start();
-
-            //Simultaneously, do something on the main thread.
-            for (int i = 0; i < 1000; i++)
-            {
-                //textBox1.Text+="x";
-            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
