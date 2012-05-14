@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Copy of ModelController.cs" />
     <Compile Include="ModelController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
