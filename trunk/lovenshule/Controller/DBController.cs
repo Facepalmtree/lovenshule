@@ -21,8 +21,9 @@ namespace Controller
         public DBController(ModelController controller)
         {
             this.controller = controller;
-                       
-            connectionstring = Properties.Settings.Default.lovenshuleDBConnectionString;
+
+            connectionstring = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\lovenshuleDB.mdf;Integrated Security=True;User Instance=True;";
+                //Properties.Settings.Default.lovenshuleDBConnectionString;
 
 
             con = new SqlConnection(connectionstring);
