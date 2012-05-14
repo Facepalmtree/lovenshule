@@ -27,5 +27,20 @@ namespace GUI
             //Commented out until it's needed.
             //Cursor.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
