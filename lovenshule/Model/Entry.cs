@@ -12,7 +12,7 @@ namespace Model
         //private Img Picture {get; set;}
         public int time { get; set; }
         public int levelCount { get; set; }
-        public int entryID { public get; set; }
+        public int entryID { get; set; }
 
         public Entry(int scor, int tim, int levelC, int entry)
         {
