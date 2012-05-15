@@ -22,8 +22,8 @@ namespace Controller
         {
             this.controller = controller;
 
-            connectionstring = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\lovenshuleDB.mdf;Integrated Security=True;User Instance=True;";
-                //Properties.Settings.Default.lovenshuleDBConnectionString;
+            connectionstring = Properties.Settings.Default.lovenshuleDBConnectionString;
+            //"Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\lovenshuleDB.mdf;Integrated Security=True;User Instance=True;";
 
 
             con = new SqlConnection(connectionstring);
@@ -125,6 +125,60 @@ namespace Controller
                 return entryID;
             }
             finally //if connections is open, close it
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        public void DeleteEntry(int entryID)
+        {
+
+            cmd.CommandText = "DeleteEntry"; 
+
+            cmd.Parameters.Clear();
+            
+            SqlParameter par = new SqlParameter("@entryID", SqlDbType.Int);
+            par.Value = entryID;
+            cmd.Parameters.Add(par);
+
+            try
+            {
+                con.Open(); // opens connections
+                cmd.ExecuteNonQuery(); //executes command//returns entryID
+                
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally //if connections is open, close it
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        public void ResetHighscore()
+        {
+            cmd.CommandText = "ResetHighscore";
+
+            cmd.Parameters.Clear();
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
             {
                 if (con.State == ConnectionState.Open)
                 {
