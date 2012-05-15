@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.IO;
+using System.Drawing;
+
+
 using Model;
 using Interface;
 
@@ -38,7 +42,7 @@ namespace Controller
         public void AddEntry()
         {
             //TEST
-            TestPlayer();
+            //TestPlayer();
 
             try
             {
@@ -55,6 +59,28 @@ namespace Controller
                 throw e;
             }
         }
+
+
+        #region image to byte
+
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms,System.Drawing.Imaging.ImageFormat.Gif);
+            return  ms.ToArray();
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
+        #endregion
+
+
+
 
         public void AddScore(int score)
         {
@@ -100,7 +126,14 @@ namespace Controller
 
         public void LoadHighscore()
         {
-            //DBController...
+            try
+            {
+                dbcontroller.GetAllEntries();
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
     }
 }
