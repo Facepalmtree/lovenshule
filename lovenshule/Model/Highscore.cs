@@ -89,7 +89,7 @@ namespace Model
                 int n = 1;
                 while (n < entries.Count)
                 {
-                    if (entries[n-1].score  > entries[n].score)
+                    if (entries[n-1].score > entries[n].score)
                     {
                         entry = entries[n];
                         entries[n] = entries[n - 1];
@@ -99,5 +99,34 @@ namespace Model
                 }
             }
         }
+
+        //cursor for iterator
+        //int cursor = -1;
+
+        //public void ResetCursor()
+        //{
+        //    cursor = -1;
+        //}
+
+        //public bool MoveNext()
+        //{
+        //    cursor++;
+
+        //    if (cursor < entries.Count)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
+        //public Entry Current()
+        //{
+        //    return entries[cursor];
+        //}
+
+        //public void CurrentImages()
+        //{
+        //    //return entries[cursor].Image;
+        //}
     }
 }
