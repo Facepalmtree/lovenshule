@@ -26,6 +26,17 @@ namespace Model
             this.health = 10;
         }
 
+        //temp without image
+        public PlayerData()
+        {
+            this.totalScore = 0;
+            this.image = image;
+            this.time = 0;            
+            this.levelCount = 1;
+            this.health = 10;
+            this.image = null;
+        }
+
         public void AddScore(int score) 
         {
             totalScore += score;
