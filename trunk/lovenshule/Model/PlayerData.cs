@@ -17,13 +17,13 @@ namespace Model
         public int health { get; set; }
         
 
-        public PlayerData( int totalScore, string picture, int time, int levelCount, int health, Image image)
+        public PlayerData(Image image)
         {
-            this.totalScore = totalScore;
+            this.totalScore = 0;
             this.image = image;
-            this.time = time;            
-            this.levelCount = levelCount;
-            this.health = health;
+            this.time = 0;            
+            this.levelCount = 1;
+            this.health = 10;
         }
 
         public void AddScore(int score) 
