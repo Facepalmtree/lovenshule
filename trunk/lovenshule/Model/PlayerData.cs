@@ -38,5 +38,17 @@ namespace Model
         {
             time = this.time;
         }
+
+        public void LoseLife(int hit)
+        {
+            health -= hit;
+        }
+
+        public string UpdateHealth()
+        {
+            return Convert.ToString(health);
+        }
+
+        public 
     }
 }

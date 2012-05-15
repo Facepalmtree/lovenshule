@@ -30,6 +30,7 @@ namespace Model
                 case 1: 
                     holesCount = 3;
                     spawn = 10;
+                    spawnFrequency = 3;
 
                     break;
                 case 2:

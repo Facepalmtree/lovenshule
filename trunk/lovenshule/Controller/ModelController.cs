@@ -70,6 +70,16 @@ namespace Controller
         {
             currentPlayer.SaveTime(time);
         }
+
+        public void LoseHealth(int hit)
+        {
+            currentPlayer.LoseLife(hit);
+        }
+
+        public string UpdateHealth()
+        {
+            return currentPlayer.UpdateHealth();
+        }
 #region Methods for DBController
 
         //add entry to model from db
