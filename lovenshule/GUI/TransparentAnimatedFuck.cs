@@ -19,8 +19,12 @@ namespace GUI
         int animations;
         int animStep = 0;
         int animation = 0;
-        int Type = 1;
-        Object Parent;
+        int type;
+
+        public TransparentAnimatedFuck(int type)
+        {
+            this.type = type;
+        }
 
         public void AddAnimationData(int animStart, int animEnd)
         {
@@ -39,7 +43,7 @@ namespace GUI
             animStep += 1;
             if (animStep > animEnd[animation])
             {
-                if (Type == 1)
+                if (type == 1)
                 {
                     if (animation == 1)
                     {
