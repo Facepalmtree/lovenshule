@@ -58,8 +58,7 @@ namespace Controller
                     levelCount = (int)datareader["levelCount"];
                     entryID = (int)datareader["entryID"];
                     entryTime = (DateTime)datareader["entryTime"];
-
-                    //Not implemented yet!!!!!!!!!!
+                                       
                     controller.DB_AddEntry(score, playTime, levelCount, entryID, entryTime);
                 }
             }
@@ -83,7 +82,7 @@ namespace Controller
             }
         }
 
-        public int AddEntry(int score, int playTime, int levelCount, DateTime entryTime)
+        public int AddEntry(int score, int playTime, int levelCount, DateTime entryTime)//, byte[] imageData & imagepath?!?!
         {
             int entryID = -1;
 
@@ -111,6 +110,13 @@ namespace Controller
             par = new SqlParameter("@entryTime", SqlDbType.DateTime);
             par.Value = entryTime;
             cmd.Parameters.Add(par);
+
+
+            //IMAGE
+            //par = new SqlParameter("@ImageData", (object)imageData);
+            //par.Value = imageData;
+            //cmd.Parameters.Add(par);
+
 
             try
             {
