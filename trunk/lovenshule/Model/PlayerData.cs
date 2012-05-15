@@ -61,7 +61,5 @@ namespace Model
         {
             return Convert.ToString(health);
         }
-
-        public 
     }
 }
