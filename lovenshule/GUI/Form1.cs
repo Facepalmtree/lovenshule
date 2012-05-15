@@ -33,9 +33,9 @@ namespace GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             //Makes the winform run in fullscreen.
-            this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            //this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //this.WindowState = FormWindowState.Maximized;
 
             //Hides the curser
             //Commented out until it's needed.
@@ -60,28 +60,28 @@ namespace GUI
         private void Mole1_Click(object sender, EventArgs e)
         {
             if (Mole1.Visible == true)
-                Points += 5;
+                Controller.AddScore(1);
             Mole1.Visible = false;
         }
 
         private void Mole2_Click(object sender, EventArgs e)
         {
             if (Mole2.Visible == true)
-                Points += 5;
+                Controller.AddScore(2);
             Mole2.Visible = false;
         }
 
         private void Mole3_Click(object sender, EventArgs e)
         {
             if (Mole3.Visible == true)
-                Points += 5;
+                Controller.AddScore(3);
             Mole3.Visible = false;
         }
 
         private void Mole4_Click(object sender, EventArgs e)
         {
             if (Mole4.Visible == true)
-                Points += 5;
+                Controller.AddScore(4);
             Mole4.Visible = false;
         }
 
@@ -197,14 +197,14 @@ namespace GUI
 
         private void Update()
         {
-            if (this.label1.InvokeRequired)
+            if (this.lblScore.InvokeRequired)
             {
                 SetNoneCallBack d = new SetNoneCallBack(Update);
                 this.Invoke(d);
             }
             else
             {
-                this.label1.Text = Points.ToString();
+                this.lblScore.Text = Controller.UpdateScore();
             }
         }
 
