@@ -21,9 +21,11 @@ namespace GUI
         int animation = 0;
         int type;
 
-        public TransparentAnimatedFuck(int type)
+        public TransparentAnimatedFuck(int type, int x, int y)
         {
             this.type = type;
+            Location = new Point(x, y);
+
         }
 
         public void AddAnimationData(int animStart, int animEnd)
@@ -48,7 +50,7 @@ namespace GUI
                     if (animation == 1)
                     {
                         //animation = 2;
-                        //animStep = animStart[animation];
+                        animStep = animStart[animation];
                     }
                 }
             }
