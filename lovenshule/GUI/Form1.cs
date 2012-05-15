@@ -18,7 +18,6 @@ namespace GUI
         delegate void SetTextCallBack(String text);
         delegate void SetNoneCallBack();
         Thread main;          // Kick off a new thread
-        int Points = 0;
 
         ModelController Controller = new ModelController();
 
@@ -57,7 +56,7 @@ namespace GUI
 
         }
 
-        private void Mole1_Click(object sender, EventArgs e)
+        /*private void Mole1_Click(object sender, EventArgs e)
         {
             if (Mole1.Visible == true)
                 Controller.AddScore(1);
@@ -83,7 +82,7 @@ namespace GUI
             if (Mole4.Visible == true)
                 Controller.AddScore(4);
             Mole4.Visible = false;
-        }
+        }*/
 
         //TEMP TEMP TEMP TEMP
         private void button2_Click(object sender, EventArgs e)
