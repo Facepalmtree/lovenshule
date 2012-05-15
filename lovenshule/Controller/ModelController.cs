@@ -16,13 +16,13 @@ namespace Controller
     {
         //sessionvariables
         DBController dbcontroller;
-        PlayerData currentPlayer = new PlayerData(0, "img", 0, 1, 10);
+        PlayerData currentPlayer;
         Highscore highscore = new Highscore();
 
         //TEST PLAYER
         public void TestPlayer()
         {
-            currentPlayer = new PlayerData(100, "trololol", 20, 5, 10);
+            currentPlayer = new PlayerData();
         }
 
 
@@ -41,17 +41,14 @@ namespace Controller
 
         public void AddEntry()
         {
-            //TEST
-            //TestPlayer();
-
             try
             {
                 DateTime now = DateTime.Now;
-                int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now);
+                int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now, currentPlayer.image);
 
                 if (entryID != -1)
                 {
-                    highscore.AddEntry(new Entry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, entryID, now)); 
+                    highscore.AddEntry(new Entry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, entryID, now, currentPlayer.image)); 
                 }
             }
             catch (Exception e)
@@ -61,21 +58,21 @@ namespace Controller
         }
 
 
-        #region image to byte
+        #region image to byte not used
 
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms,System.Drawing.Imaging.ImageFormat.Gif);
-            return  ms.ToArray();
-        }
+        //public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        //{
+        //    MemoryStream ms = new MemoryStream();
+        //    imageIn.Save(ms,System.Drawing.Imaging.ImageFormat.Gif);
+        //    return  ms.ToArray();
+        //}
 
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
+        //public Image byteArrayToImage(byte[] byteArrayIn)
+        //{
+        //    MemoryStream ms = new MemoryStream(byteArrayIn);
+        //    Image returnImage = Image.FromStream(ms);
+        //    return returnImage;
+        //}
 
         #endregion
 
@@ -109,11 +106,11 @@ namespace Controller
 #region Methods for DBController
 
         //add entry to model from db
-        public void DB_AddEntry(int score, int playTime, int levelCount, int entryID, DateTime entryTime)
+        public void DB_AddEntry(int score, int playTime, int levelCount, int entryID, DateTime entryTime, Image image)
         {
             try
             {
-                highscore.AddEntry(new Entry(score, playTime, levelCount, entryID, entryTime));
+                highscore.AddEntry(new Entry(score, playTime, levelCount, entryID, entryTime, image));
             }
             catch(Exception e)
             {
