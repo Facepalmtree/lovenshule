@@ -12,13 +12,13 @@ namespace Controller
     {
         //sessionvariables
         DBController dbcontroller;
-        PlayerData currentPlayer = null;
+        PlayerData currentPlayer = new PlayerData(0, "img", 0, 1, 10);
         Highscore highscore = new Highscore();
 
         //TEST PLAYER
         public void TestPlayer()
         {
-            currentPlayer = new PlayerData(100, "trololol", 20, 5);
+            currentPlayer = new PlayerData(100, "trololol", 20, 5, 10);
         }
 
 
@@ -43,17 +43,27 @@ namespace Controller
             try
             {
                 DateTime now = DateTime.Now;
-                int entryID = dbcontroller.AddEntry(currentPlayer.score, currentPlayer.time, currentPlayer.levelCount, now);
+                int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now);
 
                 if (entryID != -1)
                 {
-                    highscore.AddEntry(new Entry(currentPlayer.score, currentPlayer.time, currentPlayer.levelCount, entryID, now)); 
+                    highscore.AddEntry(new Entry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, entryID, now)); 
                 }
             }
             catch (Exception e)
             {
                 throw e;
             }
+        }
+
+        public void AddScore(int score)
+        {
+            currentPlayer.AddScore(score);
+        }
+
+        public string UpdateScore()
+        {
+            return currentPlayer.UpdateScore();
         }
 
 #region Methods for DBController
