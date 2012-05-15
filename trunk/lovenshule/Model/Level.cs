@@ -85,5 +85,11 @@ namespace Model
                     nextLevel();
                 }
             }
+
+        public void ResetLevel()
+        {
+            startTime = holesCount = spawn = 0;
+            holes = new List<Hole>();
+        }
     }
 }
