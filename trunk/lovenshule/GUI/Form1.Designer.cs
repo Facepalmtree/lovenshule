@@ -107,7 +107,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.transparentAnimatedFuck1);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.button2);
