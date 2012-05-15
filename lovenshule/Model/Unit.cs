@@ -6,7 +6,7 @@ using Interface;
 
 namespace Model
 {
-    public abstract class Unit
+    public abstract class Unit : Interface.IUnit
     {
         int lives;
         int point;
