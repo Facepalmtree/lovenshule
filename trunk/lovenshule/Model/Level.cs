@@ -71,7 +71,19 @@ namespace Model
                     break;
                 default:
                     break;
-            }
+            }       
         }
+        
+        public void SpawnCount()
+            {
+                if (spawnCount < spawn)
+                {
+                    spawnCount += 1;
+                }
+                else
+                {
+                    nextLevel();
+                }
+            }
     }
 }
