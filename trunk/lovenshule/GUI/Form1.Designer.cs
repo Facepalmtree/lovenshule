@@ -35,19 +35,11 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.HEJ = new GUI.TransparentHack();
+            this.transparentAnimatedFuck1 = new GUI.TransparentAnimatedFuck();
+            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.Mole4 = new GUI.TransparentHack();
-            this.Mole3 = new GUI.TransparentHack();
-            this.Mole2 = new GUI.TransparentHack();
-            this.Mole1 = new GUI.TransparentHack();
-            this.Hole4 = new GUI.TransparentHack();
-            this.Hole3 = new GUI.TransparentHack();
-            this.Hole2 = new GUI.TransparentHack();
-            this.Hole1 = new GUI.TransparentHack();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,18 +108,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.transparentAnimatedFuck1);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.HEJ);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.Mole4);
-            this.tabPage2.Controls.Add(this.Mole3);
-            this.tabPage2.Controls.Add(this.Mole2);
-            this.tabPage2.Controls.Add(this.Mole1);
-            this.tabPage2.Controls.Add(this.Hole4);
-            this.tabPage2.Controls.Add(this.Hole3);
-            this.tabPage2.Controls.Add(this.Hole2);
-            this.tabPage2.Controls.Add(this.Hole1);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -137,13 +121,22 @@
             this.tabPage2.Text = "Gamepage";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // HEJ
+            // transparentAnimatedFuck1
             // 
-            this.HEJ.Image = global::GUI.Properties.Resources.molimation;
-            this.HEJ.Location = new System.Drawing.Point(40, 327);
-            this.HEJ.Name = "HEJ";
-            this.HEJ.Size = new System.Drawing.Size(152, 118);
-            this.HEJ.TabIndex = 17;
+            this.transparentAnimatedFuck1.Location = new System.Drawing.Point(0, 0);
+            this.transparentAnimatedFuck1.Name = "transparentAnimatedFuck1";
+            this.transparentAnimatedFuck1.Size = new System.Drawing.Size(0, 0);
+            this.transparentAnimatedFuck1.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(99, 21);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -164,78 +157,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Mole4
-            // 
-            this.Mole4.Image = global::GUI.Properties.Resources.molecut;
-            this.Mole4.Location = new System.Drawing.Point(843, 391);
-            this.Mole4.Name = "Mole4";
-            this.Mole4.Size = new System.Drawing.Size(152, 118);
-            this.Mole4.TabIndex = 14;
-            this.Mole4.Visible = false;
-            this.Mole4.Click += new System.EventHandler(this.Mole4_Click);
-            // 
-            // Mole3
-            // 
-            this.Mole3.Image = global::GUI.Properties.Resources.molecut;
-            this.Mole3.Location = new System.Drawing.Point(647, 481);
-            this.Mole3.Name = "Mole3";
-            this.Mole3.Size = new System.Drawing.Size(173, 138);
-            this.Mole3.TabIndex = 13;
-            this.Mole3.Visible = false;
-            this.Mole3.Click += new System.EventHandler(this.Mole3_Click);
-            // 
-            // Mole2
-            // 
-            this.Mole2.Image = global::GUI.Properties.Resources.molecut;
-            this.Mole2.Location = new System.Drawing.Point(396, 481);
-            this.Mole2.Name = "Mole2";
-            this.Mole2.Size = new System.Drawing.Size(173, 138);
-            this.Mole2.TabIndex = 12;
-            this.Mole2.Visible = false;
-            this.Mole2.Click += new System.EventHandler(this.Mole2_Click);
-            // 
-            // Mole1
-            // 
-            this.Mole1.Image = global::GUI.Properties.Resources.molecut;
-            this.Mole1.Location = new System.Drawing.Point(221, 391);
-            this.Mole1.Name = "Mole1";
-            this.Mole1.Size = new System.Drawing.Size(152, 118);
-            this.Mole1.TabIndex = 11;
-            this.Mole1.Visible = false;
-            this.Mole1.Click += new System.EventHandler(this.Mole1_Click);
-            // 
-            // Hole4
-            // 
-            this.Hole4.Image = global::GUI.Properties.Resources.holecut;
-            this.Hole4.Location = new System.Drawing.Point(843, 447);
-            this.Hole4.Name = "Hole4";
-            this.Hole4.Size = new System.Drawing.Size(152, 80);
-            this.Hole4.TabIndex = 10;
-            // 
-            // Hole3
-            // 
-            this.Hole3.Image = global::GUI.Properties.Resources.holecut;
-            this.Hole3.Location = new System.Drawing.Point(627, 538);
-            this.Hole3.Name = "Hole3";
-            this.Hole3.Size = new System.Drawing.Size(211, 110);
-            this.Hole3.TabIndex = 9;
-            // 
-            // Hole2
-            // 
-            this.Hole2.Image = global::GUI.Properties.Resources.holecut;
-            this.Hole2.Location = new System.Drawing.Point(379, 538);
-            this.Hole2.Name = "Hole2";
-            this.Hole2.Size = new System.Drawing.Size(211, 110);
-            this.Hole2.TabIndex = 7;
-            // 
-            // Hole1
-            // 
-            this.Hole1.Image = global::GUI.Properties.Resources.holecut;
-            this.Hole1.Location = new System.Drawing.Point(221, 447);
-            this.Hole1.Name = "Hole1";
-            this.Hole1.Size = new System.Drawing.Size(152, 80);
-            this.Hole1.TabIndex = 6;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GUI.Properties.Resources.background;
@@ -245,16 +166,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(99, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -286,18 +197,19 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private TransparentHack Hole1;
-        private TransparentHack Hole4;
-        private TransparentHack Hole3;
-        private TransparentHack Hole2;
-        private TransparentHack Mole1;
-        private TransparentHack Mole4;
-        private TransparentHack Mole3;
-        private TransparentHack Mole2;
+        private TransparentAnimatedFuck Hole1;
+        private TransparentAnimatedFuck Hole4;
+        private TransparentAnimatedFuck Hole3;
+        private TransparentAnimatedFuck Hole2;
+        private TransparentAnimatedFuck Mole1;
+        private TransparentAnimatedFuck Mole4;
+        private TransparentAnimatedFuck Mole3;
+        private TransparentAnimatedFuck Mole2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
-        private TransparentHack HEJ;
+        private TransparentAnimatedFuck HEJ;
         private System.Windows.Forms.Button button3;
+        private TransparentAnimatedFuck transparentAnimatedFuck1;
     }
 }
 

@@ -54,7 +54,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransparentHack.cs">
+    <Compile Include="TransparentAnimatedFuck.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -84,6 +84,10 @@
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{38344447-7D13-4ABE-ACC5-3028ADB7E8B0}</Project>
       <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interface\Interface.csproj">
+      <Project>{C2F6B817-2AF7-4FE8-A561-1E7580C990C8}</Project>
+      <Name>Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

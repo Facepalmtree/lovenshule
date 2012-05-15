@@ -107,12 +107,12 @@ namespace GUI
 
             while (play)
             {
-                Update();
+                //Update();
                 if (random.NextDouble()*100<5)
                 {
 
                     Hole = random.Next(1, 4);
-                    if (Hole == 1)
+                    /*if (Hole == 1)
                         SetMole1(true);
                     else
                         if (Hole == 2)
@@ -121,12 +121,17 @@ namespace GUI
                         if (Hole == 3)
                             SetMole3(true);
                     else
-                         SetMole4(true);
+                         SetMole4(true);*/
                 }
 
                 //Sleep, to not consume endless CPU power.
                 Thread.Sleep(1000 / 30);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -138,7 +143,7 @@ namespace GUI
         // InvokeRequired required compares the thread ID of the
         // calling thread to the thread ID of the creating thread.
         // If these threads are different, it returns true.
-        private void SetMole1(bool Visible)
+        /*private void SetMole1(bool Visible)
         {
             if (this.Mole1.InvokeRequired)
             {
@@ -206,6 +211,6 @@ namespace GUI
         private void button3_Click(object sender, EventArgs e)
         {
             //Controller.AddEntry();
-        }
+        }*/
     }
 }
