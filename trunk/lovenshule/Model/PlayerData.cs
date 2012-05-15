@@ -33,5 +33,10 @@ namespace Model
         {
             return Convert.ToString(totalScore);
         }
+
+        public void SaveTime(int time)
+        {
+            time = this.time;
+        }
     }
 }

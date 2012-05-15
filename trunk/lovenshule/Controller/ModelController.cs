@@ -66,6 +66,10 @@ namespace Controller
             return currentPlayer.UpdateScore();
         }
 
+        public void GetTime(int time)
+        {
+            currentPlayer.SaveTime(time);
+        }
 #region Methods for DBController
 
         //add entry to model from db
