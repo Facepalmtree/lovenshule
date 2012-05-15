@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Drawing;
+
 namespace Model
 {
     public class PlayerData
     {
         //Declaring class variables
         public int totalScore { get; set; }
-        //public string picture { get; set; }
+        public Image image  { get; set; }
         public int time { get; set; }
         public int levelCount { get; set; }
         public int health { get; set; }
         
 
-        public PlayerData( int totalScore, string picture, int time, int levelCount, int health)
+        public PlayerData( int totalScore, string picture, int time, int levelCount, int health, Image image)
         {
             this.totalScore = totalScore;
-            //this.picture = picture;
+            this.image = image;
             this.time = time;            
             this.levelCount = levelCount;
             this.health = health;
