@@ -35,13 +35,10 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-<<<<<<< .mine
             this.button3 = new System.Windows.Forms.Button();
             this.HEJ = new GUI.TransparentHack();
-=======
             this.transparentAnimatedFuck1 = new GUI.TransparentAnimatedFuck();
             this.button3 = new System.Windows.Forms.Button();
->>>>>>> .r58
             this.lblScore = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -126,7 +123,6 @@
             this.tabPage2.Text = "Gamepage";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-<<<<<<< .mine
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(99, 21);
@@ -138,18 +134,14 @@
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // HEJ
-=======
             // transparentAnimatedFuck1
->>>>>>> .r58
             // 
             this.transparentAnimatedFuck1.Location = new System.Drawing.Point(0, 0);
             this.transparentAnimatedFuck1.Name = "transparentAnimatedFuck1";
             this.transparentAnimatedFuck1.Size = new System.Drawing.Size(0, 0);
             this.transparentAnimatedFuck1.TabIndex = 0;
             // 
-<<<<<<< .mine
             // lblScore
-=======
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(99, 21);
@@ -161,7 +153,6 @@
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
->>>>>>> .r58
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Location = new System.Drawing.Point(15, 47);
