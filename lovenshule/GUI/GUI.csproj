@@ -94,7 +94,7 @@
     <None Include="Resources\holefront.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mole.png" />
+    <EmbeddedResource Include="Resources\mole.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.png" />

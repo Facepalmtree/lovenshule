@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 using Interface;
 
@@ -15,17 +17,36 @@ namespace GUI
     {
         private List<int> animStart = new List<int>();
         private List<int> animEnd = new List<int>();
-        private List<Image> Image = new List<Image>();
+        private List<Bitmap> Image = new List<Bitmap>();
         int animations;
         int animStep = 0;
         int animation = 0;
         int type;
+        private Image Hej;
 
-        public TransparentAnimatedFuck(int type, int x, int y)
+        public Image SetHej
+        {
+            get
+            {
+                return Hej;
+            }
+            set
+            {
+                Hej = value;
+            }
+        }
+
+
+        public TransparentAnimatedFuck()
+        {
+            
+        }
+
+        public TransparentAnimatedFuck(int type, int x, int y, int Width, int Height)
         {
             this.type = type;
-            Location = new Point(x, y);
-
+            Location = new System.Drawing.Point(x, y);
+            Size = new System.Drawing.Size(Width, Height);
         }
 
         public void AddAnimationData(int animStart, int animEnd)
@@ -35,9 +56,9 @@ namespace GUI
             this.animEnd.Add(animEnd);
         }
 
-        public void AddImage(Image image)
+        public void AddImage(Bitmap Image)
         {
-            this.Image.Add(image);
+            this.Image.Add(Image);
         }
 
         public void AnimationStep()
@@ -49,7 +70,6 @@ namespace GUI
                 {
                     if (animation == 1)
                     {
-                        //animation = 2;
                         animStep = animStart[animation];
                     }
                 }
