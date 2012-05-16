@@ -5,9 +5,11 @@ using System.Text;
 
 using System.Drawing;
 
+using Interface;
+
 namespace Model
 {
-    public class Entry : Model.IEntry
+    public class Entry : Interface.IEntry
     {
         //Declaring class variables
         public int score { get; set; }        
