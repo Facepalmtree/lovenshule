@@ -68,7 +68,7 @@ namespace GUI
         {
 
             moleImages[0].AddAnimationData(0, 13);
-            moleImages[0].AddImage(Properties.Resources.moleanimation1 );
+            moleImages[0].AddImage(Properties.Resources. );
         }
 
 
