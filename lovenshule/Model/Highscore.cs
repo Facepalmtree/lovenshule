@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Interface;
+
 namespace Model
 {
     public class Highscore
@@ -98,6 +100,16 @@ namespace Model
                     }
                 }
             }
+        }
+
+        public List<IEntry> GetIEntries()
+        {
+            List<IEntry> ientrylist = new List<IEntry>();
+            foreach (Entry entry in entries)
+            {
+                ientrylist.Add((IEntry)entry);
+            }
+            return ientrylist;
         }
 
         //cursor for iterator
