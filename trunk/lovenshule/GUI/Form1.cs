@@ -28,8 +28,9 @@ namespace GUI
 
 
             moleImages.Add(new TransparentAnimatedFuck(1, 200, 200, 100, 100));
-            moleImages[0].AddAnimationData(0, 0);
-            moleImages[0].AddImage(Properties.Resources.mole);
+
+            this.tabPage2.Controls.Add(moleImages[0]);
+            moleImages[0].BringToFront();
 
             main = new Thread(MainLoop);
             main.Start();
@@ -62,6 +63,13 @@ namespace GUI
 
         }
 
+        //Adds the appropriate image data, for a mole, to the given object,
+        private void AddMoleData(TransparentAnimatedFuck transparentAnimatedFuck)
+        {
+
+            moleImages[0].AddAnimationData(0, 13);
+            moleImages[0].AddImage(Properties.Resources.mole);
+        }
 
 
 
