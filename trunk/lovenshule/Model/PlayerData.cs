@@ -30,7 +30,6 @@ namespace Model
         public PlayerData()
         {
             this.totalScore = 0;
-            this.image = image;
             this.time = 0;            
             this.levelCount = 1;
             this.health = 10;
