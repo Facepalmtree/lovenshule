@@ -17,7 +17,6 @@ namespace GUI
         delegate void SetMoleCallBack(bool visible);
         delegate void SetTextCallBack(String text);
         delegate void SetNoneCallBack();
-        Thread main;          // Kick off a new thread
         List<TransparentAnimatedFuck> Moles = new List<TransparentAnimatedFuck>();
 
         ModelController Controller = new ModelController();
@@ -25,9 +24,6 @@ namespace GUI
         public Form1()
         {
             InitializeComponent();
-
-            main = new Thread(MainLoop);
-            main.Start();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -93,41 +89,9 @@ namespace GUI
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            main.Abort();
+            Controller.StopThread();
         }
 
-        public void MainLoop()
-        {
-            bool play = true;
-            int Hole = 0;
-            Random random = new Random();
-            //The play variable will be false, when the game is quit, to stop our loop.
-
-
-
-            while (play)
-            {
-                //Update();
-                if (random.NextDouble()*100<5)
-                {
-
-                    Hole = random.Next(1, 4);
-                    /*if (Hole == 1)
-                        SetMole1(true);
-                    else
-                        if (Hole == 2)
-                            SetMole2(true);
-                    else
-                        if (Hole == 3)
-                            SetMole3(true);
-                    else
-                         SetMole4(true);*/
-                }
-
-                //Sleep, to not consume endless CPU power.
-                Thread.Sleep(1000 / 30);
-            }
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
