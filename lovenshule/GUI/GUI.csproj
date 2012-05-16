@@ -111,6 +111,23 @@
   <ItemGroup>
     <None Include="Resources\molimation.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Moler\moleanimation1.png" />
+    <Content Include="Resources\Moler\moleanimation10.png" />
+    <Content Include="Resources\Moler\moleanimation11.png" />
+    <Content Include="Resources\Moler\moleanimation12.png" />
+    <Content Include="Resources\Moler\moleanimation13.png" />
+    <Content Include="Resources\Moler\moleanimation14.png" />
+    <Content Include="Resources\Moler\moleanimation2.png" />
+    <Content Include="Resources\Moler\moleanimation3.png" />
+    <Content Include="Resources\Moler\moleanimation4.png" />
+    <Content Include="Resources\Moler\moleanimation5.png" />
+    <Content Include="Resources\Moler\moleanimation6.png" />
+    <Content Include="Resources\Moler\moleanimation7.png" />
+    <Content Include="Resources\Moler\moleanimation8.png" />
+    <Content Include="Resources\Moler\moleanimation9.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
