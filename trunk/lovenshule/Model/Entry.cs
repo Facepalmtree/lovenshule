@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Model
 {
-    public class Entry
+    public class Entry : Model.IEntry
     {
         //Declaring class variables
         public int score { get; set; }        
