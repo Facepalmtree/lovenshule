@@ -112,33 +112,35 @@ namespace Model
             return ientrylist;
         }
 
-        //cursor for iterator
-        //int cursor = -1;
+        /*//cursor for iterator
 
-        //public void ResetCursor()
-        //{
-        //    cursor = -1;
-        //}
+        int cursor = -1;
 
-        //public bool MoveNext()
-        //{
-        //    cursor++;
+        public void ResetCursor()
+        {
+            cursor = -1;
+        }
 
-        //    if (cursor < entries.Count)
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
+        public bool MoveNext()
+        {
+            cursor++;
 
-        //public Entry Current()
-        //{
-        //    return entries[cursor];
-        //}
+            if (cursor < entries.Count)
+            {
+                return true;
+            }
+            return false;
+        }
 
-        //public void CurrentImages()
-        //{
-        //    //return entries[cursor].Image;
-        //}
+        public Entry Current()
+        {
+            return entries[cursor];
+        }
+
+        public void CurrentImages()
+        {
+            //return entries[cursor].Image;
+        }
+         */
     }
 }
