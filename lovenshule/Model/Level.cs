@@ -74,16 +74,9 @@ namespace Model
             }       
         }
         
-        public void SpawnCount()
+        public void SpawnCount(int spawn)
             {
-                if (spawnCount < spawn)
-                {
-                    spawnCount += 1;
-                }
-                else
-                {
-                    nextLevel();
-                }
+                spawnCount = spawn; 
             }
 
         public void ResetLevel()
