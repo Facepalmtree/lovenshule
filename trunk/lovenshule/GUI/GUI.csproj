@@ -112,6 +112,9 @@
     <None Include="Resources\molimation.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\Moler\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation1.png" />
     <None Include="Resources\moleanimation10.png" />
     <None Include="Resources\moleanimation11.png" />
@@ -126,9 +129,6 @@
     <None Include="Resources\moleanimation7.png" />
     <None Include="Resources\moleanimation8.png" />
     <None Include="Resources\moleanimation9.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Moler\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
