@@ -132,5 +132,19 @@ namespace Controller
                 throw e;
             }
         }
+
+        //til frmadmin
+
+        public List<IEntry> GetIEntries()
+        {
+            try
+            {
+                return highscore.GetIEntries();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
