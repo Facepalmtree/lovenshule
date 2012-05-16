@@ -17,13 +17,22 @@ namespace GUI
         delegate void SetMoleCallBack(bool visible);
         delegate void SetTextCallBack(String text);
         delegate void SetNoneCallBack();
-        List<TransparentAnimatedFuck> Moles = new List<TransparentAnimatedFuck>();
+        List<TransparentAnimatedFuck> moleImages = new List<TransparentAnimatedFuck>();
+        Thread main;          // Kick off a new thread
 
         ModelController Controller = new ModelController();
 
         public Form1()
         {
             InitializeComponent();
+
+
+            moleImages.Add(new TransparentAnimatedFuck(1, 200, 200, 100, 100));
+            moleImages[0].AddAnimationData(0, 0);
+            moleImages[0].AddImage(Properties.Resources.mole);
+
+            main = new Thread(MainLoop);
+            main.Start();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,6 +61,59 @@ namespace GUI
         {
 
         }
+
+
+
+
+
+
+
+
+
+
+
+        public void MainLoop()
+        {
+            bool play = true;
+            int Hole = 0;
+            Random random = new Random();
+            //The play variable will be false, when the game is quit, to stop our loop.
+
+
+
+            while (play)
+            {
+                if (random.NextDouble() * 100 < 5)
+                {
+
+                    Hole = random.Next(1, 4);
+                    /*if (Hole == 1)
+                        SetMole1(true);
+                    else
+                        if (Hole == 2)
+                            SetMole2(true);
+                    else
+                        if (Hole == 3)
+                            SetMole3(true);
+                    else
+                         SetMole4(true);*/
+                }
+
+                //Sleep, to not consume endless CPU power.
+                Thread.Sleep(1000 / 30);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         /*private void Mole1_Click(object sender, EventArgs e)
         {
@@ -89,7 +151,7 @@ namespace GUI
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Controller.StopThread();
+            main.Abort();
         }
 
 
