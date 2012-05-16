@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 using System.IO;
 using System.Drawing;
@@ -18,6 +19,7 @@ namespace Controller
         DBController dbcontroller;
         PlayerData currentPlayer;
         Highscore highscore = new Highscore();
+        
 
         //TEST PLAYER
         public void TestPlayer()
