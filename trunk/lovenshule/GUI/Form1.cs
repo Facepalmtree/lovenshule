@@ -18,6 +18,7 @@ namespace GUI
         delegate void SetTextCallBack(String text);
         delegate void SetNoneCallBack();
         Thread main;          // Kick off a new thread
+        List<TransparentAnimatedFuck> Moles = new List<TransparentAnimatedFuck>();
 
         ModelController Controller = new ModelController();
 
@@ -131,6 +132,11 @@ namespace GUI
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
         }
 
 
