@@ -61,5 +61,15 @@ namespace Model
         {
             return Convert.ToString(health);
         }
+
+        public void SetLevel(int level)
+        { 
+            levelCount = level;
+        }
+
+        public void SetImage(Image image)
+        {
+            image = this.image;
+        }
     }
 }
