@@ -56,8 +56,7 @@ namespace GUI
             //Makes the winform run in fullscreen.
             //this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
-            this.Location = new Point(-22, -40);
+            this.Location = new Point(-28, -47);
 
             //Hides the curser
             //Commented out until it's needed.
@@ -82,7 +81,9 @@ namespace GUI
         //Adds the appropriate image data, for a mole, to the given object,
         private void AddMoleData(TransparentAnimatedFuck transparentAnimatedFuck)
         {
-            transparentAnimatedFuck.AddAnimationData(0, 13);
+            transparentAnimatedFuck.AddAnimationData(0, 0);
+            transparentAnimatedFuck.AddAnimationData(1, 13);
+            transparentAnimatedFuck.AddImage(Properties.Resources.molehole);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation2);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation3);
