@@ -201,5 +201,29 @@ namespace Controller
                 }
             }
         }
+
+        public void DailyClear()
+        {
+            cmd.CommandText = "DailyClear";
+            cmd.Parameters.Clear();
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            
+        }
     }
 }

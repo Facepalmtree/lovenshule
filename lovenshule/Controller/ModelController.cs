@@ -149,5 +149,48 @@ namespace Controller
                 throw e;
             }
         }
+
+        public void RemoveEntry(int entryID)
+        {
+            try
+            {
+                if (entryID != -1)
+                {
+                    dbcontroller.DeleteEntry(entryID);
+                }
+                else
+                {
+                    throw new Exception("Pladsen er tom");
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void ResetHighscore()
+        {
+            try
+            {
+                dbcontroller.ResetHighscore();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void DailyClear()
+        {
+            try
+            {
+                dbcontroller.DailyClear();
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
