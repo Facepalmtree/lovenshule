@@ -16,6 +16,8 @@ namespace GUI
     {
         delegate void SetMoleCallBack(bool visible);
         delegate void SetTextCallBack(String text);
+        delegate void SetTAFCallBack(TransparentAnimatedFuck transparentAnimatedFuck);
+        delegate void SetPicCallBack(PictureBox PicBox);
         delegate void SetNoneCallBack();
         List<TransparentAnimatedFuck> moleImages = new List<TransparentAnimatedFuck>();
         Thread main;          // Kick off a new thread
@@ -27,13 +29,30 @@ namespace GUI
             InitializeComponent();
 
 
-            moleImages.Add(new TransparentAnimatedFuck(1, 200, 200, 100, 100));
+            moleImages.Add(new TransparentAnimatedFuck(1, 500, 500, 165, 120));
+            //moleImages.Add(new TransparentAnimatedFuck(1, 700, 500, 165, 120));
+            //moleImages.Add(new TransparentAnimatedFuck(1, 400, 420, 100, 70));
+            //moleImages.Add(new TransparentAnimatedFuck(1, 800, 420, 100, 70));
 
-            this.tabPage2.Controls.Add(moleImages[0]);
-            moleImages[0].BringToFront();
+            int n = 0;
+            while (n < moleImages.Count)
+            {
+                AddMoleData(moleImages[n]);
+                //moleImages[n].Paint += new PaintEventHandler(MolePaint);
+
+                this.tabPage2.Controls.Add(moleImages[n]);
+                moleImages[n].BringToFront();
+                n++;
+            }
 
             main = new Thread(MainLoop);
             main.Start();
+        }
+
+        private void MolePaint(object sender, PaintEventArgs e)
+        {
+            if (moleImages[0].Image.Count > 0)
+                e.Graphics.DrawImage(moleImages[0].Image[moleImages[0].animStep], 0, 0, moleImages[0].Width, moleImages[0].Height);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -66,9 +85,21 @@ namespace GUI
         //Adds the appropriate image data, for a mole, to the given object,
         private void AddMoleData(TransparentAnimatedFuck transparentAnimatedFuck)
         {
-
-            moleImages[0].AddAnimationData(0, 13);
-            moleImages[0].AddImage(Properties.Resources. );
+            transparentAnimatedFuck.AddAnimationData(0, 13);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation5);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation6);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation7);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation8);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation9);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation10);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation11);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation12);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation13);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation14);
         }
 
 
@@ -91,6 +122,16 @@ namespace GUI
 
             while (play)
             {
+                //Update the graphics
+                updateCross2(pictureBox2);
+                int n = 0;
+                while (n < moleImages.Count)
+                {
+                    animationStepCross(moleImages[n]);
+                    updateCross(moleImages[n]);
+                    n++;
+                }
+
                 if (random.NextDouble() * 100 < 5)
                 {
 
@@ -108,11 +149,9 @@ namespace GUI
                 }
 
                 //Sleep, to not consume endless CPU power.
-                Thread.Sleep(1000 / 30);
+                Thread.Sleep(1000/30);
             }
         }
-
-
 
 
 
@@ -165,7 +204,7 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Update();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -182,6 +221,46 @@ namespace GUI
         // InvokeRequired required compares the thread ID of the
         // calling thread to the thread ID of the creating thread.
         // If these threads are different, it returns true.
+
+        private void animationStepCross(TransparentAnimatedFuck transparentAnimatedFuck)
+        {
+            if (transparentAnimatedFuck.InvokeRequired)
+            {
+                SetTAFCallBack d = new SetTAFCallBack(animationStepCross);
+                this.Invoke(d, new object[] { transparentAnimatedFuck });
+            }
+            else
+            {
+                transparentAnimatedFuck.AnimationStep();
+            }
+        }
+
+        private void updateCross(TransparentAnimatedFuck transparentAnimatedFuck)
+        {
+            if (transparentAnimatedFuck.InvokeRequired)
+            {
+                SetTAFCallBack d = new SetTAFCallBack(updateCross);
+                this.Invoke(d, new object[] { transparentAnimatedFuck });
+            }
+            else
+            {
+                transparentAnimatedFuck.Refresh();
+            }
+        }
+
+        private void updateCross2(PictureBox PicBox)
+        {
+            if (PicBox.InvokeRequired)
+            {
+                SetPicCallBack d = new SetPicCallBack(updateCross2);
+                this.Invoke(d, new object[] { PicBox });
+            }
+            else
+            {
+                PicBox.Refresh();
+            }
+        }
+
         /*private void SetMole1(bool Visible)
         {
             if (this.Mole1.InvokeRequired)

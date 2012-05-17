@@ -139,4 +139,46 @@
   <data name="molimation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\molimation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="moleanimation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimation9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimation9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

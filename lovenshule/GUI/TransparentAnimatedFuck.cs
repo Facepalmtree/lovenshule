@@ -15,14 +15,14 @@ namespace GUI
 {
     class TransparentAnimatedFuck : Control
     {
-        private List<int> animStart = new List<int>();
-        private List<int> animEnd = new List<int>();
-        private List<Bitmap> Image = new List<Bitmap>();
-        int animations;
-        int animStep = 0;
-        int animation = 0;
-        int type;
-        private Image Hej;
+        public List<int> animStart = new List<int>();
+        public List<int> animEnd = new List<int>();
+        public List<Bitmap> Image = new List<Bitmap>();
+        public int animations;
+        public int animStep = 0;
+        public int animation = 0;
+        public int type;
+        public Image Hej;
 
         public Image SetHej
         {
@@ -68,7 +68,7 @@ namespace GUI
             {
                 if (type == 1)
                 {
-                    if (animation == 1)
+                    if (animation == 0)
                     {
                         animStep = animStart[animation];
                     }
@@ -87,7 +87,7 @@ namespace GUI
         protected override void OnPaint(PaintEventArgs pe)
         {
             if(Image.Count>0)
-                pe.Graphics.DrawImage(Image[0], 0, 0, this.Width, this.Height);
+                pe.Graphics.DrawImage(Image[animStep], 0, 0, this.Width, this.Height);
         }
 
         protected override CreateParams CreateParams

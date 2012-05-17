@@ -116,19 +116,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\moleanimation1.png" />
-    <None Include="Resources\moleanimation10.png" />
-    <None Include="Resources\moleanimation11.png" />
-    <None Include="Resources\moleanimation12.png" />
-    <None Include="Resources\moleanimation13.png" />
-    <None Include="Resources\moleanimation14.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation2.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation3.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation4.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation5.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation6.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation7.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation8.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\moleanimation9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimation10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimation11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimation12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimation13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimation14.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
