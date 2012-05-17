@@ -30,29 +30,25 @@ namespace GUI
 
 
             moleImages.Add(new TransparentAnimatedFuck(1, 500, 500, 165, 120));
-            //moleImages.Add(new TransparentAnimatedFuck(1, 700, 500, 165, 120));
-            //moleImages.Add(new TransparentAnimatedFuck(1, 400, 420, 100, 70));
-            //moleImages.Add(new TransparentAnimatedFuck(1, 800, 420, 100, 70));
+            moleImages.Add(new TransparentAnimatedFuck(1, 700, 500, 165, 120));
+            moleImages.Add(new TransparentAnimatedFuck(1, 400, 420, 100, 70));
+            moleImages.Add(new TransparentAnimatedFuck(1, 800, 420, 100, 70));
 
             int n = 0;
             while (n < moleImages.Count)
             {
                 AddMoleData(moleImages[n]);
-                //moleImages[n].Paint += new PaintEventHandler(MolePaint);
 
                 this.tabPage2.Controls.Add(moleImages[n]);
                 moleImages[n].BringToFront();
                 n++;
             }
 
+
+            
+
             main = new Thread(MainLoop);
             main.Start();
-        }
-
-        private void MolePaint(object sender, PaintEventArgs e)
-        {
-            if (moleImages[0].Image.Count > 0)
-                e.Graphics.DrawImage(moleImages[0].Image[moleImages[0].animStep], 0, 0, moleImages[0].Width, moleImages[0].Height);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -116,19 +112,18 @@ namespace GUI
             bool play = true;
             int Hole = 0;
             Random random = new Random();
-            //The play variable will be false, when the game is quit, to stop our loop.
+            //The play variable will be set to false, when the loop should be stopped.
 
 
 
             while (play)
             {
                 //Update the graphics
-                updateCross2(pictureBox2);
                 int n = 0;
                 while (n < moleImages.Count)
                 {
                     animationStepCross(moleImages[n]);
-                    updateCross(moleImages[n]);
+                    //updateCross(moleImages[n]);
                     n++;
                 }
 
@@ -136,16 +131,6 @@ namespace GUI
                 {
 
                     Hole = random.Next(1, 4);
-                    /*if (Hole == 1)
-                        SetMole1(true);
-                    else
-                        if (Hole == 2)
-                            SetMole2(true);
-                    else
-                        if (Hole == 3)
-                            SetMole3(true);
-                    else
-                         SetMole4(true);*/
                 }
 
                 //Sleep, to not consume endless CPU power.
@@ -162,34 +147,7 @@ namespace GUI
 
 
 
-        /*private void Mole1_Click(object sender, EventArgs e)
-        {
-            if (Mole1.Visible == true)
-                Controller.AddScore(1);
-            Mole1.Visible = false;
-        }
-
-        private void Mole2_Click(object sender, EventArgs e)
-        {
-            if (Mole2.Visible == true)
-                Controller.AddScore(2);
-            Mole2.Visible = false;
-        }
-
-        private void Mole3_Click(object sender, EventArgs e)
-        {
-            if (Mole3.Visible == true)
-                Controller.AddScore(3);
-            Mole3.Visible = false;
-        }
-
-        private void Mole4_Click(object sender, EventArgs e)
-        {
-            if (Mole4.Visible == true)
-                Controller.AddScore(4);
-            Mole4.Visible = false;
-        }*/
-
+        
         //TEMP TEMP TEMP TEMP
         private void button2_Click(object sender, EventArgs e)
         {
@@ -260,75 +218,5 @@ namespace GUI
                 PicBox.Refresh();
             }
         }
-
-        /*private void SetMole1(bool Visible)
-        {
-            if (this.Mole1.InvokeRequired)
-            {
-                SetMoleCallBack d = new SetMoleCallBack(SetMole1);
-                this.Invoke(d, new object[] { Visible });
-            }
-            else
-            {
-                this.Mole1.Visible = Visible;
-            }
-        }
-
-        private void SetMole2(bool Visible)
-        {
-            if (this.Mole2.InvokeRequired)
-            {
-                SetMoleCallBack d = new SetMoleCallBack(SetMole2);
-                this.Invoke(d, new object[] { Visible });
-            }
-            else
-            {
-                this.Mole2.Visible = Visible;
-            }
-        }
-
-        private void SetMole3(bool Visible)
-        {
-            if (this.Mole3.InvokeRequired)
-            {
-                SetMoleCallBack d = new SetMoleCallBack(SetMole3);
-                this.Invoke(d, new object[] { Visible });
-            }
-            else
-            {
-                this.Mole3.Visible = Visible;
-            }
-        }
-
-        private void SetMole4(bool Visible)
-        {
-            if (this.Mole4.InvokeRequired)
-            {
-                SetMoleCallBack d = new SetMoleCallBack(SetMole4);
-                this.Invoke(d, new object[] { Visible });
-            }
-            else
-            {
-                this.Mole4.Visible = Visible;
-            }
-        }
-
-        private void Update()
-        {
-            if (this.lblScore.InvokeRequired)
-            {
-                SetNoneCallBack d = new SetNoneCallBack(Update);
-                this.Invoke(d);
-            }
-            else
-            {
-                this.lblScore.Text = Controller.UpdateScore();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //Controller.AddEntry();
-        }*/
     }
 }

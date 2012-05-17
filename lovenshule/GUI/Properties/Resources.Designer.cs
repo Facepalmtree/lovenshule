@@ -206,5 +206,12 @@ namespace GUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap Unavngivet4 {
+            get {
+                object obj = ResourceManager.GetObject("Unavngivet4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
