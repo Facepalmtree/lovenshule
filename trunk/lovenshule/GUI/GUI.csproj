@@ -172,6 +172,60 @@
   <ItemGroup>
     <None Include="Resources\molehole.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pic18.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

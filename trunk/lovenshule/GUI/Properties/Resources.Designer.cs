@@ -207,6 +207,132 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Pic1 {
+            get {
+                object obj = ResourceManager.GetObject("Pic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic10 {
+            get {
+                object obj = ResourceManager.GetObject("Pic10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic11 {
+            get {
+                object obj = ResourceManager.GetObject("Pic11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic12 {
+            get {
+                object obj = ResourceManager.GetObject("Pic12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic13 {
+            get {
+                object obj = ResourceManager.GetObject("Pic13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic14 {
+            get {
+                object obj = ResourceManager.GetObject("Pic14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic15 {
+            get {
+                object obj = ResourceManager.GetObject("Pic15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic16 {
+            get {
+                object obj = ResourceManager.GetObject("Pic16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic17 {
+            get {
+                object obj = ResourceManager.GetObject("Pic17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic18 {
+            get {
+                object obj = ResourceManager.GetObject("Pic18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic2 {
+            get {
+                object obj = ResourceManager.GetObject("Pic2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic3 {
+            get {
+                object obj = ResourceManager.GetObject("Pic3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic4 {
+            get {
+                object obj = ResourceManager.GetObject("Pic4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic5 {
+            get {
+                object obj = ResourceManager.GetObject("Pic5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic6 {
+            get {
+                object obj = ResourceManager.GetObject("Pic6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic7 {
+            get {
+                object obj = ResourceManager.GetObject("Pic7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic8 {
+            get {
+                object obj = ResourceManager.GetObject("Pic8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Pic9 {
+            get {
+                object obj = ResourceManager.GetObject("Pic9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap transparentpng {
             get {
                 object obj = ResourceManager.GetObject("transparentpng", resourceCulture);
