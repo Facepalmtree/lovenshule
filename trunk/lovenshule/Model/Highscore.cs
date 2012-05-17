@@ -20,19 +20,25 @@ namespace Model
             entries = new List<Entry>();
         }
         //Function to delete an entry from the list.
-        public bool DeleteEntry(Entry E)
+        public bool RemoveEntry(int entryID)
         {
             try
             {
-                entries.Remove(E);
-                //TODO: DB_connection.
-                //No error was catched, return true, and terminate the function.
-                return true;
+                foreach (Entry entry in entries)
+                {
+                    if (entry.entryID == entryID)
+                    {
+                        entries.Remove(entry);
+                        //entry removed
+                        return true;
+                    }
+                }
+                //entry not removed
+                return false;  
             }
-            catch
+            catch(Exception e)
             {
-                //An error was catched, return false, to let the caller know.
-                return false;
+                throw e;  
             }
         }
 
@@ -58,8 +64,8 @@ namespace Model
             }
         }
 
-        //Function to reset the highscore:
-        public void Reset()
+        //Function to clear the highscore:
+        public void Clear()
         {
             entries.Clear();
         }
