@@ -39,7 +39,7 @@ namespace GUI
             {
                 AddMoleData(moleImages[n]);
 
-                this.tabPage2.Controls.Add(moleImages[n]);
+                this.Controls.Add(moleImages[n]);
                 moleImages[n].BringToFront();
                 n++;
             }
@@ -54,9 +54,9 @@ namespace GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             //Makes the winform run in fullscreen.
-            //this.TopMost = true;
+            this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Location = new Point(-28, -47);
+            this.WindowState = FormWindowState.Maximized;
 
             //Hides the curser
             //Commented out until it's needed.
