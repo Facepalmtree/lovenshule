@@ -46,6 +46,7 @@ namespace Controller
         {
             try
             {
+                //create an instance of now to get same time in model and db
                 DateTime now = DateTime.Now;
                 int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now, currentPlayer.image);
 
@@ -129,6 +130,7 @@ namespace Controller
             try
             {
                 dbcontroller.GetAllEntries();
+                highscore.Sort();
             }
             catch(Exception e)
             {
@@ -157,6 +159,7 @@ namespace Controller
                 if (entryID != -1)
                 {
                     dbcontroller.DeleteEntry(entryID);
+                    highscore.RemoveEntry(entryID);
                 }
                 else
                 {
@@ -174,6 +177,7 @@ namespace Controller
             try
             {
                 dbcontroller.ResetHighscore();
+                highscore.Clear();
             }
             catch (Exception e)
             {
@@ -186,10 +190,24 @@ namespace Controller
             try
             {
                 dbcontroller.DailyClear();
+                highscore.Clear();
+                LoadHighscore();                
             }
             catch(Exception e)
             {
                 throw e;
+            }
+        }
+
+        public void ResetDailyHighscore()
+        {
+            try
+            {
+                dbcontroller.ResetDailyHighscore();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
     }
