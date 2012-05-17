@@ -192,7 +192,6 @@
 
         #endregion
 
-        private TransparentAnimatedFuck transparentAnimatedFuck1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
