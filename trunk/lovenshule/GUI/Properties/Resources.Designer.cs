@@ -88,6 +88,104 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap moleanimation1 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation10 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation11 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation12 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation13 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation14 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation2 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation3 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation4 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation5 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation6 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation7 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation8 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimation9 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimation9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap molecut {
             get {
                 object obj = ResourceManager.GetObject("molecut", resourceCulture);
