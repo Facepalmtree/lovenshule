@@ -193,6 +193,13 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap molehole {
+            get {
+                object obj = ResourceManager.GetObject("molehole", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap molimation {
             get {
                 object obj = ResourceManager.GetObject("molimation", resourceCulture);
