@@ -128,7 +128,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(188, 131);
+            this.button1.Location = new System.Drawing.Point(591, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(265, 36);
             this.button1.TabIndex = 3;
@@ -138,9 +138,9 @@
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(468, 6);
+            this.listView2.Location = new System.Drawing.Point(882, 6);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(166, 282);
+            this.listView2.Size = new System.Drawing.Size(458, 690);
             this.listView2.TabIndex = 2;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -148,15 +148,15 @@
             // 
             this.listView1.Location = new System.Drawing.Point(6, 6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(166, 282);
+            this.listView1.Size = new System.Drawing.Size(545, 690);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(178, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(557, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 282);
+            this.pictureBox1.Size = new System.Drawing.Size(319, 690);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
