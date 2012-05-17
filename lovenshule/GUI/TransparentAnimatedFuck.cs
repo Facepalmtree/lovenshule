@@ -19,9 +19,10 @@ namespace GUI
         public int animStep = 0;
         public int animation = 0;
         public int type;
-        private Color fillColor = Color.White;
+        private Color brushColor = Color.Transparent;
+        private Color fillColor = Color.Transparent;
         private int opacity = 100;
-        private int alpha;
+        private float lineThick = 1.0f;
 
         public TransparentAnimatedFuck()
         {
@@ -35,7 +36,14 @@ namespace GUI
             Size = new System.Drawing.Size(Width, Height);
 
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            SetStyle(ControlStyles.Opaque, true);
+            SetStyle(ControlStyles.ResizeRedraw, true);
+
+            //Set style for double buffering
+            SetStyle(ControlStyles.DoubleBuffer |
+                     ControlStyles.AllPaintingInWmPaint |
+                     ControlStyles.UserPaint, true);
+
+            //Set the default backcolor
             this.BackColor = Color.Transparent;
         }
 
@@ -52,22 +60,20 @@ namespace GUI
             set
             {
                 this.fillColor = value;
-                if (this.Parent != null) Parent.Invalidate(this.Bounds, true);
+                this.Invalidate();
             }
         }
 
-        public int Opacity
+        public float LineThick
         {
             get
             {
-                if (opacity > 100) { opacity = 100; }
-                else if (opacity < 1) { opacity = 1; }
-                return this.opacity;
+                return this.lineThick;
             }
             set
             {
-                this.opacity = value;
-                if (this.Parent != null) Parent.Invalidate(this.Bounds, true);
+                this.lineThick = value;
+                this.Invalidate();
             }
         }
 
@@ -119,45 +125,41 @@ namespace GUI
             if (Image.Count > 0)
                 e.Graphics.DrawImage(Image[animStep], 0, 0, this.Width, this.Height);*/
 
+            base.OnPaint(e);
             Graphics g = e.Graphics;
-            Rectangle bounds = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
+            g.SmoothingMode = SmoothingMode.HighQuality;
 
-            Color frmColor = this.Parent.BackColor;
-            Brush brushColor;
-            Brush bckColor;
+            RectangleF r = new RectangleF(0.0f, 0.0f, (float)this.Width, (float)this.Height);
+            float cx = r.Width - 1;
+            float cy = r.Height - 1;
+            float offset = 0.4f;
 
-            alpha = (opacity * 255) / 100;
+            Pen pen = new Pen(new SolidBrush(Color.Black), lineThick);
+            pen.Alignment = PenAlignment.Center;
+            SolidBrush brush = new SolidBrush(Color.White);
+            SolidBrush bckgnd = new SolidBrush(Color.Green);
 
+            // Creates a path to draw graphics
+            GraphicsPath path = new GraphicsPath();
 
-            Color color = fillColor;
-            brushColor = new SolidBrush(Color.FromArgb(alpha, color));
-            bckColor = new SolidBrush(Color.FromArgb(alpha, this.BackColor));
+            
+            //Add a rectangle to the path. This will be the control background.
+            path.AddRectangle(r);
 
+            //Creates a region area for the background painting
+            this.Region = new Region(path);
 
-            Pen pen = new Pen(this.ForeColor);
+            //Paint the control background
+            g.FillRegion(bckgnd, this.Region);
 
-            g.FillEllipse(new SolidBrush(Color.FromArgb(1, Color.White)), bounds);
-
-            g.DrawEllipse(pen, bounds);
-            g.DrawImage(Properties.Resources.Unavngivet4, 0, 0, this.Width, this.Height);
+            e.Graphics.DrawImage(Properties.Resources.Unavngivet4, 0, 0, this.Width, this.Height);
             if (Image.Count > 0)
-                g.DrawImage(Image[animStep], 0, 0, this.Width, this.Height);
+                e.Graphics.DrawImage(Image[animStep], 0, 0, this.Width, this.Height);
 
             pen.Dispose();
-            brushColor.Dispose();
-            bckColor.Dispose();
-            g.Dispose();
-            base.OnPaint(e);
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle = 0x20;
-                return cp;
-            }
+            brush.Dispose();
+            this.Region.Dispose();
+            path.Dispose();
         }
     }
 }
