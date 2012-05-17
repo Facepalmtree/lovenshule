@@ -65,7 +65,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage2;
+            
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
