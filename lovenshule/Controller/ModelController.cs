@@ -46,7 +46,6 @@ namespace Controller
         public ModelController()
         {
             dbcontroller = new DBController(this);
-            TestPlayer();
         }
 
         //methods
