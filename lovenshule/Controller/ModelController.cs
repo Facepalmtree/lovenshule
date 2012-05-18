@@ -18,9 +18,13 @@ namespace Controller
         //sessionvariables
         DBController dbcontroller;
         PlayerData currentPlayer;
-        Highscore highscore = new Highscore();
-        
-        
+        Highscore highscore = new Highscore();  
+
+        //constructor
+        public ModelController()
+        {
+            dbcontroller = new DBController(this);
+        }
 
         //player methods
         public void NewPlayer(Image image)
@@ -29,7 +33,7 @@ namespace Controller
             {
                 currentPlayer = new PlayerData(image);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
@@ -38,14 +42,6 @@ namespace Controller
         public void ResetPlayer()
         {
             currentPlayer = null;
-        }
-
-
-
-        //constructor
-        public ModelController()
-        {
-            dbcontroller = new DBController(this);
         }
 
         //methods
@@ -91,6 +87,8 @@ namespace Controller
         //}
 
         #endregion
+
+
 
 
         public void AddScore(int score)
