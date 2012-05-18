@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model
 {
-    class UnitNormal : Unit
+    public class UnitNormal : Unit
     {
         public UnitNormal(Hole currentHole)
             : base(currentHole)

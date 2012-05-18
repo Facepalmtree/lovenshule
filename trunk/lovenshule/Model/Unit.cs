@@ -10,15 +10,13 @@ namespace Model
     {
         int lives;
         int point;
-        Hole currentHole;
         int frame;
         int maxFrame;
         int damage;
         int spawnTime;
 
-        public Unit(Hole currentHole)
+        public Unit()
         {
-            this.currentHole = currentHole;
         }
 
         #region Methods
