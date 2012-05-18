@@ -29,12 +29,16 @@ namespace GUI
         {
             Form webcam = new FrmWebcam(controller);
             this.Hide();
-            webcam.ShowDialog();            
+            webcam.ShowDialog();
             if (controller.GetCurrentPlayer() != null)
             {
                 Form game = new Form1(controller);
                 game.ShowDialog();
-            }     
+            }
+            else
+            {
+                this.Show();
+            }
         }
 
         public void UpdateGui()
