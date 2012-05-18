@@ -210,5 +210,11 @@ namespace Controller
                 throw ex;
             }
         }
+
+        //til gui
+        public IPlayerData GetCurrentPlayer()
+        {
+            return (IPlayerData)currentPlayer;
+        }
     }
 }
