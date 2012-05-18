@@ -106,42 +106,42 @@ namespace Model
             {
                 //NORMAL
                 case 1:
-                    currentUnit = new UnitNormal(this);                    
+                    currentUnit = new UnitNormal();                    
                     break;
                 //AVOID
                 case 2:
-                    currentUnit = new UnitAvoid(this);
+                    currentUnit = new UnitAvoid();
                     break;
                 //STRONG
                 case 3:
-                    currentUnit = new UnitStrong(this);
+                    currentUnit = new UnitStrong();
                     break;
                 //FAT
                 case 4:
-                    currentUnit = new UnitFat(this);
+                    currentUnit = new UnitFat();
                     break;
                 //STAR
                 case 5:
-                    currentUnit = new UnitStar(this);
+                    currentUnit = new UnitStar();
                     break;
                 //RED
                 case 6:
-                    currentUnit = new UnitRed(this);
+                    currentUnit = new UnitRed();
                     break;
                 //GREEN
                 case 7:
-                    currentUnit = new UnitGreen(this);
+                    currentUnit = new UnitGreen();
                     break;
                 //BLUE
                 case 8:
-                    currentUnit = new UnitBlue(this);
+                    currentUnit = new UnitBlue();
                     break;
                 //YELLOW
                 case 9:
-                    currentUnit = new UnitYellow(this);
+                    currentUnit = new UnitYellow();
                     break;
                 default:
-                    currentUnit = new UnitNormal(this);
+                    currentUnit = new UnitNormal();
                     break;
             }
             if(currentUnit != null)

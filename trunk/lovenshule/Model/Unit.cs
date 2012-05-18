@@ -34,11 +34,6 @@ namespace Model
         {
             get { return point; }
             set { point = value; }
-        } 
-        internal Hole CurrentHole
-        {
-            get { return currentHole; }
-            set { currentHole = value; }
         }
         public int Frame
         {

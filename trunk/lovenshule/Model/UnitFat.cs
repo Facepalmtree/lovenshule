@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Model
 {
-    class UnitFat : Unit
+    public class UnitFat : Unit
     {
-        public UnitFat(Hole currentHole)
-            : base(currentHole)
+        public UnitFat()
         {
             //revise this!!!!!!!!!!!!!!!!
             //this.Frame =
