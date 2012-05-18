@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Model
+namespace Interface
 {
     public interface IPlayerData
     {

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using System.Drawing;
+
+using Interface;
 
 namespace Model
 {
-    public class PlayerData
+    public class PlayerData : Interface.IPlayerData
     {
         //Declaring class variables
         private int totalScore { get; set; }
