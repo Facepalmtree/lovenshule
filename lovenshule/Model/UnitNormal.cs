@@ -7,8 +7,7 @@ namespace Model
 {
     public class UnitNormal : Unit
     {
-        public UnitNormal(Hole currentHole)
-            : base(currentHole)
+        public UnitNormal()
         {
             //revise this!!!!!!!!!!!!!!!!
             //this.Frame =
