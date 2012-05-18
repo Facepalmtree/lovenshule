@@ -93,8 +93,6 @@ namespace Controller
         #endregion
 
 
-
-
         public void AddScore(int score)
         {
             currentPlayer.AddScore(score);
