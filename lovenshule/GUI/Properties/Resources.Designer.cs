@@ -67,6 +67,20 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap cross {
+            get {
+                object obj = ResourceManager.GetObject("cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap flueben {
+            get {
+                object obj = ResourceManager.GetObject("flueben", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap holecut {
             get {
                 object obj = ResourceManager.GetObject("holecut", resourceCulture);
@@ -77,6 +91,13 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap holefront {
             get {
                 object obj = ResourceManager.GetObject("holefront", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap kamera {
+            get {
+                object obj = ResourceManager.GetObject("kamera", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
