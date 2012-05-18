@@ -23,6 +23,7 @@ namespace Model
 
         }
 
+        //holds data for each level
         public void nextLevel(int level)
         {           
             switch (level)
@@ -74,11 +75,13 @@ namespace Model
             }       
         }
         
+        //Gets current number of moles spawned
         public void SpawnCount(int spawn)
             {
                 spawnCount = spawn; 
             }
 
+        //starts the level overs
         public void ResetLevel()
         {
             startTime = holesCount = spawn = 0;

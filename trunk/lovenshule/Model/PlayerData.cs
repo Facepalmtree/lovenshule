@@ -37,36 +37,43 @@ namespace Model
             this.image = null;
         }
 
+        //Adds points to score
         public void AddScore(int score) 
         {
             totalScore += score;
         }
 
+        //Gets current score
         public string UpdateScore()
         {
             return Convert.ToString(totalScore);
         }
 
+        //Gets time played
         public void SaveTime(int time)
         {
             time = this.time;
         }
 
+        //Subtracts a lifepoint
         public void LoseLife(int hit)
         {
             health -= hit;
         }
 
+        //Gets current lifepoints
         public string UpdateHealth()
         {
             return Convert.ToString(health);
         }
 
+        //Chooses which level to play
         public void SetLevel(int level)
         { 
             levelCount = level;
         }
 
+        //Saves user picture
         public void SetImage(Image image)
         {
             image = this.image;
