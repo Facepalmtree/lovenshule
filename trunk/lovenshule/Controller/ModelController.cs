@@ -18,7 +18,12 @@ namespace Controller
         //sessionvariables
         DBController dbcontroller;
         PlayerData currentPlayer;
-        Highscore highscore = new Highscore();  
+        Highscore highscore = new Highscore();
+        List<Unit> units = new List<Unit>();
+        List<Hole> holes = new List<Hole>();
+        
+        
+        Highscore highscore = new Highscore();
 
         //constructor
         public ModelController()
@@ -37,6 +42,18 @@ namespace Controller
             {
                 throw e;
             }
+        }
+
+        public void NewMole(Hole hole)
+        {
+            //Creates a new mole.
+            units.Add(new UnitNormal());
+        }
+
+        public void NewHole()
+        {
+            //Creates a new hole.
+            holes.Add(new Hole());
         }
 
         public void ResetPlayer()
