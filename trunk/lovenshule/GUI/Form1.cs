@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 
 using Controller;
+using Interface;
 
 namespace GUI
 {
@@ -17,6 +18,7 @@ namespace GUI
         delegate void SetMoleCallBack(bool visible);
         delegate void SetTextCallBack(String text);
         delegate void SetTAFCallBack(TransparentAnimatedFuck transparentAnimatedFuck);
+        delegate void SetTAFIntCallBack(TransparentAnimatedFuck transparentAnimatedFuck, int anim);
         delegate void SetPicCallBack(PictureBox PicBox);
         delegate void SetNoneCallBack();
         List<TransparentAnimatedFuck> moleImages = new List<TransparentAnimatedFuck>();
@@ -29,15 +31,16 @@ namespace GUI
             InitializeComponent();
 
 
-            moleImages.Add(new TransparentAnimatedFuck(1, 500, 500, 165, 120));
-            moleImages.Add(new TransparentAnimatedFuck(1, 700, 500, 165, 120));
-            moleImages.Add(new TransparentAnimatedFuck(1, 400, 420, 100, 70));
-            moleImages.Add(new TransparentAnimatedFuck(1, 800, 420, 100, 70));
+            moleImages.Add(new TransparentAnimatedFuck(1, 483, 484, 200, 200, 165, 120));
+            moleImages.Add(new TransparentAnimatedFuck(1, 683, 484, 200, 200, 165, 120));
+            moleImages.Add(new TransparentAnimatedFuck(1, 283, 284, 200, 200, 100, 70));
+            moleImages.Add(new TransparentAnimatedFuck(1, 883, 284, 200, 200, 100, 70));
 
             int n = 0;
             while (n < moleImages.Count)
             {
                 AddMoleData(moleImages[n]);
+                moleImages[n].Click += new EventHandler(MoleDie);
 
                 this.Controls.Add(moleImages[n]);
                 moleImages[n].BringToFront();
@@ -82,7 +85,7 @@ namespace GUI
         private void AddMoleData(TransparentAnimatedFuck transparentAnimatedFuck)
         {
             transparentAnimatedFuck.AddAnimationData(0, 0);
-            transparentAnimatedFuck.AddAnimationData(1, 13);
+            transparentAnimatedFuck.AddAnimationData(1, 14);
             transparentAnimatedFuck.AddImage(Properties.Resources.molehole);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation2);
@@ -125,14 +128,13 @@ namespace GUI
                 while (n < moleImages.Count)
                 {
                     animationStepCross(moleImages[n]);
-                    updateCross(moleImages[n]);
                     n++;
                 }
 
                 if (random.NextDouble() * 100 < 5)
                 {
-
-                    Hole = random.Next(1, 4);
+                    Hole = random.Next(0, 4);
+                    SelectAnimationCross(moleImages[Hole], 1);
                 }
 
                 //Sleep, to not consume endless CPU power.
@@ -167,9 +169,20 @@ namespace GUI
             this.Update();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void MoleDie(object sender, EventArgs e)
         {
-            
+            TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
+            if (transparentAnimatedFuck.animation == 1)
+            {
+                transparentAnimatedFuck.SetAnimation(0);
+                Controller.AddScore(5);
+                UpdateScore();
+            }
+        }
+
+        private void UpdateScore()
+        {
+            lblScore.Text = Convert.ToString(Controller.GetCurrentPlayer().totalScore);
         }
 
 
@@ -191,7 +204,24 @@ namespace GUI
             }
             else
             {
-                transparentAnimatedFuck.AnimationStep();
+                if (transparentAnimatedFuck.AnimationStep())
+                    updateCross(transparentAnimatedFuck);
+
+            }
+        }
+
+        private void SelectAnimationCross(TransparentAnimatedFuck transparentAnimatedFuck, int anim)
+        {
+            if (transparentAnimatedFuck.InvokeRequired)
+            {
+                SetTAFIntCallBack d = new SetTAFIntCallBack(SelectAnimationCross);
+                this.Invoke(d, new object[] { transparentAnimatedFuck, anim });
+            }
+            else
+            {
+                transparentAnimatedFuck.SetAnimation(1);
+                updateCross(transparentAnimatedFuck);
+
             }
         }
 

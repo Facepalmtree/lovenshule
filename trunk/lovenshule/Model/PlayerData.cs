@@ -11,11 +11,11 @@ namespace Model
     public class PlayerData : Interface.IPlayerData
     {
         //Declaring class variables
-        private int totalScore { get; set; }
-        private Image image { get; set; }
-        private int time { get; set; }
-        private int levelCount { get; set; }
-        private int health { get; set; }
+        public int totalScore { get; set; }
+        public Image image { get; set; }
+        public int time { get; set; }
+        public int levelCount { get; set; }
+        public int health { get; set; }
         
 
         public PlayerData(Image image)
