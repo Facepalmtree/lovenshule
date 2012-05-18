@@ -10,11 +10,11 @@ namespace Model
     public class PlayerData
     {
         //Declaring class variables
-        public int totalScore { get; set; }
-        public Image image  { get; set; }
-        public int time { get; set; }
-        public int levelCount { get; set; }
-        public int health { get; set; }
+        private int totalScore { get; set; }
+        private Image image { get; set; }
+        private int time { get; set; }
+        private int levelCount { get; set; }
+        private int health { get; set; }
         
 
         public PlayerData(Image image)
