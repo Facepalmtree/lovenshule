@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Model
 {
-    class UnitAvoid : Unit
+    public class UnitAvoid : Unit
     {
-        public UnitAvoid(Hole currentHole)
-            : base(currentHole)
+        public UnitAvoid()
         {
             //revise this!!!!!!!!!!!!!!!!
             //this.Frame =

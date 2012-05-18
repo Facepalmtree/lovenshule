@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Model
 {
-    class UnitBlue : Unit
+    public class UnitBlue : Unit
     {
-        public UnitBlue(Hole currentHole)
-            : base(currentHole)
+        public UnitBlue()
         {
             //revise this!!!!!!!!!!!!!!!!
             //this.Frame =
