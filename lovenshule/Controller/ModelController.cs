@@ -22,10 +22,22 @@ namespace Controller
         
         
 
-        //TEST PLAYER
-        public void TestPlayer()
+        //player methods
+        public void NewPlayer(Image image)
         {
-            currentPlayer = new PlayerData();
+            try
+            {
+                currentPlayer = new PlayerData(image);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void ResetPlayer()
+        {
+            currentPlayer = null;
         }
 
 
