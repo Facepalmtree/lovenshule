@@ -21,9 +21,6 @@ namespace Controller
         Highscore highscore = new Highscore();
         List<Unit> units = new List<Unit>();
         List<Hole> holes = new List<Hole>();
-        
-        
-        Highscore highscore = new Highscore();
 
         //constructor
         public ModelController()
