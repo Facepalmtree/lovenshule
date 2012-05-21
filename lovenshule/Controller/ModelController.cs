@@ -28,7 +28,7 @@ namespace Controller
             dbcontroller = new DBController(this);
         }
 
-        //player methods
+        //Creates new player
         public void NewPlayer(Image image)
         {
             try
