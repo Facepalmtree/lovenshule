@@ -41,7 +41,19 @@ namespace Controller
             }
         }
 
-        public void NewMole(Hole hole)
+        public bool UpdateSpawnTime(int ID)
+        {
+            if (units[ID].SpawnTime!=0)
+            units[ID].SpawnTime -= 1;
+            if (units[ID].SpawnTime <= 0) return true; else return false;
+        }
+
+        public void SetSpawnTime(int ID, int time)
+        {
+            units[ID].SpawnTime = time;
+        }
+
+        public void NewMole()
         {
             //Creates a new mole.
             units.Add(new UnitNormal());
