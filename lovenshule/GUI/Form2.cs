@@ -27,8 +27,8 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form webcam = new FrmWebcam(controller);
-            this.Hide();
+            //Form webcam = new FrmWebcam(controller);
+            //this.Close();
             //webcam.ShowDialog();
             controller.NewPlayer((Image)Properties.Resources.background);
             if (controller.GetCurrentPlayer() != null)
@@ -40,6 +40,7 @@ namespace GUI
             {
                 this.Show();
             }
+            this.Close();
         }
 
         public void UpdateGui()
