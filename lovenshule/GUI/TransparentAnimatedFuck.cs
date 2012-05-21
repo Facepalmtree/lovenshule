@@ -191,7 +191,7 @@ namespace GUI
             animStep += 1;
             if (animStep > animEnd[animation])
             {
-                if (animation == 0 || animation == 1)
+                if (animation == 0 || animation == 1 || animation ==2)
                     animStep = animEnd[animation];
             }
 

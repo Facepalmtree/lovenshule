@@ -24,12 +24,12 @@ namespace GUI
         List<TransparentAnimatedFuck> moleImages = new List<TransparentAnimatedFuck>();
         Thread main;          // Kick off a new thread
 
-        ModelController Controller = new ModelController();
+        ModelController Controller;
 
-        public Form1()
+        public Form1(ModelController Controller)
         {
             InitializeComponent();
-
+            this.Controller = Controller;
 
             moleImages.Add(new TransparentAnimatedFuck(1, 483, 484, 200, 200, 165, 120));
             moleImages.Add(new TransparentAnimatedFuck(1, 683, 484, 200, 200, 165, 120));
@@ -41,6 +41,7 @@ namespace GUI
             {
                 AddMoleData(moleImages[n]);
                 moleImages[n].Click += new EventHandler(MoleDie);
+                Controller.NewMole();
 
                 this.Controls.Add(moleImages[n]);
                 moleImages[n].BringToFront();
@@ -57,7 +58,7 @@ namespace GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             //Makes the winform run in fullscreen.
-            this.TopMost = true;
+            //this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
 
@@ -86,6 +87,7 @@ namespace GUI
         {
             transparentAnimatedFuck.AddAnimationData(0, 0);
             transparentAnimatedFuck.AddAnimationData(1, 14);
+            transparentAnimatedFuck.AddAnimationData(15, 15);
             transparentAnimatedFuck.AddImage(Properties.Resources.molehole);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation2);
@@ -101,6 +103,7 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation12);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation13);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation14);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationred14);
         }
 
 
@@ -123,14 +126,29 @@ namespace GUI
 
             while (play)
             {
-                //Update the graphics
                 int n = 0;
+                //Mole logic
                 while (n < moleImages.Count)
                 {
+                    //Update the graphics
                     animationStepCross(moleImages[n]);
+
+                    //Update Spawn Timer.
+                    if (moleImages[n].animation==1 || moleImages[n].animation==2)
+                    if (Controller.UpdateSpawnTime(n))
+                    {
+                        MoleDespawn(moleImages[n], EventArgs.Empty);
+                    }
+
+
+
+
                     n++;
                 }
 
+
+
+                //Spawn new Moles
                 if (random.NextDouble() * 100 < 5)
                 {
                     Hole = random.Next(0, 4);
@@ -174,15 +192,20 @@ namespace GUI
             TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
             if (transparentAnimatedFuck.animation == 1)
             {
-                transparentAnimatedFuck.SetAnimation(0);
+                transparentAnimatedFuck.SetAnimation(2);
+                Controller.SetSpawnTime(1, 15);
                 Controller.AddScore(5);
-                UpdateScore();
+                UpdateScoreCross();
             }
         }
 
-        private void UpdateScore()
+        private void MoleDespawn(object sender, EventArgs e)
         {
-            lblScore.Text = Convert.ToString(Controller.GetCurrentPlayer().totalScore);
+            TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
+            if (transparentAnimatedFuck.animation == 1)
+            {
+                transparentAnimatedFuck.SetAnimation(0);
+            }
         }
 
 
@@ -195,6 +218,21 @@ namespace GUI
         // calling thread to the thread ID of the creating thread.
         // If these threads are different, it returns true.
 
+
+
+        private void UpdateScoreCross()
+        {
+            if (lblScore.InvokeRequired)
+            {
+                SetNoneCallBack d = new SetNoneCallBack(UpdateScoreCross);
+                this.Invoke(d);
+            }
+            else
+            {
+                lblScore.Text = Convert.ToString(Controller.GetCurrentPlayer().totalScore);
+            }
+        }
+
         private void animationStepCross(TransparentAnimatedFuck transparentAnimatedFuck)
         {
             if (transparentAnimatedFuck.InvokeRequired)
@@ -206,7 +244,6 @@ namespace GUI
             {
                 if (transparentAnimatedFuck.AnimationStep())
                     updateCross(transparentAnimatedFuck);
-
             }
         }
 
@@ -249,6 +286,11 @@ namespace GUI
             {
                 PicBox.Refresh();
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
