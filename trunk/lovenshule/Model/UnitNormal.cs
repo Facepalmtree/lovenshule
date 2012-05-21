@@ -13,8 +13,8 @@ namespace Model
             //this.Frame =
             //this.MaxFrame =
             this.Point = 100;
-            this.Lives = 1;
-            this.Damage = 1;
+            this.Lives = 1; 
+            this.Damage = 10;
             this.SpawnTime = 30*2;
         }
     }
