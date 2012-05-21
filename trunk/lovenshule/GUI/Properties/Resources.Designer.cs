@@ -207,6 +207,13 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap moleanimationred14 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationred14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap molecut {
             get {
                 object obj = ResourceManager.GetObject("molecut", resourceCulture);

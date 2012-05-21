@@ -29,7 +29,8 @@ namespace GUI
         {
             Form webcam = new FrmWebcam(controller);
             this.Hide();
-            webcam.ShowDialog();
+            //webcam.ShowDialog();
+            controller.NewPlayer((Image)Properties.Resources.background);
             if (controller.GetCurrentPlayer() != null)
             {
                 Form game = new Form1(controller);
