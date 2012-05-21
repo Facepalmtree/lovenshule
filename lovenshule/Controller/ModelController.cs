@@ -42,6 +42,11 @@ namespace Controller
         }
         // if the units' spawntime is not 0, its subtracts 1 from the spawntime and returns false
         // if it is 0 or less it returns true
+        public IUnit getUnit(int ID)
+        {
+            return (IUnit)units[ID];
+        }
+
         public bool UpdateSpawnTime(int ID)
         {
             if (units[ID].SpawnTime!=0)
