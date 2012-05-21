@@ -10,8 +10,6 @@ namespace Model
     {
         int lives;
         int point;
-        int frame;
-        int maxFrame;
         int damage;
         int spawnTime;
 
