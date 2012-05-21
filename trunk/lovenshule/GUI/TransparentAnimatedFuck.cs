@@ -14,6 +14,7 @@ namespace GUI
     {
         public List<int> animStart = new List<int>();
         public List<int> animEnd = new List<int>();
+        public List<bool> loop = new List<bool>();
         public List<Bitmap> Image = new List<Bitmap>();
         public int animations;
         public int animStep = 0;
@@ -133,51 +134,19 @@ namespace GUI
             }
         }
 
-        public Color FillColor
-        {
-            get
-            {
-                return this.fillColor;
-            }
-            set
-            {
-                this.fillColor = value;
-                this.Invalidate();
-            }
-        }
-
-        public float LineThick
-        {
-            get
-            {
-                return this.lineThick;
-            }
-            set
-            {
-                this.lineThick = value;
-                this.Invalidate();
-            }
-        }
-
-
-
-
-
-
-
-
-
         public void SetAnimation(int animation)
         {
             this.animation = animation;
+            animStep = animStart[animation];
         }
 
 
-        public void AddAnimationData(int animStart, int animEnd)
+        public void AddAnimationData(int animStart, int animEnd, bool loop)
         {
             animations+=1;
             this.animStart.Add(animStart);
             this.animEnd.Add(animEnd);
+            this.loop.Add(loop);
         }
 
         public void AddImage(Bitmap Image)
@@ -191,8 +160,11 @@ namespace GUI
             animStep += 1;
             if (animStep > animEnd[animation])
             {
-                if (animation == 0 || animation == 1 || animation ==2)
+                if (loop[animation] == true)
+                    animStep = animStart[animation];
+                else
                     animStep = animEnd[animation];
+
             }
 
             //if animation  number has not changed, return false, otherwise return true.
