@@ -40,7 +40,8 @@ namespace Controller
                 throw e;
             }
         }
-
+        // if the units' spawntime is not 0, its subtracts 1 from the spawntime and returns false
+        // if it is 0 or less it returns true
         public bool UpdateSpawnTime(int ID)
         {
             if (units[ID].SpawnTime!=0)
@@ -48,6 +49,7 @@ namespace Controller
             if (units[ID].SpawnTime <= 0) return true; else return false;
         }
 
+        // Gives a value to a units spawntime
         public void SetSpawnTime(int ID, int time)
         {
             units[ID].SpawnTime = time;
@@ -65,6 +67,7 @@ namespace Controller
             holes.Add(new Hole());
         }
 
+        //Sets every value in currentPlayer to null
         public void ResetPlayer()
         {
             currentPlayer = null;
@@ -116,27 +119,31 @@ namespace Controller
 
 
 
-
+        // adds a value to currentPlayers score
         public void AddScore(int score)
         {
             currentPlayer.AddScore(score);
         }
 
+        // returns currentPlayers score
         public string UpdateScore()
         {
             return currentPlayer.UpdateScore();
         }
 
+        // gets current players time
         public void GetTime(int time)
         {
             currentPlayer.SaveTime(time);
         }
 
+        // subtracts a life from currentPlayers health
         public void LoseHealth(int hit)
         {
             currentPlayer.LoseLife(hit);
         }
 
+        // Returns currentPlayer's current health
         public string UpdateHealth()
         {
             return currentPlayer.UpdateHealth();
@@ -158,7 +165,7 @@ namespace Controller
 
 #endregion
 
-
+        //gets all highscore entries
         public void LoadHighscore()
         {
             try
@@ -173,7 +180,6 @@ namespace Controller
         }
 
         //til frmadmin
-
         public List<IEntry> GetIEntries()
         {
             try
@@ -186,6 +192,7 @@ namespace Controller
             }
         }
 
+        // removes an entry from the highscores
         public void RemoveEntry(int entryID)
         {
             try
@@ -206,6 +213,7 @@ namespace Controller
             }
         }
 
+        //Deletes all entrys from highscores
         public void ResetHighscore()
         {
             try
@@ -219,6 +227,7 @@ namespace Controller
             }
         }
 
+        //Deletes all entries in the daily highscore (exept the ones that are also in alltime highscore?)
         public void DailyClear()
         {
             try
@@ -233,6 +242,7 @@ namespace Controller
             }
         }
 
+        //removes all entries in daily highscore
         public void ResetDailyHighscore()
         {
             try
