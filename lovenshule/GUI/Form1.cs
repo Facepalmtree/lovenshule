@@ -20,9 +20,12 @@ namespace GUI
         delegate void SetTAFCallBack(TransparentAnimatedFuck transparentAnimatedFuck);
         delegate void SetTAFIntCallBack(TransparentAnimatedFuck transparentAnimatedFuck, int anim);
         delegate void SetPicCallBack(PictureBox PicBox);
+        delegate void SetIntCallBack(int Health);
         delegate void SetNoneCallBack();
+        delegate void SetLabelCallBack(Label label, string text);
         List<TransparentAnimatedFuck> moleImages = new List<TransparentAnimatedFuck>();
         Thread main;          // Kick off a new thread
+        int health = 100;
 
         ModelController Controller;
 
@@ -82,12 +85,13 @@ namespace GUI
 
         }
 
-        //Adds the appropriate image data, for a mole, to the given object,
+        //Adds the appropriate image data, for a mole, to the given object.
         private void AddMoleData(TransparentAnimatedFuck transparentAnimatedFuck)
         {
-            transparentAnimatedFuck.AddAnimationData(0, 0);
-            transparentAnimatedFuck.AddAnimationData(1, 14);
-            transparentAnimatedFuck.AddAnimationData(15, 15);
+            transparentAnimatedFuck.AddAnimationData(0, 0, false);
+            transparentAnimatedFuck.AddAnimationData(1, 14, false);
+            transparentAnimatedFuck.AddAnimationData(15, 15, false);
+            transparentAnimatedFuck.AddAnimationData(16, 16, false);
             transparentAnimatedFuck.AddImage(Properties.Resources.molehole);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation2);
@@ -103,6 +107,7 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation12);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation13);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation14);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationdefeated);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationred14);
         }
 
@@ -123,10 +128,10 @@ namespace GUI
             //The play variable will be set to false, when the loop should be stopped.
 
 
-
             while (play)
             {
                 int n = 0;
+
                 //Mole logic
                 while (n < moleImages.Count)
                 {
@@ -134,15 +139,11 @@ namespace GUI
                     animationStepCross(moleImages[n]);
 
                     //Update Spawn Timer.
-                    if (moleImages[n].animation==1 || moleImages[n].animation==2)
-                    if (Controller.UpdateSpawnTime(n))
-                    {
-                        MoleDespawn(moleImages[n], EventArgs.Empty);
-                    }
-
-
-
-
+                    if (moleImages[n].animation == 1 || moleImages[n].animation == 2 || moleImages[n].animation == 3)
+                        if (Controller.UpdateSpawnTime(n))
+                        {
+                            MoleDespawnCross(moleImages[n]);
+                        }
                     n++;
                 }
 
@@ -152,8 +153,14 @@ namespace GUI
                 if (random.NextDouble() * 100 < 5)
                 {
                     Hole = random.Next(0, 4);
-                    SelectAnimationCross(moleImages[Hole], 1);
+                    if (moleImages[Hole].animation == 0)
+                    {
+                        SelectAnimationCross(moleImages[Hole], 1);
+                        Controller.SetSpawnTime(Hole, 60);
+                    }
                 }
+
+                UpdateHealthCross(health);
 
                 //Sleep, to not consume endless CPU power.
                 Thread.Sleep(1000/30);
@@ -167,47 +174,36 @@ namespace GUI
 
 
 
-
-
-        
-        //TEMP TEMP TEMP TEMP
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             main.Abort();
         }
 
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Update();
-        }
-
         private void MoleDie(object sender, EventArgs e)
         {
             TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
+            //Set the value to 255, because we know that this value will never be sued (As there can be no more than 10 holes)
+            //And int cannot be null.
+            int ID=255;
+
+            //We need the id of the mole, rather than the instance.
+            int n = 0;
+            while (n < moleImages.Count && ID==255)
+            {
+                if (transparentAnimatedFuck == moleImages[n])
+                    ID = n;
+                n++;
+            }
+
             if (transparentAnimatedFuck.animation == 1)
             {
                 transparentAnimatedFuck.SetAnimation(2);
-                Controller.SetSpawnTime(1, 15);
+                transparentAnimatedFuck.Refresh();
+                Controller.SetSpawnTime(ID, 15);
                 Controller.AddScore(5);
                 UpdateScoreCross();
             }
         }
-
-        private void MoleDespawn(object sender, EventArgs e)
-        {
-            TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
-            if (transparentAnimatedFuck.animation == 1)
-            {
-                transparentAnimatedFuck.SetAnimation(0);
-            }
-        }
-
 
         // The following functions are all thread callbacks, to
         // Ensure a stable program. The following comment will
@@ -219,6 +215,55 @@ namespace GUI
         // If these threads are different, it returns true.
 
 
+
+        private void MoleDespawnCross(TransparentAnimatedFuck transparentAnimatedFuck)
+        {
+
+            if (transparentAnimatedFuck.InvokeRequired)
+            {
+                SetTAFCallBack d = new SetTAFCallBack(MoleDespawnCross);
+                this.Invoke(d, new object[] { transparentAnimatedFuck });
+            }
+            else
+            {
+                if (transparentAnimatedFuck.animation == 3 || transparentAnimatedFuck.animation == 2)
+                {
+
+                    if (transparentAnimatedFuck.animation == 3)
+                    {
+                        int ID = 255;
+                        int n = 0;
+                        while (n < moleImages.Count && ID==255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+                        health -= Controller.getUnit(ID).Damage;
+                    }
+                    transparentAnimatedFuck.SetAnimation(0);
+                    transparentAnimatedFuck.Refresh();
+                }
+                else
+                    if (transparentAnimatedFuck.animation == 1)
+                    {
+                        int ID = 255;
+                        int n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+
+                        Controller.SetSpawnTime(ID, 15);
+
+
+                        transparentAnimatedFuck.SetAnimation(3);
+                        transparentAnimatedFuck.Refresh();
+                    }
+            }
+        }
 
         private void UpdateScoreCross()
         {
@@ -256,9 +301,21 @@ namespace GUI
             }
             else
             {
-                transparentAnimatedFuck.SetAnimation(1);
+                transparentAnimatedFuck.SetAnimation(anim);
                 updateCross(transparentAnimatedFuck);
+            }
+        }
 
+        private void UpdateHealthCross(int health)
+        {
+            if (healthBar.InvokeRequired)
+            {
+                SetIntCallBack d = new SetIntCallBack(UpdateHealthCross);
+                this.Invoke(d, new object[] { health });
+            }
+            else
+            {
+                healthBar.Value = health;
             }
         }
 
@@ -274,6 +331,21 @@ namespace GUI
                 transparentAnimatedFuck.Refresh();
             }
         }
+
+
+        private void updateLabel(Label label, string text)
+        {
+            if (label.InvokeRequired)
+            {
+                SetLabelCallBack d = new SetLabelCallBack(updateLabel);
+                this.Invoke(d, new object[] { label, text });
+            }
+            else
+            {
+                label.Text = text;
+            }
+        }
+
 
         private void updateCross2(PictureBox PicBox)
         {

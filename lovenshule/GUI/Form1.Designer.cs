@@ -28,45 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
+            this.healthBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(174, 35);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(93, 35);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(12, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // lblScore
             // 
@@ -79,16 +43,24 @@
             this.lblScore.TabIndex = 25;
             this.lblScore.Text = "0";
             // 
+            // healthBar
+            // 
+            this.healthBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.healthBar.ForeColor = System.Drawing.Color.Lime;
+            this.healthBar.Location = new System.Drawing.Point(15, 25);
+            this.healthBar.Name = "healthBar";
+            this.healthBar.Size = new System.Drawing.Size(161, 14);
+            this.healthBar.TabIndex = 26;
+            this.healthBar.Value = 100;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1362, 742);
+            this.Controls.Add(this.healthBar);
             this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.ForeColor = System.Drawing.Color.Cornsilk;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -101,10 +73,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.ProgressBar healthBar;
 
     }
 }
