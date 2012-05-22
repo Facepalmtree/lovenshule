@@ -70,28 +70,13 @@ namespace GUI
             //Cursor.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Adds the appropriate image data, for a mole, to the given object.
         private void AddMoleData(TransparentAnimatedFuck transparentAnimatedFuck)
         {
             transparentAnimatedFuck.AddAnimationData(0, 0, false);
             transparentAnimatedFuck.AddAnimationData(1, 14, false);
             transparentAnimatedFuck.AddAnimationData(15, 15, false);
-            transparentAnimatedFuck.AddAnimationData(16, 16, false);
+            transparentAnimatedFuck.AddAnimationData(16, 20, false);
             transparentAnimatedFuck.AddImage(Properties.Resources.molehole);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation2);
@@ -108,7 +93,11 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation13);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation14);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationdefeated);
-            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationred14);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack5);
         }
 
 
@@ -256,7 +245,7 @@ namespace GUI
                             n++;
                         }
 
-                        Controller.SetSpawnTime(ID, 15);
+                        Controller.SetSpawnTime(ID, 20);
 
 
                         transparentAnimatedFuck.SetAnimation(3);
@@ -315,7 +304,10 @@ namespace GUI
             }
             else
             {
-                healthBar.Value = health;
+                if (health > 0)
+                    healthBar.Value = health;
+                else
+                    Controller.AddEntry();
             }
         }
 
