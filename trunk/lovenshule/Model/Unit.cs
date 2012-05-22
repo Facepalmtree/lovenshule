@@ -33,16 +33,6 @@ namespace Model
             get { return point; }
             set { point = value; }
         }
-        public int Frame
-        {
-            get { return frame; }
-            set { frame = value; }
-        }
-        public int MaxFrame
-        {
-            get { return maxFrame; }
-            set { maxFrame = value; }
-        }
         public int Damage
         {
             get { return damage; }

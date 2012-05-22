@@ -277,6 +277,21 @@
   <ItemGroup>
     <None Include="Resources\moleanimationdefeated.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationattack1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationattack2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationattack3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationattack4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationattack5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

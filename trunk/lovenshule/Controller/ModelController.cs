@@ -90,7 +90,7 @@ namespace Controller
             {
                 //create an instance of now to get same time in model and db
                 DateTime now = DateTime.Now;
-                int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now, ImageToByteArray(currentPlayer.image));
+                 int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now, ImageToByteArray(currentPlayer.image));
 
                 if (entryID != -1)
                 {

@@ -256,4 +256,19 @@
   <data name="moleanimationdefeated" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moleanimationdefeated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="moleanimationattack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimationattack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimationattack2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimationattack2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimationattack3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimationattack3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimationattack4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimationattack4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="moleanimationattack5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\moleanimationattack5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

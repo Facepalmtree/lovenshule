@@ -207,6 +207,41 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap moleanimationattack1 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationattack1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationattack2 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationattack2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationattack3 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationattack3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationattack4 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationattack4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationattack5 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationattack5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap moleanimationdefeated {
             get {
                 object obj = ResourceManager.GetObject("moleanimationdefeated", resourceCulture);

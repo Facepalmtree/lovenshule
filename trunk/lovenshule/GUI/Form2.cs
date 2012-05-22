@@ -21,16 +21,11 @@ namespace GUI
             InitializeComponent();
 
             controller = new ModelController();
-
-            this.BackgroundImage = Properties.Resources.background;                       
-
-            UpdateGui();            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Form webcam = new FrmWebcam(controller);
-            //this.Close();
+            Form webcam = new FrmWebcam(controller);
             webcam.ShowDialog();
             controller.NewPlayer((Image)Properties.Resources.background);
             if (controller.GetCurrentPlayer() != null)
