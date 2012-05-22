@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPlayerData.cs" />
     <Compile Include="UnitGreen.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="Highscore.cs" />
