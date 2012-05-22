@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Drawing;
+
 namespace Model
 {
     class Level
     {
-        public string background { get; set; }
+        public Image background { get; set; }
         public decimal spawnFrequency { get; set; }
         public List<Hole> holes { get; set; }
         public int holesCount { get; set; }
