@@ -232,7 +232,7 @@ namespace Controller
             }
         }
 
-        //Deletes all entries in the daily highscore (exept the ones that are also in alltime highscore?)
+        //Deletes all entries that are not in top 10 and not from today
         public void DailyClear()
         {
             try
@@ -260,7 +260,7 @@ namespace Controller
             }
         }
 
-        //til gui
+        //returns the current players data to gui
         public IPlayerData GetCurrentPlayer()
         {
             return (IPlayerData)currentPlayer;
