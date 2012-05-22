@@ -292,6 +292,12 @@
   <ItemGroup>
     <None Include="Resources\moleanimationattack5.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hp bar liv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hpbar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
