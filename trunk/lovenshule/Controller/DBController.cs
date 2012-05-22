@@ -116,7 +116,7 @@ namespace Controller
             par.Value = entryTime;
             cmd.Parameters.Add(par);
 
-            par = new SqlParameter("@Image", SqlDbType.Image);
+            par = new SqlParameter("@image", SqlDbType.Image);
             par.Value = image;
             cmd.Parameters.Add(par);
 
