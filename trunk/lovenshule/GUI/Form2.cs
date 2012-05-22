@@ -44,6 +44,8 @@ namespace GUI
         {
             //for highscore list A, containing todays highscores
 
+            controller.LoadHighscore();
+
             Label[] labels_score1 = { lblAscore1, lblAscore2, lblAscore3, lblAscore4, lblAscore5, lblAscore6, lblAscore7, lblAscore8, lblAscore9, lblAscore10 };
             Label[] labels_tid1 = { lblAtid1, lblAtid2, lblAtid3, lblAtid4, lblAtid5, lblAtid6, lblAtid7, lblAtid8, lblAtid9, lblAtid10 };
             Label[] labels_level1 = { lblAlevel1, lblAlevel2, lblALevel3, lblAlevel4, lblAlevel5, lblAlevel6, lblAlevel7, lblAlevel8, lblAlevel9, lblAlevel10 };
@@ -131,6 +133,11 @@ namespace GUI
                     i++;
                 }
             }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            UpdateGui();
         }
     }
 }
