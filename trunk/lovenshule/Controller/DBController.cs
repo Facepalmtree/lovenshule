@@ -43,7 +43,7 @@ namespace Controller
             int levelCount;
             int  entryID;
             DateTime entryTime;
-            Image image;
+            byte[] image;
 
             cmd.Parameters.Clear();
 
@@ -61,10 +61,10 @@ namespace Controller
                     levelCount = (int)datareader["levelCount"];
                     entryID = (int)datareader["entryID"];
                     entryTime = (DateTime)datareader["entryTime"];
-                    image = (Image)datareader["image"];
+                    image = (byte[])datareader["image"];
 
                                        
-                    controller.DB_AddEntry(score, playTime, levelCount, entryID, entryTime, image);
+                    controller.DB_AddEntry(score, playTime, levelCount, entryID, entryTime, controller.ByteArrayToImage(image));
                 }
             }
             catch (SqlException ex)
@@ -87,7 +87,7 @@ namespace Controller
             }
         }
 
-        public int AddEntry(int score, int playTime, int levelCount, DateTime entryTime, Image image)//, byte[] imageData & imagepath?!?!
+        public int AddEntry(int score, int playTime, int levelCount, DateTime entryTime, byte[] imageData)
         {
             int entryID = -1;
 
@@ -116,15 +116,15 @@ namespace Controller
             par.Value = entryTime;
             cmd.Parameters.Add(par);
 
-            par = new SqlParameter("@image", SqlDbType.Image);
-            par.Value = image;
-            cmd.Parameters.Add(par);
+            //par = new SqlParameter("@image", SqlDbType.Image);
+            //par.Value = image;
+            //cmd.Parameters.Add(par);
 
 
             //BYTE ARRAY IMAGE
-            //par = new SqlParameter("@ImageData", (object)imageData);
-            //par.Value = imageData;
-            //cmd.Parameters.Add(par);
+            par = new SqlParameter("@image", SqlDbType.Image);//(object)imageData);
+            par.Value = imageData;
+            cmd.Parameters.Add(par);
 
 
             try

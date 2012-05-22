@@ -90,7 +90,7 @@ namespace Controller
             {
                 //create an instance of now to get same time in model and db
                 DateTime now = DateTime.Now;
-                int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now, currentPlayer.image);
+                int entryID = dbcontroller.AddEntry(currentPlayer.totalScore, currentPlayer.time, currentPlayer.levelCount, now, ImageToByteArray(currentPlayer.image));
 
                 if (entryID != -1)
                 {
@@ -104,21 +104,21 @@ namespace Controller
         }
 
 
-        #region image to byte not used
+        #region image to bytearray
 
-        //public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        //{
-        //    MemoryStream ms = new MemoryStream();
-        //    imageIn.Save(ms,System.Drawing.Imaging.ImageFormat.Gif);
-        //    return  ms.ToArray();
-        //}
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
+        }
 
-        //public Image byteArrayToImage(byte[] byteArrayIn)
-        //{
-        //    MemoryStream ms = new MemoryStream(byteArrayIn);
-        //    Image returnImage = Image.FromStream(ms);
-        //    return returnImage;
-        //}
+        public Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
 
         #endregion
 
