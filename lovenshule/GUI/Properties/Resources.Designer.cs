@@ -95,6 +95,20 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap hp_bar_liv {
+            get {
+                object obj = ResourceManager.GetObject("hp_bar_liv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap hpbar {
+            get {
+                object obj = ResourceManager.GetObject("hpbar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap kamera {
             get {
                 object obj = ResourceManager.GetObject("kamera", resourceCulture);

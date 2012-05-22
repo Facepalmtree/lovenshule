@@ -48,17 +48,18 @@
             // 
             // healthBarM
             // 
-            this.healthBarM.Image = global::GUI.Properties.Resources.Unavngivet4;
+            this.healthBarM.Image = global::GUI.Properties.Resources.hpbar;
             this.healthBarM.Location = new System.Drawing.Point(12, 25);
             this.healthBarM.Name = "healthBarM";
-            this.healthBarM.Size = new System.Drawing.Size(200, 20);
+            this.healthBarM.Size = new System.Drawing.Size(212, 26);
+            this.healthBarM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.healthBarM.TabIndex = 26;
             this.healthBarM.TabStop = false;
             // 
             // healthBarR
             // 
-            this.healthBarR.Image = global::GUI.Properties.Resources.Pic6;
-            this.healthBarR.Location = new System.Drawing.Point(12, 68);
+            this.healthBarR.Image = global::GUI.Properties.Resources.hp_bar_liv;
+            this.healthBarR.Location = new System.Drawing.Point(18, 28);
             this.healthBarR.Name = "healthBarR";
             this.healthBarR.Size = new System.Drawing.Size(200, 20);
             this.healthBarR.TabIndex = 27;
