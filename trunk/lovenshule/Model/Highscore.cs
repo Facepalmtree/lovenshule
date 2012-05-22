@@ -97,7 +97,7 @@ namespace Model
                 int n = 1;
                 while (n < entries.Count)
                 {
-                    if (entries[n-1].score > entries[n].score)
+                    if (entries[n-1].score < entries[n].score)
                     {
                         entry = entries[n];
                         entries[n] = entries[n - 1];
