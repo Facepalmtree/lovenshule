@@ -395,7 +395,6 @@
             // 
             // lblBscore10
             // 
-            this.lblBscore10.AutoSize = true;
             this.lblBscore10.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblBscore10.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblBscore10.Location = new System.Drawing.Point(255, 629);
@@ -403,6 +402,7 @@
             this.lblBscore10.Size = new System.Drawing.Size(98, 33);
             this.lblBscore10.TabIndex = 7;
             this.lblBscore10.Text = "label11";
+            this.lblBscore10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pbxB1
             // 
@@ -481,7 +481,6 @@
             // 
             // lblBscore8
             // 
-            this.lblBscore8.AutoSize = true;
             this.lblBscore8.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblBscore8.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblBscore8.Location = new System.Drawing.Point(255, 507);
@@ -489,6 +488,7 @@
             this.lblBscore8.Size = new System.Drawing.Size(98, 33);
             this.lblBscore8.TabIndex = 7;
             this.lblBscore8.Text = "label11";
+            this.lblBscore8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pbxB9
             // 
@@ -530,7 +530,6 @@
             // 
             // lblBscore2
             // 
-            this.lblBscore2.AutoSize = true;
             this.lblBscore2.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblBscore2.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblBscore2.Location = new System.Drawing.Point(255, 141);
@@ -538,10 +537,10 @@
             this.lblBscore2.Size = new System.Drawing.Size(98, 33);
             this.lblBscore2.TabIndex = 7;
             this.lblBscore2.Text = "label11";
+            this.lblBscore2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblBscore6
             // 
-            this.lblBscore6.AutoSize = true;
             this.lblBscore6.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblBscore6.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblBscore6.Location = new System.Drawing.Point(255, 385);
@@ -549,6 +548,7 @@
             this.lblBscore6.Size = new System.Drawing.Size(98, 33);
             this.lblBscore6.TabIndex = 7;
             this.lblBscore6.Text = "label11";
+            this.lblBscore6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblBscore3
             // 
@@ -574,7 +574,6 @@
             // 
             // lblBscore4
             // 
-            this.lblBscore4.AutoSize = true;
             this.lblBscore4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblBscore4.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblBscore4.Location = new System.Drawing.Point(255, 263);
@@ -582,6 +581,7 @@
             this.lblBscore4.Size = new System.Drawing.Size(98, 33);
             this.lblBscore4.TabIndex = 7;
             this.lblBscore4.Text = "label11";
+            this.lblBscore4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Form2
             // 
