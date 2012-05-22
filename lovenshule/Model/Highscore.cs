@@ -104,6 +104,7 @@ namespace Model
                         entries[n - 1] = entry;
                         done = 0;
                     }
+                    n++;
                 }
             }
         }
