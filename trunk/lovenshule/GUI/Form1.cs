@@ -297,7 +297,7 @@ namespace GUI
 
         private void UpdateHealthCross(int health)
         {
-            if (healthBar.InvokeRequired)
+            if (healthBarR.InvokeRequired)
             {
                 SetIntCallBack d = new SetIntCallBack(UpdateHealthCross);
                 this.Invoke(d, new object[] { health });
@@ -305,9 +305,12 @@ namespace GUI
             else
             {
                 if (health > 0)
-                    healthBar.Value = health;
+                    healthBarR.Width = health * 2;
                 else
+                {
                     Controller.AddEntry();
+                    this.Close();
+                }
             }
         }
 

@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.lblScore = new System.Windows.Forms.Label();
-            this.healthBar = new System.Windows.Forms.ProgressBar();
+            this.healthBarM = new System.Windows.Forms.PictureBox();
+            this.healthBarR = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.healthBarM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthBarR)).BeginInit();
             this.SuspendLayout();
             // 
             // lblScore
@@ -43,15 +46,23 @@
             this.lblScore.TabIndex = 25;
             this.lblScore.Text = "0";
             // 
-            // healthBar
+            // healthBarM
             // 
-            this.healthBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.healthBar.ForeColor = System.Drawing.Color.Lime;
-            this.healthBar.Location = new System.Drawing.Point(15, 25);
-            this.healthBar.Name = "healthBar";
-            this.healthBar.Size = new System.Drawing.Size(161, 14);
-            this.healthBar.TabIndex = 26;
-            this.healthBar.Value = 100;
+            this.healthBarM.Image = global::GUI.Properties.Resources.Unavngivet4;
+            this.healthBarM.Location = new System.Drawing.Point(12, 25);
+            this.healthBarM.Name = "healthBarM";
+            this.healthBarM.Size = new System.Drawing.Size(200, 20);
+            this.healthBarM.TabIndex = 26;
+            this.healthBarM.TabStop = false;
+            // 
+            // healthBarR
+            // 
+            this.healthBarR.Image = global::GUI.Properties.Resources.Pic6;
+            this.healthBarR.Location = new System.Drawing.Point(12, 68);
+            this.healthBarR.Name = "healthBarR";
+            this.healthBarR.Size = new System.Drawing.Size(200, 20);
+            this.healthBarR.TabIndex = 27;
+            this.healthBarR.TabStop = false;
             // 
             // Form1
             // 
@@ -59,13 +70,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1362, 742);
-            this.Controls.Add(this.healthBar);
+            this.Controls.Add(this.healthBarR);
+            this.Controls.Add(this.healthBarM);
             this.Controls.Add(this.lblScore);
             this.ForeColor = System.Drawing.Color.Cornsilk;
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.healthBarM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthBarR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,7 +88,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblScore;
-        private System.Windows.Forms.ProgressBar healthBar;
+        private System.Windows.Forms.PictureBox healthBarM;
+        private System.Windows.Forms.PictureBox healthBarR;
 
     }
 }
