@@ -65,14 +65,15 @@ namespace GUI
                         {
                             labels_score1[i].Text = ientry.score.ToString();
                             labels_score1[i].TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                            pictureboxes1[i].Image = ientry.image;                           
+                            pictureboxes1[i].Image = ientry.image;
+                            i++;
                         }
                     }
                     else
                     {
                         break;
                     }
-                    i++;
+                    
                 }
             }
             
@@ -100,13 +101,13 @@ namespace GUI
                     if (i < 10)
                     {
                         labels_score2[i].Text = ientry.score.ToString();
-                        pictureboxes2[i].Image = ientry.image;                        
+                        pictureboxes2[i].Image = ientry.image;
+                        i++;
                     }
                     else
                     {
                         break; 
                     }
-                    i++;
                 }
             }
             
