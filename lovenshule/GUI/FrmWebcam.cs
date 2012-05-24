@@ -86,14 +86,21 @@ namespace GUI
 
         public void Snapshot(object sender, EventArgs e)
         {
-            Bitmap image1 = videoSourcePlayer1.GetCurrentVideoFrame();
+            try
+            {
+                Bitmap image1 = videoSourcePlayer1.GetCurrentVideoFrame();
 
 
-            Image previewImage = ResizeImageToPreview(image1);
+                Image previewImage = ResizeImageToPreview(image1);
 
-            saveImage = ResizeImageToSave(image1);
+                saveImage = ResizeImageToSave(image1);
 
-            pictureBox1.Image = previewImage;
+                pictureBox1.Image = previewImage;
+            }
+            catch
+            {
+                MessageBox.Show("Kunne ikke oprette forbindelse til webcam", "Fejl");
+            }
         }
 
         public void Continue(object sender, EventArgs e)
