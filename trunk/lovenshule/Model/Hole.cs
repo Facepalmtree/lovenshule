@@ -124,22 +124,22 @@ namespace Model
                 case 5:
                     currentUnit = new UnitStar();
                     break;
-                //RED
-                case 6:
-                    currentUnit = new UnitRed();
-                    break;
-                //GREEN
-                case 7:
-                    currentUnit = new UnitGreen();
-                    break;
-                //BLUE
-                case 8:
-                    currentUnit = new UnitBlue();
-                    break;
-                //YELLOW
-                case 9:
-                    currentUnit = new UnitYellow();
-                    break;
+                ////RED
+                //case 6:
+                //    currentUnit = new UnitRed();
+                //    break;
+                ////GREEN
+                //case 7:
+                //    currentUnit = new UnitGreen();
+                //    break;
+                ////BLUE
+                //case 8:
+                //    currentUnit = new UnitBlue();
+                //    break;
+                ////YELLOW
+                //case 9:
+                //    currentUnit = new UnitYellow();
+                //    break;
                 default:
                     currentUnit = new UnitNormal();
                     break;
