@@ -47,6 +47,8 @@ namespace GUI
             
             videoSourcePlayer1.VideoSource = videoSource;
 
+            videoSourcePlayer1.Size = new Size(800, 600);
+
             this.videoSourcePlayer1.Start();
 
             //snapshot button
