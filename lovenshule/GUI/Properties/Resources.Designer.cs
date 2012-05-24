@@ -417,6 +417,13 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap start {
+            get {
+                object obj = ResourceManager.GetObject("start", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap transparentpng {
             get {
                 object obj = ResourceManager.GetObject("transparentpng", resourceCulture);

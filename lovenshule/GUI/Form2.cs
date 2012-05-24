@@ -25,23 +25,6 @@ namespace GUI
             this.BackgroundImage = Properties.Resources.background;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form webcam = new FrmWebcam(controller);
-            webcam.ShowDialog();
-            
-            if (controller.GetCurrentPlayer() != null)
-            {
-                Form game = new Form1(controller);
-                game.ShowDialog();
-            }
-            else
-            {
-                this.Show();
-            }
-            this.Close();
-        }
-
         public void UpdateGui()
         {
             //for highscore list A, containing todays highscores
@@ -124,6 +107,23 @@ namespace GUI
         private void Form2_Load(object sender, EventArgs e)
         {
             UpdateGui();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form webcam = new FrmWebcam(controller);
+            webcam.ShowDialog();
+
+            if (controller.GetCurrentPlayer() != null)
+            {
+                Form game = new Form1(controller);
+                game.ShowDialog();
+            }
+            else
+            {
+                this.Show();
+            }
+            this.Close();
         }
     }
 }
