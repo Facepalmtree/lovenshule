@@ -20,6 +20,7 @@ namespace Controller
         PlayerData currentPlayer;
         Highscore highscore = new Highscore();
         List<Unit> units = new List<Unit>();
+        List<Unit> bonusUnits = new List<Unit>();
         List<Hole> holes = new List<Hole>();
 
         //constructor
@@ -47,11 +48,23 @@ namespace Controller
             return (IUnit)units[ID];
         }
 
+        public IUnit getBonusUnit(int ID)
+        {
+            return (IUnit)bonusUnits[ID];
+        }
+
         public bool UpdateSpawnTime(int ID)
         {
             if (units[ID].SpawnTime!=0)
             units[ID].SpawnTime -= 1;
             if (units[ID].SpawnTime <= 0) return true; else return false;
+        }
+
+        public bool UpdateBonusSpawnTime(int ID)
+        {
+            if (bonusUnits[ID].SpawnTime != 0)
+                bonusUnits[ID].SpawnTime -= 1;
+            if (bonusUnits[ID].SpawnTime <= 0) return true; else return false;
         }
 
         // Gives a value to a units spawntime
@@ -60,10 +73,23 @@ namespace Controller
             units[ID].SpawnTime = time;
         }
 
+        // Gives a value to a units spawntime
+        public void SetBonusSpawnTime(int ID, int time)
+        {
+            bonusUnits[ID].SpawnTime = time;
+        }
+
         public void NewMole()
         {
             //Creates a new mole.
             units.Add(new UnitNormal());
+        }
+
+
+        public void NewBonusMole()
+        {
+            //Creates a new mole.
+            bonusUnits.Add(new UnitNormal());
         }
 
         public void NewHole()
