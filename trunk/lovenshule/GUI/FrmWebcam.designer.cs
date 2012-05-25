@@ -35,7 +35,7 @@
             // 
             // videoSourcePlayer1
             // 
-            this.videoSourcePlayer1.Location = new System.Drawing.Point(96, 62);
+            this.videoSourcePlayer1.Location = new System.Drawing.Point(52, 29);
             this.videoSourcePlayer1.Name = "videoSourcePlayer1";
             this.videoSourcePlayer1.Size = new System.Drawing.Size(800, 600);
             this.videoSourcePlayer1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(944, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(940, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 240);
             this.pictureBox1.TabIndex = 2;

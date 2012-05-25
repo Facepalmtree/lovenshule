@@ -32,7 +32,16 @@ namespace GUI
         public FrmWebcam(ModelController controller)
         {
             InitializeComponent();
-            this.controller = controller;           
+            this.controller = controller;
+
+            //Makes the winform run in fullscreen.
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
+            //Hides the curser
+            //Commented out until it's needed.
+            Cursor.Hide();
         }
 
         private void FrmWebcam_Load(object sender, EventArgs e)
@@ -112,9 +121,12 @@ namespace GUI
                 {
                     Snapshot(sender, e);
                 }
-                controller.NewPlayer(saveImage);
-                this.videoSourcePlayer1.SignalToStop();
-                this.Close();
+                if (saveImage != null)
+                {
+                    controller.NewPlayer(saveImage);
+                    this.videoSourcePlayer1.SignalToStop();
+                    this.Close();
+                }
             }
             catch
             {
