@@ -201,6 +201,7 @@ namespace Controller
         {
             try
             {
+                highscore.Clear();
                 dbcontroller.GetAllEntries();
                 highscore.Sort();
             }
