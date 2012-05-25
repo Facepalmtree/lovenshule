@@ -125,5 +125,22 @@ namespace GUI
             }
             this.Close();
         }
+        
+
+        private void Form2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                Form admin = new FrmAdmin(controller);
+                this.Hide();
+                admin.ShowDialog();
+                this.Show();
+                UpdateGui();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

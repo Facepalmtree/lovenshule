@@ -1280,7 +1280,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(525, 708);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Daglig highscore";
             // 
@@ -1289,7 +1289,7 @@
             this.btnSletA10.Location = new System.Drawing.Point(427, 585);
             this.btnSletA10.Name = "btnSletA10";
             this.btnSletA10.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA10.TabIndex = 8;
+            this.btnSletA10.TabIndex = 9;
             this.btnSletA10.Text = "SLET";
             this.btnSletA10.UseVisualStyleBackColor = true;
             this.btnSletA10.Click += new System.EventHandler(this.btnSletA10_Click);
@@ -1309,7 +1309,7 @@
             this.btnSletA8.Location = new System.Drawing.Point(427, 473);
             this.btnSletA8.Name = "btnSletA8";
             this.btnSletA8.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA8.TabIndex = 8;
+            this.btnSletA8.TabIndex = 7;
             this.btnSletA8.Text = "SLET";
             this.btnSletA8.UseVisualStyleBackColor = true;
             this.btnSletA8.Click += new System.EventHandler(this.btnSletA8_Click);
@@ -1319,7 +1319,7 @@
             this.btnSletA7.Location = new System.Drawing.Point(427, 417);
             this.btnSletA7.Name = "btnSletA7";
             this.btnSletA7.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA7.TabIndex = 8;
+            this.btnSletA7.TabIndex = 6;
             this.btnSletA7.Text = "SLET";
             this.btnSletA7.UseVisualStyleBackColor = true;
             this.btnSletA7.Click += new System.EventHandler(this.btnSletA7_Click);
@@ -1329,7 +1329,7 @@
             this.btnSletA6.Location = new System.Drawing.Point(427, 361);
             this.btnSletA6.Name = "btnSletA6";
             this.btnSletA6.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA6.TabIndex = 8;
+            this.btnSletA6.TabIndex = 5;
             this.btnSletA6.Text = "SLET";
             this.btnSletA6.UseVisualStyleBackColor = true;
             this.btnSletA6.Click += new System.EventHandler(this.btnSletA6_Click);
@@ -1339,7 +1339,7 @@
             this.btnSletA5.Location = new System.Drawing.Point(427, 305);
             this.btnSletA5.Name = "btnSletA5";
             this.btnSletA5.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA5.TabIndex = 8;
+            this.btnSletA5.TabIndex = 4;
             this.btnSletA5.Text = "SLET";
             this.btnSletA5.UseVisualStyleBackColor = true;
             this.btnSletA5.Click += new System.EventHandler(this.btnSletA5_Click);
@@ -1349,7 +1349,7 @@
             this.btnSletA4.Location = new System.Drawing.Point(427, 249);
             this.btnSletA4.Name = "btnSletA4";
             this.btnSletA4.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA4.TabIndex = 8;
+            this.btnSletA4.TabIndex = 3;
             this.btnSletA4.Text = "SLET";
             this.btnSletA4.UseVisualStyleBackColor = true;
             this.btnSletA4.Click += new System.EventHandler(this.btnSletA4_Click);
@@ -1359,7 +1359,7 @@
             this.btnSletA3.Location = new System.Drawing.Point(427, 193);
             this.btnSletA3.Name = "btnSletA3";
             this.btnSletA3.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA3.TabIndex = 8;
+            this.btnSletA3.TabIndex = 2;
             this.btnSletA3.Text = "SLET";
             this.btnSletA3.UseVisualStyleBackColor = true;
             this.btnSletA3.Click += new System.EventHandler(this.btnSletA3_Click);
@@ -1369,7 +1369,7 @@
             this.btnSletA2.Location = new System.Drawing.Point(427, 137);
             this.btnSletA2.Name = "btnSletA2";
             this.btnSletA2.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA2.TabIndex = 8;
+            this.btnSletA2.TabIndex = 1;
             this.btnSletA2.Text = "SLET";
             this.btnSletA2.UseVisualStyleBackColor = true;
             // 
@@ -1378,7 +1378,7 @@
             this.btnSletA1.Location = new System.Drawing.Point(427, 81);
             this.btnSletA1.Name = "btnSletA1";
             this.btnSletA1.Size = new System.Drawing.Size(75, 50);
-            this.btnSletA1.TabIndex = 8;
+            this.btnSletA1.TabIndex = 0;
             this.btnSletA1.Text = "SLET";
             this.btnSletA1.UseVisualStyleBackColor = true;
             this.btnSletA1.Click += new System.EventHandler(this.btnSletA1_Click);
@@ -1453,7 +1453,7 @@
             this.groupBox2.Location = new System.Drawing.Point(813, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(525, 708);
-            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alltime highscore";
             // 
@@ -1462,7 +1462,7 @@
             this.btnSletB10.Location = new System.Drawing.Point(408, 585);
             this.btnSletB10.Name = "btnSletB10";
             this.btnSletB10.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB10.TabIndex = 15;
+            this.btnSletB10.TabIndex = 9;
             this.btnSletB10.Text = "SLET";
             this.btnSletB10.UseVisualStyleBackColor = true;
             this.btnSletB10.Click += new System.EventHandler(this.btnSletB10_Click);
@@ -1472,7 +1472,7 @@
             this.btnSletB9.Location = new System.Drawing.Point(408, 529);
             this.btnSletB9.Name = "btnSletB9";
             this.btnSletB9.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB9.TabIndex = 14;
+            this.btnSletB9.TabIndex = 8;
             this.btnSletB9.Text = "SLET";
             this.btnSletB9.UseVisualStyleBackColor = true;
             this.btnSletB9.Click += new System.EventHandler(this.btnSletB9_Click);
@@ -1482,7 +1482,7 @@
             this.btnSletB8.Location = new System.Drawing.Point(408, 473);
             this.btnSletB8.Name = "btnSletB8";
             this.btnSletB8.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB8.TabIndex = 16;
+            this.btnSletB8.TabIndex = 7;
             this.btnSletB8.Text = "SLET";
             this.btnSletB8.UseVisualStyleBackColor = true;
             this.btnSletB8.Click += new System.EventHandler(this.btnSletB8_Click);
@@ -1492,7 +1492,7 @@
             this.btnSletB7.Location = new System.Drawing.Point(408, 417);
             this.btnSletB7.Name = "btnSletB7";
             this.btnSletB7.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB7.TabIndex = 18;
+            this.btnSletB7.TabIndex = 6;
             this.btnSletB7.Text = "SLET";
             this.btnSletB7.UseVisualStyleBackColor = true;
             this.btnSletB7.Click += new System.EventHandler(this.btnSletB7_Click);
@@ -1502,7 +1502,7 @@
             this.btnSletB1.Location = new System.Drawing.Point(408, 81);
             this.btnSletB1.Name = "btnSletB1";
             this.btnSletB1.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB1.TabIndex = 12;
+            this.btnSletB1.TabIndex = 0;
             this.btnSletB1.Text = "SLET";
             this.btnSletB1.UseVisualStyleBackColor = true;
             this.btnSletB1.Click += new System.EventHandler(this.btnSletB1_Click);
@@ -1512,7 +1512,7 @@
             this.btnSletB6.Location = new System.Drawing.Point(408, 361);
             this.btnSletB6.Name = "btnSletB6";
             this.btnSletB6.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB6.TabIndex = 17;
+            this.btnSletB6.TabIndex = 5;
             this.btnSletB6.Text = "SLET";
             this.btnSletB6.UseVisualStyleBackColor = true;
             this.btnSletB6.Click += new System.EventHandler(this.btnSletB6_Click);
@@ -1522,7 +1522,7 @@
             this.btnSletB2.Location = new System.Drawing.Point(408, 137);
             this.btnSletB2.Name = "btnSletB2";
             this.btnSletB2.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB2.TabIndex = 13;
+            this.btnSletB2.TabIndex = 1;
             this.btnSletB2.Text = "SLET";
             this.btnSletB2.UseVisualStyleBackColor = true;
             this.btnSletB2.Click += new System.EventHandler(this.btnSletB2_Click);
@@ -1532,7 +1532,7 @@
             this.btnSletB5.Location = new System.Drawing.Point(408, 305);
             this.btnSletB5.Name = "btnSletB5";
             this.btnSletB5.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB5.TabIndex = 10;
+            this.btnSletB5.TabIndex = 4;
             this.btnSletB5.Text = "SLET";
             this.btnSletB5.UseVisualStyleBackColor = true;
             this.btnSletB5.Click += new System.EventHandler(this.btnSletB5_Click);
@@ -1542,7 +1542,7 @@
             this.btnSletB3.Location = new System.Drawing.Point(408, 193);
             this.btnSletB3.Name = "btnSletB3";
             this.btnSletB3.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB3.TabIndex = 11;
+            this.btnSletB3.TabIndex = 2;
             this.btnSletB3.Text = "SLET";
             this.btnSletB3.UseVisualStyleBackColor = true;
             this.btnSletB3.Click += new System.EventHandler(this.btnSletB3_Click);
@@ -1552,7 +1552,7 @@
             this.btnSletB4.Location = new System.Drawing.Point(408, 249);
             this.btnSletB4.Name = "btnSletB4";
             this.btnSletB4.Size = new System.Drawing.Size(75, 50);
-            this.btnSletB4.TabIndex = 9;
+            this.btnSletB4.TabIndex = 3;
             this.btnSletB4.Text = "SLET";
             this.btnSletB4.UseVisualStyleBackColor = true;
             this.btnSletB4.Click += new System.EventHandler(this.btnSletB4_Click);
@@ -1564,7 +1564,7 @@
             this.button1.Location = new System.Drawing.Point(590, 93);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(156, 70);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Nulstil highscoreliste!";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -1574,7 +1574,7 @@
             this.button2.Location = new System.Drawing.Point(617, 318);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 49);
-            this.button2.TabIndex = 11;
+            this.button2.TabIndex = 0;
             this.button2.Text = "Tilbage";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -1586,7 +1586,7 @@
             this.button3.Location = new System.Drawing.Point(590, 193);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(156, 70);
-            this.button3.TabIndex = 12;
+            this.button3.TabIndex = 1;
             this.button3.Text = "Nulstil daglig highscoreliste!";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -1605,6 +1605,7 @@
             this.Name = "FrmAdmin";
             this.Text = "FrmAdmin";
             this.Load += new System.EventHandler(this.FrmAdmin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmAdmin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbxA1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxA2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxA3)).EndInit();

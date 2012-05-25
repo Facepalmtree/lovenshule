@@ -85,29 +85,25 @@ namespace GUI
                             labels_dato1[i].Text = ientry.entryTime.ToShortDateString();
                             pictureboxes1[i].Image = ientry.image;
                             buttons1[i].Tag = ientry.entryID;
+                            i++;
                         }
                     }
                     else
                     {
                         break;
-                    }
-                    i++;
+                    }                    
                 }
             }
-            else
+            while (i < 10)
             {
-                while (i < 10)
-                {
-                    labels_score1[i].Text = "Tom";
-                    labels_tid1[i].Text = "Tom";
-                    labels_level1[i].Text = "Tom";
-                    labels_dato1[i].Text = "Tom";
-                    pictureboxes1[i].Image = null;
-                    buttons1[i].Tag = -1;
-                    i++;
-                }
-                
-            }
+                labels_score1[i].Text = "---";
+                labels_tid1[i].Text = "---";
+                labels_level1[i].Text = "---";
+                labels_dato1[i].Text = "---";
+                pictureboxes1[i].Image = null;
+                buttons1[i].Tag = -1;
+                i++;
+            }   
 
             //for highscore list B, containing alltime highscores
 
@@ -126,33 +122,32 @@ namespace GUI
                 {
                     if (i < 10)
                     {
-                        labels_score1[i].Text = ientry.score.ToString();
-                        labels_tid1[i].Text = ientry.playTime.ToString();
-                        labels_level1[i].Text = ientry.levelCount.ToString();
-                        labels_dato1[i].Text = ientry.entryTime.ToShortDateString();
-                        pictureboxes1[i].Image = ientry.image;
+                        labels_score2[i].Text = ientry.score.ToString();
+                        labels_tid2[i].Text = ientry.playTime.ToString();
+                        labels_level2[i].Text = ientry.levelCount.ToString();
+                        labels_dato2[i].Text = ientry.entryTime.ToShortDateString();
+                        pictureboxes2[i].Image = ientry.image;
                         buttons2[i].Tag = ientry.entryID;
+                        i++;
                     }
                     else
                     {
                         break;
-                    }
-                    i++;
+                    }                    
                 }
-            }
-            else
+            }            
+            
+            while (i < 10)
             {
-                while (i < 10)
-                {
-                    labels_score2[i].Text = "Tom";
-                    labels_tid2[i].Text = "Tom";
-                    labels_level2[i].Text = "Tom";
-                    labels_dato2[i].Text = "Tom";
-                    pictureboxes2[i].Image = null;
-                    buttons2[i].Tag = -1;
-                    i++;
-                }                
-            }
+                labels_score2[i].Text = "---";
+                labels_tid2[i].Text = "---";
+                labels_level2[i].Text = "---";
+                labels_dato2[i].Text = "---";
+                pictureboxes2[i].Image = null;
+                buttons2[i].Tag = -1;
+                i++;
+            }                
+            
 
 
         }
@@ -449,6 +444,19 @@ namespace GUI
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Fejl");
+            }
+
+        }
+
+        private void FrmAdmin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Close();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
 
         }
