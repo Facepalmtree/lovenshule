@@ -67,7 +67,7 @@
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
@@ -303,6 +303,183 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueTex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenTex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationblue14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreen14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationred13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellow14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedTex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YellowTex.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
