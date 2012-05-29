@@ -87,7 +87,7 @@ namespace Model
 
 
         //Function to sort the entries, we're using a bubblesort, based on score.
-        public void Sort()
+        public void BubbleSort()
         {
             int done = 0;
             Entry entry;
@@ -106,6 +106,61 @@ namespace Model
                     }
                     n++;
                 }
+            }
+        }
+
+        public void Sort()
+        {
+            if( entries.Count > 1 )
+                q_sort(0, entries.Count-1);
+        }
+
+        public void q_sort(int left, int right)
+        {
+            int l_hold, r_hold, pivot;
+
+            l_hold = left;
+            r_hold = right;
+            pivot = left;
+
+            while (left < right)
+            {
+                while ((entries[right].score >= entries[pivot].score) && (left < right))
+                {
+                    right--;
+                }
+
+                if (left != right)
+                {
+                    entries[left] = entries[right];
+                    left++;
+                }
+
+                while ((entries[left].score <= entries[pivot].score) && (left < right))
+                {
+                    left++;
+                }
+
+                if (left != right)
+                {
+                    entries[right] = entries[left];
+                    right--;
+                }
+            }
+
+            entries[left] = entries[pivot];
+            pivot = left;
+            left = l_hold;
+            right = r_hold;
+
+            if (left < pivot)
+            {
+                q_sort(left, pivot - 1);
+            }
+
+            if (right > pivot)
+            {
+                q_sort(pivot + 1, right);
             }
         }
 
