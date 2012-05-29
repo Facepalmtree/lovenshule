@@ -109,60 +109,107 @@ namespace Model
             }
         }
 
+        #region meyer quicksort
+        //public void Sort()
+        //{
+        //    if( entries.Count > 1 )
+        //        q_sort(0, entries.Count-1);
+        //}
+        //public void q_sort(int left, int right)
+        //{
+        //    int l_hold, r_hold, pivot;
+
+        //    l_hold = left;
+        //    r_hold = right;
+        //    pivot = left;
+
+        //    while (left < right)
+        //    {
+        //        while ((entries[left].score >= entries[pivot].score) && (left < right))
+        //        {
+        //            left++;
+        //        }
+
+        //        if (left != right)
+        //        {
+        //            entries[left] = entries[right];
+        //            left++;
+        //        }
+
+        //        while ((entries[left].score <= entries[pivot].score) && (left < right))
+        //        {
+        //            left++;
+        //        }
+
+        //        if (left != right)
+        //        {
+        //            entries[right] = entries[left];
+        //            right--;
+        //        }
+        //    }
+
+        //    entries[left] = entries[pivot];
+        //    pivot = left;
+        //    left = l_hold;
+        //    right = r_hold;
+
+        //    if (left < pivot)
+        //    {
+        //        q_sort(left, pivot - 1);
+        //    }
+
+        //    if (right > pivot)
+        //    {
+        //        q_sort(pivot + 1, right);
+        //    }
+        //}
+        #endregion 
+
+
+        #region QuickSort
+
         public void Sort()
         {
-            if( entries.Count > 1 )
-                q_sort(0, entries.Count-1);
+            QuickSort(0, entries.Count - 1);
         }
-
-        public void q_sort(int left, int right)
+        private void QuickSort(int left, int right)
         {
-            int l_hold, r_hold, pivot;
+            int i = left, j = right;
+            Entry temp;
+            int pivot = Pivot(left+1, right+1);
 
-            l_hold = left;
-            r_hold = right;
-            pivot = left;
-
-            while (left < right)
+            while (i <= j)
             {
-                while ((entries[right].score >= entries[pivot].score) && (left < right))
+                while (entries[i].score > entries[pivot].score && i < pivot)
+                    i++;
+                while (entries[j].score < entries[pivot].score && j > pivot)
+                    j--;
+                if (i <= j)
                 {
-                    right--;
-                }
+                    temp = entries[i];
+                    entries[i] = entries[j];
+                    entries[j] = temp;
 
-                if (left != right)
-                {
-                    entries[left] = entries[right];
-                    left++;
-                }
-
-                while ((entries[left].score <= entries[pivot].score) && (left < right))
-                {
-                    left++;
-                }
-
-                if (left != right)
-                {
-                    entries[right] = entries[left];
-                    right--;
+                    i++;
+                    j--;
                 }
             }
 
-            entries[left] = entries[pivot];
-            pivot = left;
-            left = l_hold;
-            right = r_hold;
+            if (left < j)
 
-            if (left < pivot)
-            {
-                q_sort(left, pivot - 1);
-            }
+                QuickSort(left, j);
 
-            if (right > pivot)
-            {
-                q_sort(pivot + 1, right);
-            }
+            if (i < right)
+
+                QuickSort(i, right);
         }
+
+        private int Pivot(int left, int right)
+        {
+            return (left + right) / 2;
+        }
+
+        #endregion
 
         public List<IEntry> GetIEntries()
         {
