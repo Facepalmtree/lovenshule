@@ -23,6 +23,15 @@ namespace GUI
             controller = new ModelController();
 
             this.BackgroundImage = Properties.Resources.background;
+
+            //Makes the winform run in fullscreen.
+            //this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
+            //Hides the curser
+            //Commented out until it's needed.
+            //Cursor.Hide();
         }
 
         public void UpdateGui()
@@ -123,7 +132,7 @@ namespace GUI
             {
                 this.Show();
             }
-            this.Close();
+            UpdateGui();
         }
         
 
