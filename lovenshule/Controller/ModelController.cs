@@ -275,11 +275,15 @@ namespace Controller
         }
 
         //removes all entries in daily highscore
+        /*we're aware that we're reloading the entire highscorelist, but as the calculations are done serverside
+        this was the easiest way (considering we're dealing with a fixed number of entries)*/
         public void ResetDailyHighscore()
         {
             try
             {
                 dbcontroller.ResetDailyHighscore();
+                highscore.Clear();
+                LoadHighscore();
             }
             catch(Exception ex)
             {
