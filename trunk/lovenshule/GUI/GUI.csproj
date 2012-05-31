@@ -305,12 +305,6 @@
     <None Include="Resources\start.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BlueTex.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GreenTex.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\moleanimationblue1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -476,10 +470,28 @@
     <None Include="Resources\moleanimationyellow14.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RedTex.png" />
+    <None Include="Resources\Star-løve1 small.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\YellowTex.png" />
+    <None Include="Resources\TexBlue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TexGreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TexYellow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TexBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TexGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TexRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TexYellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

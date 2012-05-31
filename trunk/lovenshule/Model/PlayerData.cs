@@ -16,6 +16,7 @@ namespace Model
         public int time { get; set; }
         public int levelCount { get; set; }
         public int health { get; set; }
+        public Level level { get; set; }
         
 
         public PlayerData(Image image)
@@ -25,6 +26,40 @@ namespace Model
             this.time = 0;            
             this.levelCount = 1;
             this.health = 10;
+            
+            //create a level which will be used to keep track of the game's difficulty.
+            level = new Level(1);
+        }
+
+        public List<int> GetXCoordinates()
+        {
+            return level.GetXCoordinates();
+        }
+
+        public List<int> GetYCoordinates()
+        {
+            return level.GetYCoordinates();
+        }
+
+        public bool SpawnDecrease()
+        {
+            return level.SpawnDecrease();
+        }
+
+        public int GetHoleCount()
+        {
+            return level.holesCount;
+        }
+
+        public decimal GetSpawnFrequency()
+        {
+            return level.spawnFrequency;
+        }
+
+        public void Nextlevel()
+        {
+            levelCount += 1;
+            level.nextLevel(levelCount);
         }
 
         //temp without image
@@ -65,12 +100,6 @@ namespace Model
         public string UpdateHealth()
         {
             return Convert.ToString(health);
-        }
-
-        //Chooses which level to play
-        public void SetLevel(int level)
-        { 
-            levelCount = level;
         }
 
         //Saves user picture

@@ -67,13 +67,6 @@ namespace GUI.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap BlueTex {
-            get {
-                object obj = ResourceManager.GetObject("BlueTex", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap cross {
             get {
                 object obj = ResourceManager.GetObject("cross", resourceCulture);
@@ -84,13 +77,6 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap flueben {
             get {
                 object obj = ResourceManager.GetObject("flueben", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap GreenTex {
-            get {
-                object obj = ResourceManager.GetObject("GreenTex", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -816,9 +802,9 @@ namespace GUI.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap RedTex {
+        internal static System.Drawing.Bitmap Star_løve1_small {
             get {
-                object obj = ResourceManager.GetObject("RedTex", resourceCulture);
+                object obj = ResourceManager.GetObject("Star_løve1_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -826,6 +812,34 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap start {
             get {
                 object obj = ResourceManager.GetObject("start", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TexBlue {
+            get {
+                object obj = ResourceManager.GetObject("TexBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TexGreen {
+            get {
+                object obj = ResourceManager.GetObject("TexGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TexRed {
+            get {
+                object obj = ResourceManager.GetObject("TexRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TexYellow {
+            get {
+                object obj = ResourceManager.GetObject("TexYellow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -840,13 +854,6 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap Unavngivet4 {
             get {
                 object obj = ResourceManager.GetObject("Unavngivet4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap YellowTex {
-            get {
-                object obj = ResourceManager.GetObject("YellowTex", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
