@@ -22,7 +22,7 @@ namespace GUI
 
             controller = new ModelController();
 
-            this.BackgroundImage = Properties.Resources.background;
+            //this.BackgroundImage = Properties.Resources.background;
 
             //Makes the winform run in fullscreen.
             //this.TopMost = true;

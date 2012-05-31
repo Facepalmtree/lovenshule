@@ -41,6 +41,40 @@ namespace Controller
                 throw e;
             }
         }
+
+
+        //Functions to access attributes from the level class.
+        public bool SpawnDecrease()
+        {
+            return currentPlayer.SpawnDecrease();
+        }
+
+        public int GetHoleCount()
+        {
+            return currentPlayer.GetHoleCount();
+        }
+
+        public decimal GetSpawnFrequency()
+        {
+            return currentPlayer.GetSpawnFrequency();
+        }
+
+        public void Nextlevel()
+        {
+            currentPlayer.Nextlevel();
+        }
+
+        public List<int> GetXCoordinates()
+        {
+            return currentPlayer.GetXCoordinates();
+        }
+
+        public List<int> GetYCoordinates()
+        {
+            return currentPlayer.GetYCoordinates();
+        }
+
+
         // if the units' spawntime is not 0, its subtracts 1 from the spawntime and returns false
         // if it is 0 or less it returns true
         public IUnit getUnit(int ID)

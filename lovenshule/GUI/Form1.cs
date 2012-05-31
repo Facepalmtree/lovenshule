@@ -31,6 +31,10 @@ namespace GUI
         int bonusColor = 0;
         int bonusTimer;
         int nextCol;
+        bool levelEnded = false;
+        int nextLevelWait;
+        bool bonusSpawned = false;
+        int bonusDecay;
 
         ManualResetEvent _shutdownEvent = new ManualResetEvent(false);
         ManualResetEvent _pauseEvent = new ManualResetEvent(true);
@@ -42,12 +46,25 @@ namespace GUI
             InitializeComponent();
             this.Controller = Controller;
 
-            moleImages.Add(new TransparentAnimatedFuck(1, 483, 484, 200, 200, 165, 120));
-            moleImages.Add(new TransparentAnimatedFuck(1, 683, 484, 200, 200, 165, 120));
-            moleImages.Add(new TransparentAnimatedFuck(1, 283, 284, 200, 200, 100, 70));
-            moleImages.Add(new TransparentAnimatedFuck(1, 883, 284, 200, 200, 100, 70));
+            List<int> xCoordinates = Controller.GetXCoordinates();
+            List<int> yCoordinates = Controller.GetYCoordinates();
 
+            int position;
             int n = 0;
+            Random random = new Random();
+            while (n < Controller.GetHoleCount())
+            {
+                position = random.Next(0, xCoordinates.Count-1);
+                if (yCoordinates[position]==284)
+                    moleImages.Add(new TransparentAnimatedFuck(1, xCoordinates[position], yCoordinates[position], 200, 200, 100, 70));
+                else
+                    moleImages.Add(new TransparentAnimatedFuck(1, xCoordinates[position], yCoordinates[position], 200, 200, 165, 120));
+                xCoordinates.RemoveAt(position);
+                yCoordinates.RemoveAt(position);
+                n++;
+            }
+
+            n = 0;
             while (n < moleImages.Count)
             {
                 AddMoleData(moleImages[n]);
@@ -241,9 +258,18 @@ namespace GUI
                         }
 
 
+                        //If the bonus start icon is present, count down to make it decay.
+                        if (pictureBox1.Visible == true)
+                        {
+                            bonusDecay -= 1;
+                            if (bonusDecay <= 0)
+                                BonusVisibleCross(false);
+                        }
+
+
 
                         //Spawn new Moles
-                        if (random.NextDouble() * 100 < 5)
+                        if (random.NextDouble() * 100 < (double)Controller.GetSpawnFrequency() && levelEnded == false)
                         {
                             Hole = random.Next(0, moleImages.Count);
                             if (moleImages[Hole].animation == 0)
@@ -252,6 +278,29 @@ namespace GUI
                                 Controller.SetSpawnTime(Hole, 60);
                             }
                         }
+                        else
+                            if (levelEnded == true)
+                            {
+                                n = 0;
+                                bool ok = true;
+
+                                //Mole logic
+                                while (n < moleImages.Count)
+                                {
+                                    if (moleImages[n].animation != 0)
+                                        ok = false;
+                                    n++;
+                                }
+
+                                if (ok == true)
+                                {
+                                    nextLevelWait -= 1;
+                                    if (nextLevelWait <= 0)
+                                    {
+                                        StartLevelCross();
+                                    }
+                                }
+                            }
 
                         UpdateHealthCross(health);
                     }
@@ -295,6 +344,7 @@ namespace GUI
 
                         //Update the color if needed.
                         nextCol -= 1;
+                        updateLabelCross(lblBonusCount, Convert.ToString(Math.Floor((decimal)nextCol / 30)+1));
                         if (nextCol <= 0)
                         {
                             ChangeBonusColor();
@@ -309,13 +359,13 @@ namespace GUI
                     }
 
                 //Sleep, to not consume endless CPU power.
-                //We know sleeåing os not the most accurate, nor a preferred way of doing it, but it'll do.
+                //We know sleeping os not the most accurate, nor a preferred way of doing it, but it'll do.
                 Thread.Sleep(1000 / 30);
             }
         }
 
 
-        //A function for changing the color for bonus levles. It also resets the timer, to make sure it's done.
+        //A function for changing the color for bonus levels. It also resets the timer, to make sure it's done.
         public void ChangeBonusColor()
         {
             Random random = new Random();
@@ -323,13 +373,13 @@ namespace GUI
             nextCol = random.Next(6 * 30, 8 * 30);
 
             if (bonusColor == 0)
-                pictureBox1.Image = Properties.Resources.BlueTex;
+                pictureBox1.Image = Properties.Resources.TexBlue;
             if (bonusColor == 1)
-                pictureBox1.Image = Properties.Resources.RedTex;
+                pictureBox1.Image = Properties.Resources.TexRed;
             if (bonusColor == 2)
-                pictureBox1.Image = Properties.Resources.YellowTex;
+                pictureBox1.Image = Properties.Resources.TexYellow;
             if (bonusColor == 3)
-                pictureBox1.Image = Properties.Resources.GreenTex;
+                pictureBox1.Image = Properties.Resources.TexGreen;
         }
 
 
@@ -352,10 +402,23 @@ namespace GUI
                 n++;
             }
 
-            moleBonusImages.Add(new TransparentAnimatedFuck(1, 483, 484, 200, 200, 165, 120));
-            moleBonusImages.Add(new TransparentAnimatedFuck(1, 683, 484, 200, 200, 165, 120));
-            moleBonusImages.Add(new TransparentAnimatedFuck(1, 283, 284, 200, 200, 100, 70));
-            moleBonusImages.Add(new TransparentAnimatedFuck(1, 883, 284, 200, 200, 100, 70));
+            List<int> xCoordinates = Controller.GetXCoordinates();
+            List<int> yCoordinates = Controller.GetYCoordinates();
+
+            int position;
+            n = 0;
+            Random random = new Random();
+            while (n < Controller.GetHoleCount())
+            {
+                position = random.Next(0, xCoordinates.Count - 1);
+                if (yCoordinates[position] == 284)
+                    moleBonusImages.Add(new TransparentAnimatedFuck(1, xCoordinates[position], yCoordinates[position], 200, 200, 100, 70));
+                else
+                    moleBonusImages.Add(new TransparentAnimatedFuck(1, xCoordinates[position], yCoordinates[position], 200, 200, 165, 120));
+                xCoordinates.RemoveAt(position);
+                yCoordinates.RemoveAt(position);
+                n++;
+            }
 
             n = 0;
             while (n < moleBonusImages.Count)
@@ -368,6 +431,9 @@ namespace GUI
                 moleBonusImages[n].BringToFront();
                 n++;
             }
+
+            lblBonusCount.Visible = true;
+
             Resume();
         }
 
@@ -378,10 +444,10 @@ namespace GUI
 
             bonus = false;
 
+            pictureBox1.Image = Properties.Resources.Star_løve1_small;
+            pictureBox1.Visible = false;
+
             int n = 0;
-
-            pictureBox1.Image = Properties.Resources.start;
-
             while (n < moleImages.Count)
             {
                 //Make all the non bouns moles invisible.
@@ -396,7 +462,9 @@ namespace GUI
                 this.Controls.Remove(moleBonusImages[n]);
                 n++;
             }
-            //moleBonusImages.Clear();
+            moleBonusImages.Clear();
+
+            lblBonusCount.Visible = false;
             Resume();
         }
 
@@ -412,8 +480,16 @@ namespace GUI
         private void MoleDie(object sender, EventArgs e)
         {
             TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
-            //Set the value to 255, because we know that this value will never be sued (As there can be no more than 10 holes)
+            //Set the value to 255, because we know that this value will never be used (As there can be no more than 10 holes)
             //And int cannot be null.
+            
+            Random random = new Random();
+            if (random.NextDouble() * 100 <= 200 && bonusSpawned == false)
+            {
+                pictureBox1.Visible = true;
+                bonusSpawned = true;
+                bonusDecay = 45;
+            }
 
             //Make sure they are uninteractable, when invisible.
             if (transparentAnimatedFuck.Visible)
@@ -477,6 +553,59 @@ namespace GUI
             }
         }
 
+        public void EndLevel()
+        {
+            levelEnded = true;
+            nextLevelWait = 5 * 30;
+        }
+
+        public void StartLevel()
+        {
+            levelEnded = false;
+            Controller.Nextlevel();
+
+            int n = 0;
+            int position;
+            while (n < moleImages.Count)
+            {
+                this.Controls.Remove(moleImages[n]);
+                n++;
+            }
+            moleImages.Clear();
+
+            List<int> xCoordinates = Controller.GetXCoordinates();
+            List<int> yCoordinates = Controller.GetYCoordinates();
+
+            n = 0;
+            Random random = new Random();
+            while (n < Controller.GetHoleCount())
+            {
+                position = random.Next(0, xCoordinates.Count - 1);
+                if (yCoordinates[position] == 284)
+                    moleImages.Add(new TransparentAnimatedFuck(1, xCoordinates[position], yCoordinates[position], 200, 200, 100, 70));
+                else
+                    moleImages.Add(new TransparentAnimatedFuck(1, xCoordinates[position], yCoordinates[position], 200, 200, 165, 120));
+                xCoordinates.RemoveAt(position);
+                yCoordinates.RemoveAt(position);
+                n++;
+            }
+
+
+            n = 0;
+            while (n < moleImages.Count)
+            {
+                AddMoleData(moleImages[n]);
+                moleImages[n].Click += new EventHandler(MoleDie);
+                Controller.NewMole();
+
+                this.Controls.Add(moleImages[n]);
+                moleImages[n].BringToFront();
+                n++;
+            }
+
+            bonusSpawned = false;
+        }
+
         // The following functions are all thread callbacks, to
         // Ensure a stable program. The following comment will
         // explain how they function, but are put here, so that
@@ -515,6 +644,12 @@ namespace GUI
                     }
                     transparentAnimatedFuck.SetAnimation(0);
                     transparentAnimatedFuck.Refresh();
+
+                    if (levelEnded == false)
+                        if (Controller.SpawnDecrease())
+                        {
+                            EndLevel();
+                        }
                 }
                 else
                     if (transparentAnimatedFuck.animation == 1)
@@ -562,6 +697,12 @@ namespace GUI
             {
                 deinitializeBonusLevel();
             }
+        }
+
+        private void StartLevelCross()
+        {
+            SetNoneCallBack d = new SetNoneCallBack(StartLevel);
+            this.Invoke(d);
         }
 
         private void animationStepCross(TransparentAnimatedFuck transparentAnimatedFuck)
@@ -625,11 +766,11 @@ namespace GUI
         }
 
 
-        private void updateLabel(Label label, string text)
+        private void updateLabelCross(Label label, string text)
         {
             if (label.InvokeRequired)
             {
-                SetLabelCallBack d = new SetLabelCallBack(updateLabel);
+                SetLabelCallBack d = new SetLabelCallBack(updateLabelCross);
                 this.Invoke(d, new object[] { label, text });
             }
             else
@@ -652,6 +793,19 @@ namespace GUI
             }
         }
 
+        private void BonusVisibleCross(bool visible)
+        {
+            if (pictureBox1.InvokeRequired)
+            {
+                SetMoleCallBack d = new SetMoleCallBack(BonusVisibleCross);
+                this.Invoke(d, new object[] { visible });
+            }
+            else
+            {
+                pictureBox1.Visible = visible;
+            }
+        }
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -664,7 +818,10 @@ namespace GUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            initializeBonusLevel();
+            if (pictureBox1.Visible == true)
+            {
+                initializeBonusLevel();
+            }
         }
     }
 }
