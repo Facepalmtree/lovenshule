@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Model
 {
-    public class Level
+    public class Level : Model.ILevel
     {
         public Image background { get; set; }
         public decimal spawnFrequency { get; set; }
