@@ -33,12 +33,14 @@ namespace Model
 
         public List<int> GetXCoordinates()
         {
-            return level.GetXCoordinates();
+            ILevel iLevel = (ILevel)level;
+            return iLevel.GetXCoordinates();
         }
 
         public List<int> GetYCoordinates()
         {
-            return level.GetYCoordinates();
+            ILevel iLevel = (ILevel)level;
+            return iLevel.GetYCoordinates();
         }
 
         public bool SpawnDecrease()
