@@ -102,6 +102,9 @@ namespace GUI
             transparentAnimatedFuck.AddAnimationData(1, 14, false);
             transparentAnimatedFuck.AddAnimationData(15, 15, false);
             transparentAnimatedFuck.AddAnimationData(16, 20, false);
+            transparentAnimatedFuck.AddAnimationData(21, 24, false);
+            transparentAnimatedFuck.AddAnimationData(25, 38, false);
+
             transparentAnimatedFuck.AddImage(Properties.Resources.molehole);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation2);
@@ -123,6 +126,62 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack3);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack4);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationattack5);
+
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation5);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation6);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation7);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation8);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation9);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation10);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation11);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation12);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation13);
+
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong5);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong6);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong7);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongdefeated);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack5);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack6);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack7);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack8);
+
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat5);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat6);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat7);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat8);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat9);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfatdefeated);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfatattack1);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfatattack2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfatattack3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfatattack4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfatattack5);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfatattack6);
         }
 
 
@@ -196,10 +255,10 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationgreen12);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationgreen13);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationgreen14);
-            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationdefeated);
-            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationdefeated);
-            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationdefeated);
-            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationdefeated);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationbluedefeated);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationreddefeated);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationyellowdefeated);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationgreendefeated);
         }
 
         public void Pause()
@@ -546,7 +605,7 @@ namespace GUI
                     UpdateScoreCross();
                 }
                 else
-                    if (transparentAnimatedFuck.animation == 1 || transparentAnimatedFuck.animation == 2 || transparentAnimatedFuck.animation == 3 || transparentAnimatedFuck.animation == 4 && bonusColor == 3)
+                    if ((transparentAnimatedFuck.animation == 1 && bonusColor != 1) || (transparentAnimatedFuck.animation == 2 && bonusColor != 2) || (transparentAnimatedFuck.animation == 3 && bonusColor != 3) || (transparentAnimatedFuck.animation == 4 && bonusColor != 4))
                     {
                         deinitializeBonusLevel();
                     }
@@ -557,6 +616,14 @@ namespace GUI
         {
             levelEnded = true;
             nextLevelWait = 5 * 30;
+
+            int n = 0;
+            while (n < moleImages.Count)
+            {
+                this.Controls.Remove(moleImages[n]);
+                n++;
+            }
+            moleImages.Clear();
         }
 
         public void StartLevel()
@@ -564,19 +631,11 @@ namespace GUI
             levelEnded = false;
             Controller.Nextlevel();
 
-            int n = 0;
-            int position;
-            while (n < moleImages.Count)
-            {
-                this.Controls.Remove(moleImages[n]);
-                n++;
-            }
-            moleImages.Clear();
-
             List<int> xCoordinates = Controller.GetXCoordinates();
             List<int> yCoordinates = Controller.GetYCoordinates();
 
-            n = 0;
+            int position;
+            int n = 0;
             Random random = new Random();
             while (n < Controller.GetHoleCount())
             {

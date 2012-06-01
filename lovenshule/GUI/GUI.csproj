@@ -493,6 +493,168 @@
   <ItemGroup>
     <None Include="Resources\TexYellow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationgreendefeated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationbluedefeated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationreddefeated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationyellowdefeated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfat9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfatattack1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfatattack2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfatattack3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfatattack4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfatattack5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfatattack6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationfatdefeated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bomb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bomb2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bomb3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bomb4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombdetonation13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrong1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrong2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrong3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrong4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrong5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrong6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrong7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongattack9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moleanimationstrongdefeated.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Model
 {
-    public class Level : Model.ILevel
+    public class Level : Interface.ILevel
     {
         public Image background { get; set; }
         public decimal spawnFrequency { get; set; }
@@ -16,6 +16,12 @@ namespace Model
         public int startTime { get; set; }
         public int spawn { get; set; }
         public int spawnCount { get; set; }
+
+        public int normalChance { get; set; }
+        public int bombChance { get; set; }
+        public int strongChance { get; set; }
+        public int fatChance { get; set; }
+
         public int theme { get; set; }
         List<int> holeXCoordinates = new List<int>();
         List<int> holeYCoordinates = new List<int>();
@@ -74,6 +80,10 @@ namespace Model
                     holesCount = 3;
                     spawn = 10;
                     spawnFrequency = 3;
+                    normalChance = 50;
+                    bombChance = 50;
+                    strongChance = 0;
+                    fatChance = 0;
 
                     break;
                 case 2:

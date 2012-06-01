@@ -67,6 +67,125 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap bomb1 {
+            get {
+                object obj = ResourceManager.GetObject("bomb1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bomb2 {
+            get {
+                object obj = ResourceManager.GetObject("bomb2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bomb3 {
+            get {
+                object obj = ResourceManager.GetObject("bomb3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bomb4 {
+            get {
+                object obj = ResourceManager.GetObject("bomb4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation1 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation10 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation11 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation12 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation13 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation2 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation3 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation4 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation5 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation6 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation7 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation8 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap bombdetonation9 {
+            get {
+                object obj = ResourceManager.GetObject("bombdetonation9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap cross {
             get {
                 object obj = ResourceManager.GetObject("cross", resourceCulture);
@@ -354,9 +473,128 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap moleanimationbluedefeated {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationbluedefeated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap moleanimationdefeated {
             get {
                 object obj = ResourceManager.GetObject("moleanimationdefeated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat1 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat2 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat3 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat4 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat5 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat6 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat7 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat8 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfat9 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfat9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfatattack1 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfatattack1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfatattack2 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfatattack2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfatattack3 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfatattack3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfatattack4 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfatattack4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfatattack5 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfatattack5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfatattack6 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfatattack6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationfatdefeated {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationfatdefeated", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -459,6 +697,13 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap moleanimationgreendefeated {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationgreendefeated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap moleanimationred1 {
             get {
                 object obj = ResourceManager.GetObject("moleanimationred1", resourceCulture);
@@ -557,6 +802,132 @@ namespace GUI.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap moleanimationreddefeated {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationreddefeated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrong1 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrong1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrong2 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrong2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrong3 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrong3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrong4 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrong4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrong5 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrong5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrong6 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrong6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrong7 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrong7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack1 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack2 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack3 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack4 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack5 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack6 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack7 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack8 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongattack9 {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongattack9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationstrongdefeated {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationstrongdefeated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap moleanimationyellow1 {
             get {
                 object obj = ResourceManager.GetObject("moleanimationyellow1", resourceCulture);
@@ -651,6 +1022,13 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap moleanimationyellow9 {
             get {
                 object obj = ResourceManager.GetObject("moleanimationyellow9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap moleanimationyellowdefeated {
+            get {
+                object obj = ResourceManager.GetObject("moleanimationyellowdefeated", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
