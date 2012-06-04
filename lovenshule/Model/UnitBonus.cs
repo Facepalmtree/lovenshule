@@ -9,10 +9,10 @@ namespace Model
     {
         public UnitBonus()
         {
-            this.Point = 100;
+            this.Point = 500;
             this.Lives = 1;
             this.Damage = 0;
-            this.SpawnTime = 1;
+            this.SpawnTime = 45;
         }
     }
 }

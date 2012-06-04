@@ -14,5 +14,9 @@ namespace Interface
         int totalScore { get; set; }
         string UpdateHealth();
         string UpdateScore();
+        int GetChanceNormal();
+        int GetChanceBomb();
+        int GetChanceStrong();
+        int GetChanceFat();
     }
 }

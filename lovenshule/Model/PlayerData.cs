@@ -20,6 +20,7 @@ namespace Model
         
 
         public PlayerData(Image image)
+
         {
             this.totalScore = 0;
             this.image = image;
@@ -41,6 +42,26 @@ namespace Model
         {
             ILevel iLevel = (ILevel)level;
             return iLevel.GetYCoordinates();
+        }
+
+        public int GetChanceNormal()
+        {
+            return level.GetChanceNormal();
+        }
+
+        public int GetChanceBomb()
+        {
+            return level.GetChanceBomb();
+        }
+
+        public int GetChanceStrong()
+        {
+            return level.GetChanceStrong();
+        }
+
+        public int GetChanceFat()
+        {
+            return level.GetChanceFat();
         }
 
         public bool SpawnDecrease()
@@ -78,6 +99,12 @@ namespace Model
         public void AddScore(int score) 
         {
             totalScore += score;
+        }
+
+        //Substracts points to score
+        public void SubstractScore(int score)
+        {
+            totalScore -= score;
         }
 
         //Gets current score
