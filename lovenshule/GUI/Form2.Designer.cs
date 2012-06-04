@@ -238,9 +238,9 @@
             this.lblAscore1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAscore1.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblAscore1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAscore1.Location = new System.Drawing.Point(287, 70);
+            this.lblAscore1.Location = new System.Drawing.Point(250, 70);
             this.lblAscore1.Name = "lblAscore1";
-            this.lblAscore1.Size = new System.Drawing.Size(66, 30);
+            this.lblAscore1.Size = new System.Drawing.Size(103, 30);
             this.lblAscore1.TabIndex = 7;
             this.lblAscore1.Text = "label11";
             this.lblAscore1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -250,9 +250,9 @@
             this.lblAscore9.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAscore9.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblAscore9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAscore9.Location = new System.Drawing.Point(287, 574);
+            this.lblAscore9.Location = new System.Drawing.Point(250, 574);
             this.lblAscore9.Name = "lblAscore9";
-            this.lblAscore9.Size = new System.Drawing.Size(66, 30);
+            this.lblAscore9.Size = new System.Drawing.Size(103, 30);
             this.lblAscore9.TabIndex = 7;
             this.lblAscore9.Text = "label11";
             this.lblAscore9.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -273,9 +273,9 @@
             this.lblAscore3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAscore3.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblAscore3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAscore3.Location = new System.Drawing.Point(287, 196);
+            this.lblAscore3.Location = new System.Drawing.Point(250, 196);
             this.lblAscore3.Name = "lblAscore3";
-            this.lblAscore3.Size = new System.Drawing.Size(66, 30);
+            this.lblAscore3.Size = new System.Drawing.Size(103, 30);
             this.lblAscore3.TabIndex = 7;
             this.lblAscore3.Text = "label11";
             this.lblAscore3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -307,9 +307,9 @@
             this.lblAscore5.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAscore5.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblAscore5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAscore5.Location = new System.Drawing.Point(287, 322);
+            this.lblAscore5.Location = new System.Drawing.Point(250, 322);
             this.lblAscore5.Name = "lblAscore5";
-            this.lblAscore5.Size = new System.Drawing.Size(66, 30);
+            this.lblAscore5.Size = new System.Drawing.Size(103, 30);
             this.lblAscore5.TabIndex = 7;
             this.lblAscore5.Text = "label11";
             this.lblAscore5.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -319,9 +319,9 @@
             this.lblAscore7.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAscore7.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblAscore7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblAscore7.Location = new System.Drawing.Point(287, 448);
+            this.lblAscore7.Location = new System.Drawing.Point(250, 448);
             this.lblAscore7.Name = "lblAscore7";
-            this.lblAscore7.Size = new System.Drawing.Size(66, 30);
+            this.lblAscore7.Size = new System.Drawing.Size(103, 30);
             this.lblAscore7.TabIndex = 7;
             this.lblAscore7.Text = "label11";
             this.lblAscore7.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -586,11 +586,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackgroundImage = global::GUI.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1350, 730);
             this.ClientSize = new System.Drawing.Size(1362, 744);
-
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
