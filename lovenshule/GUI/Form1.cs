@@ -48,11 +48,20 @@ namespace GUI
             InitializeComponent();
             this.Controller = Controller;
 
-            List<int> xCoordinates = Controller.GetXCoordinates();
-            List<int> yCoordinates = Controller.GetYCoordinates();
+            List<int> xCoordinates = new List<int>();
+            List<int> yCoordinates = new List<int>();
+
+            int n = 0;
+            while (n < Controller.GetCoordinatesSize())
+            {
+
+                xCoordinates.Add(Controller.GetXCoordinates(n));
+                yCoordinates.Add(Controller.GetYCoordinates(n));
+                n++;
+            }
 
             int position;
-            int n = 0;
+            n = 0;
             Random random = new Random();
             while (n < Controller.GetHoleCount())
             {
@@ -704,11 +713,20 @@ namespace GUI
             levelEnded = false;
             Controller.Nextlevel();
 
-            List<int> xCoordinates = Controller.GetXCoordinates();
-            List<int> yCoordinates = Controller.GetYCoordinates();
+            List<int> xCoordinates = new List<int>();
+            List<int> yCoordinates = new List<int>();
+
+            int n = 0;
+            while (n < Controller.GetCoordinatesSize())
+            {
+                
+                xCoordinates.Add(Controller.GetXCoordinates(n));
+                yCoordinates.Add(Controller.GetYCoordinates(n));
+                n++;
+            }
 
             int position;
-            int n = 0;
+            n = 0;
             Random random = new Random();
             while (n < Controller.GetHoleCount())
             {

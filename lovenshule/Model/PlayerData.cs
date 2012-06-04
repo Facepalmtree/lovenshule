@@ -32,16 +32,19 @@ namespace Model
             level = new Level(1);
         }
 
-        public List<int> GetXCoordinates()
+        public int GetCoordinateSize()
         {
-            ILevel iLevel = (ILevel)level;
-            return iLevel.GetXCoordinates();
+            return level.GetCoordinateSize();
         }
 
-        public List<int> GetYCoordinates()
+        public int GetXCoordinates(int ID)
         {
-            ILevel iLevel = (ILevel)level;
-            return iLevel.GetYCoordinates();
+            return level.GetXCoordinates(ID);
+        }
+
+        public int GetYCoordinates(int ID)
+        {
+            return level.GetYCoordinates(ID);
         }
 
         public int GetChanceNormal()

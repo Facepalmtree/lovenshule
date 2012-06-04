@@ -9,6 +9,9 @@ namespace Interface
         int holesCount { get; set; }
         void nextLevel(int level);
         void ResetLevel();
+        int GetXCoordinates(int ID);
+        int GetYCoordinates(int ID);
+        int GetCoordinateSize();
         int spawn { get; set; }
         int spawnCount { get; set; }
         bool SpawnDecrease();
