@@ -64,14 +64,19 @@ namespace Controller
             currentPlayer.Nextlevel();
         }
 
-        public List<int> GetXCoordinates()
+        public int GetXCoordinates(int ID)
         {
-            return currentPlayer.GetXCoordinates();
+            return currentPlayer.GetXCoordinates(ID);
         }
 
-        public List<int> GetYCoordinates()
+        public int GetYCoordinates(int ID)
         {
-            return currentPlayer.GetYCoordinates();
+            return currentPlayer.GetYCoordinates(ID);
+        }
+
+        public int GetCoordinatesSize()
+        {
+            return currentPlayer.GetCoordinateSize();
         }
 
 

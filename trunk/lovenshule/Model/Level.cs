@@ -61,14 +61,19 @@ namespace Model
             nextLevel(level);
         }
 
-        public List<int> GetXCoordinates()
+        public int GetCoordinateSize()
         {
-            return holeXCoordinates;
+            return holeXCoordinates.Count;
         }
 
-        public List<int> GetYCoordinates()
+        public int GetXCoordinates(int ID)
         {
-            return holeYCoordinates;
+            return holeXCoordinates[ID];
+        }
+
+        public int GetYCoordinates(int ID)
+        {
+            return holeYCoordinates[ID];
         }
 
         //holds data for each level
