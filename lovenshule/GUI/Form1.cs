@@ -517,8 +517,17 @@ namespace GUI
                 n++;
             }
 
-            List<int> xCoordinates = Controller.GetXCoordinates();
-            List<int> yCoordinates = Controller.GetYCoordinates();
+            List<int> xCoordinates = new List<int>();
+            List<int> yCoordinates = new List<int>();
+
+            n = 0;
+            while (n < Controller.GetCoordinatesSize())
+            {
+
+                xCoordinates.Add(Controller.GetXCoordinates(n));
+                yCoordinates.Add(Controller.GetYCoordinates(n));
+                n++;
+            }
 
             int position;
             n = 0;
