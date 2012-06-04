@@ -87,6 +87,20 @@ namespace Controller
             return (IUnit)bonusUnits[ID];
         }
 
+        public bool reduceHealth(int ID)
+        {
+            units[ID].Lives -= 1;
+            if (units[ID].Lives <= 0) return true;
+            else return false;
+        }
+
+        public bool reduceHealthBonus(int ID)
+        {
+            bonusUnits[ID].Lives -= 1;
+            if (bonusUnits[ID].Lives <= 0) return true;
+            else return false;
+        }
+
         public bool UpdateSpawnTime(int ID)
         {
             if (units[ID].SpawnTime!=0)
@@ -113,17 +127,43 @@ namespace Controller
             bonusUnits[ID].SpawnTime = time;
         }
 
-        public void NewMole()
+        public void NewUnit(int Type)
         {
             //Creates a new mole.
-            units.Add(new UnitNormal());
+            switch(Type)
+            {
+                case 1:
+                    units.Add(new UnitNormal());
+                break;
+
+                case 2:
+                    units.Add(new UnitAvoid());
+                break;
+
+                case 3:
+                    units.Add(new UnitStrong());
+                break;
+
+                case 4:
+                    units.Add(new UnitFat());
+                    break;
+
+                case 5:
+                    bonusUnits.Add(new UnitBonus());
+                break;
+            }
         }
 
-
-        public void NewBonusMole()
+        public int GetUnitCount()
         {
-            //Creates a new mole.
-            bonusUnits.Add(new UnitNormal());
+            //Returns the size of the unit list.
+            return units.Count;
+        }
+
+        public int GetBonusUnitCount()
+        {
+            //Returns the size of the unit list.
+            return bonusUnits.Count;
         }
 
         public void NewHole()
@@ -188,6 +228,12 @@ namespace Controller
         public void AddScore(int score)
         {
             currentPlayer.AddScore(score);
+        }
+
+        // substracts a value to currentPlayers score
+        public void SubstractScore(int score)
+        {
+            currentPlayer.SubstractScore(score);
         }
 
         // returns currentPlayers score

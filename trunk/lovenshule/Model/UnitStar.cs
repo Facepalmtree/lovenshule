@@ -15,7 +15,7 @@ namespace Model
             this.Point = 1000;
             this.Lives = 1;
             this.Damage = 1;
-            this.SpawnTime = 1;
+            this.SpawnTime = 30*2;
         }
     }
 }

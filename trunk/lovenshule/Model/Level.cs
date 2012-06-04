@@ -80,8 +80,8 @@ namespace Model
                     holesCount = 3;
                     spawn = 10;
                     spawnFrequency = 3;
-                    normalChance = 50;
-                    bombChance = 50;
+                    normalChance = 100;
+                    bombChance = 0;
                     strongChance = 0;
                     fatChance = 0;
 
@@ -90,60 +90,116 @@ namespace Model
                     holesCount = 3;
                     spawn = 20;
                     spawnFrequency = 4;
+                    normalChance = 85;
+                    bombChance = 0;
+                    strongChance = 15;
+                    fatChance = 0;
 
                     break;
                 case 3: 
                     holesCount = 5;
                     spawn = 30;
                     spawnFrequency = 5;
+                    normalChance = 70;
+                    bombChance = 0;
+                    strongChance = 30;
+                    fatChance = 0;
 
                     break;
                 case 4:
                     holesCount = 5;
                     spawn = 40;
                     spawnFrequency = 6;
+                    normalChance = 60;
+                    bombChance = 10;
+                    strongChance = 30;
+                    fatChance = 0;
 
                     break;
                 case 5:
                     holesCount = 7;
                     spawn = 50;
                     spawnFrequency = 7;
+                    normalChance = 50;
+                    bombChance = 15;
+                    strongChance = 35;
+                    fatChance = 0;
 
                     break;
                 case 6:
                     holesCount = 7;
                     spawn = 60;
                     spawnFrequency = 8;
+                    normalChance = 40;
+                    bombChance = 15;
+                    strongChance = 40;
+                    fatChance = 5;
 
                     break;
                 case 7:
                     holesCount = 9;
                     spawn = 70;
                     spawnFrequency = 9;
+                    normalChance = 30;
+                    bombChance = 20;
+                    strongChance = 40;
+                    fatChance = 10;
 
                     break;
                 case 8:
                     holesCount = 9;
                     spawn = 80;
                     spawnFrequency = 10;
+                    normalChance = 25;
+                    bombChance = 20;
+                    strongChance = 40;
+                    fatChance = 15;
 
                     break;
                 case 9:
                     holesCount = 9;
                     spawn = 90;
                     spawnFrequency = 11;
+                    normalChance = 20;
+                    bombChance = 25;
+                    strongChance = 40;
+                    fatChance = 15;
 
                     break;
                 case 10:
                     holesCount = 9;
                     spawn = 100;
                     spawnFrequency = 12;
+                    normalChance = 15;
+                    bombChance = 30;
+                    strongChance = 40;
+                    fatChance = 15;
 
                     break;
                 default:
                     break;
             }
             spawnCount = spawn;
+        }
+
+        public int GetChanceNormal()
+        {
+            return normalChance;
+        }
+
+        public int GetChanceBomb()
+        {
+            return bombChance;
+        }
+
+        public int GetChanceStrong()
+        {
+            return strongChance;
+        }
+
+        public int GetChanceFat()
+        {
+            return fatChance;
         }
         
         //Gets current number of moles spawned

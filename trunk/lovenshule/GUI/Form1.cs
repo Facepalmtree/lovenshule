@@ -25,6 +25,8 @@ namespace GUI
         delegate void SetLabelCallBack(Label label, string text);
         List<TransparentAnimatedFuck> moleImages = new List<TransparentAnimatedFuck>();
         List<TransparentAnimatedFuck> moleBonusImages = new List<TransparentAnimatedFuck>();
+        List<int> IDCollection = new List<int>();
+        List<int> IDBonusCollection = new List<int>();
         Thread main;          // Kick off a new thread
         int health = 100;
         bool bonus = false;
@@ -69,7 +71,7 @@ namespace GUI
             {
                 AddMoleData(moleImages[n]);
                 moleImages[n].Click += new EventHandler(MoleDie);
-                Controller.NewMole();
+                IDCollection.Add(255);
 
                 this.Controls.Add(moleImages[n]);
                 moleImages[n].BringToFront();
@@ -99,11 +101,22 @@ namespace GUI
         private void AddMoleData(TransparentAnimatedFuck transparentAnimatedFuck)
         {
             transparentAnimatedFuck.AddAnimationData(0, 0, false);
+
             transparentAnimatedFuck.AddAnimationData(1, 14, false);
             transparentAnimatedFuck.AddAnimationData(15, 15, false);
             transparentAnimatedFuck.AddAnimationData(16, 20, false);
+
             transparentAnimatedFuck.AddAnimationData(21, 24, false);
-            transparentAnimatedFuck.AddAnimationData(25, 38, false);
+            transparentAnimatedFuck.AddAnimationData(25, 37, false);
+            transparentAnimatedFuck.AddAnimationData(38, 41, false);
+
+            transparentAnimatedFuck.AddAnimationData(42, 48, false);
+            transparentAnimatedFuck.AddAnimationData(49, 49, false);
+            transparentAnimatedFuck.AddAnimationData(50, 58, false);
+
+            transparentAnimatedFuck.AddAnimationData(59, 67, false);
+            transparentAnimatedFuck.AddAnimationData(68, 68, false);
+            transparentAnimatedFuck.AddAnimationData(69, 74, false);
 
             transparentAnimatedFuck.AddImage(Properties.Resources.molehole);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimation1);
@@ -135,10 +148,6 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation2);
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation3);
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation4);
-            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation1);
-            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation2);
-            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation3);
-            transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation4);
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation5);
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation6);
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation7);
@@ -148,6 +157,10 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation11);
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation12);
             transparentAnimatedFuck.AddImage(Properties.Resources.bombdetonation13);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb4);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb3);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb2);
+            transparentAnimatedFuck.AddImage(Properties.Resources.bomb1);
 
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrong2);
@@ -165,6 +178,7 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack6);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack7);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack8);
+            transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationstrongattack9);
 
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat1);
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationfat2);
@@ -308,8 +322,8 @@ namespace GUI
                             animationStepCross(moleImages[n]);
 
                             //Update Spawn Timer.
-                            if (moleImages[n].animation == 1 || moleImages[n].animation == 2 || moleImages[n].animation == 3)
-                                if (Controller.UpdateSpawnTime(n))
+                            if (moleImages[n].animation == 1 || moleImages[n].animation == 2 || moleImages[n].animation == 3 || moleImages[n].animation == 4 || moleImages[n].animation == 5 || moleImages[n].animation == 6 || moleImages[n].animation == 7 || moleImages[n].animation == 8 || moleImages[n].animation == 9 || moleImages[n].animation == 10 || moleImages[n].animation == 11 || moleImages[n].animation == 12)
+                                if (Controller.UpdateSpawnTime(IDCollection[n]))
                                 {
                                     MoleDespawnCross(moleImages[n]);
                                 }
@@ -331,10 +345,40 @@ namespace GUI
                         if (random.NextDouble() * 100 < (double)Controller.GetSpawnFrequency() && levelEnded == false)
                         {
                             Hole = random.Next(0, moleImages.Count);
+                            int type = random.Next(0, 101);
                             if (moleImages[Hole].animation == 0)
                             {
-                                SelectAnimationCross(moleImages[Hole], 1);
-                                Controller.SetSpawnTime(Hole, 60);
+                                if (type <= Controller.GetCurrentPlayer().GetChanceNormal())
+                                {
+                                    Controller.NewUnit(1);
+                                    IDCollection[Hole] = Controller.GetUnitCount() - 1;
+                                    Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime );
+                                    SelectAnimationCross(moleImages[Hole], 1);
+                                }
+                                else
+                                    if (type <= Controller.GetCurrentPlayer().GetChanceNormal() + Controller.GetCurrentPlayer().GetChanceBomb())
+                                    {
+                                        Controller.NewUnit(2);
+                                        IDCollection[Hole] = Controller.GetUnitCount() - 1;
+                                        Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime);
+                                        SelectAnimationCross(moleImages[Hole], 4);
+                                    }
+                                    else
+                                        if (type <= Controller.GetCurrentPlayer().GetChanceNormal() + Controller.GetCurrentPlayer().GetChanceBomb() + Controller.GetCurrentPlayer().GetChanceStrong())
+                                        {
+                                            Controller.NewUnit(3);
+                                            IDCollection[Hole] = Controller.GetUnitCount() - 1;
+                                            Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime);
+                                            SelectAnimationCross(moleImages[Hole], 7);
+                                        }
+                                        else
+                                            if (type <= Controller.GetCurrentPlayer().GetChanceNormal() + Controller.GetCurrentPlayer().GetChanceBomb() + Controller.GetCurrentPlayer().GetChanceStrong() + Controller.GetCurrentPlayer().GetChanceFat())
+                                            {
+                                                Controller.NewUnit(4);
+                                                IDCollection[Hole] = Controller.GetUnitCount() - 1;
+                                                Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime);
+                                                SelectAnimationCross(moleImages[Hole], 10);
+                                            }
                             }
                         }
                         else
@@ -380,7 +424,7 @@ namespace GUI
 
                             //Update Spawn Timer.
                             if (moleBonusImages[n].animation != 0)
-                                if (Controller.UpdateBonusSpawnTime(n))
+                                if (Controller.UpdateBonusSpawnTime(IDBonusCollection[n]))
                                 {
                                     SelectAnimationCross(moleBonusImages[n], 0);
                                 }
@@ -396,8 +440,11 @@ namespace GUI
                             Mole = random.Next(0, 4);
                             if (moleBonusImages[Hole].animation == 0)
                             {
+                                Controller.NewUnit(5);
+                                IDBonusCollection[Hole] = Controller.GetBonusUnitCount()-1;
+
                                 SelectAnimationCross(moleBonusImages[Hole], Mole + 1);
-                                Controller.SetBonusSpawnTime(Hole, 60);
+                                Controller.SetBonusSpawnTime(IDBonusCollection[Hole], Controller.getBonusUnit(IDBonusCollection[Hole]).SpawnTime);
                             }
                         }
 
@@ -484,7 +531,7 @@ namespace GUI
             {
                 AddBonusMoleData(moleBonusImages[n]);
                 moleBonusImages[n].Click += new EventHandler(MoleDieBonus);
-                Controller.NewBonusMole();
+                IDBonusCollection.Add(255);
 
                 this.Controls.Add(moleBonusImages[n]);
                 moleBonusImages[n].BringToFront();
@@ -524,6 +571,7 @@ namespace GUI
             moleBonusImages.Clear();
 
             lblBonusCount.Visible = false;
+            IDBonusCollection.Clear();
             Resume();
         }
 
@@ -538,39 +586,58 @@ namespace GUI
 
         private void MoleDie(object sender, EventArgs e)
         {
-            TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
-            //Set the value to 255, because we know that this value will never be used (As there can be no more than 10 holes)
-            //And int cannot be null.
-            
-            Random random = new Random();
-            if (random.NextDouble() * 100 <= 200 && bonusSpawned == false)
-            {
-                pictureBox1.Visible = true;
-                bonusSpawned = true;
-                bonusDecay = 45;
-            }
+                TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
 
-            //Make sure they are uninteractable, when invisible.
-            if (transparentAnimatedFuck.Visible)
-            {
-                int ID = 255;
-
-                //We need the id of the mole, rather than the instance.
-                int n = 0;
-                while (n < moleImages.Count && ID == 255)
+                //Make sure they are uninteractable, when invisible.
+                if (transparentAnimatedFuck.Visible)
                 {
-                    if (transparentAnimatedFuck == moleImages[n])
-                        ID = n;
-                    n++;
-                }
+                    Random random = new Random();
+                    //Set the value to 255, because we know that this value will never be used (As there can be no more than 10 holes)
+                    //And int cannot be null.
+                    int ID = 255;
 
-                if (transparentAnimatedFuck.animation == 1)
-                {
-                    transparentAnimatedFuck.SetAnimation(2);
-                    transparentAnimatedFuck.Refresh();
-                    Controller.SetSpawnTime(ID, 15);
-                    Controller.AddScore(5);
-                    UpdateScoreCross();
+                    //We need the id of the mole, rather than the instance.
+
+                    int n = 0;
+                    while (n < moleImages.Count && ID == 255)
+                    {
+                        if (transparentAnimatedFuck == moleImages[n])
+                            ID = n;
+                        n++;
+                    }
+                    if (Controller.reduceHealth(IDCollection[ID]))
+                    {
+
+                    if (transparentAnimatedFuck.animation == 1 || transparentAnimatedFuck.animation == 7 || transparentAnimatedFuck.animation == 10)
+                    {
+                        if (random.NextDouble() * 100 <= 2 && bonusSpawned == false)
+                        {
+                            pictureBox1.Visible = true;
+                            bonusSpawned = true;
+                            bonusDecay = 45;
+                        }
+
+                        transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 1);
+                        transparentAnimatedFuck.Refresh();
+                        Controller.SetSpawnTime(IDCollection[ID], 15);
+                        Controller.AddScore(Controller.getUnit(IDCollection[ID]).Point);
+                        UpdateScoreCross();
+                    }
+                    else
+                        if (transparentAnimatedFuck.animation == 4)
+                        {
+                            if (random.NextDouble() * 100 <= 200 && bonusSpawned == false)
+                            {
+                                pictureBox1.Visible = true;
+                                bonusSpawned = true;
+                                bonusDecay = 45;
+                            }
+
+                            transparentAnimatedFuck.SetAnimation(5);
+                            transparentAnimatedFuck.Refresh();
+                            Controller.SetSpawnTime(IDCollection[ID], 15);
+                            UpdateScoreCross();
+                        }
                 }
             }
         }
@@ -596,19 +663,23 @@ namespace GUI
                     n++;
                 }
 
-                if ((transparentAnimatedFuck.animation == 1 && bonusColor == 0) || (transparentAnimatedFuck.animation == 2 && bonusColor == 1) || (transparentAnimatedFuck.animation == 3 && bonusColor == 2) || (transparentAnimatedFuck.animation == 4 && bonusColor == 3))
+                if (Controller.reduceHealthBonus(IDBonusCollection[ID]))
                 {
-                    transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 4);
-                    transparentAnimatedFuck.Refresh();
-                    Controller.SetBonusSpawnTime(ID, 15);
-                    Controller.AddScore(5);
-                    UpdateScoreCross();
-                }
-                else
-                    if ((transparentAnimatedFuck.animation == 1 && bonusColor != 1) || (transparentAnimatedFuck.animation == 2 && bonusColor != 2) || (transparentAnimatedFuck.animation == 3 && bonusColor != 3) || (transparentAnimatedFuck.animation == 4 && bonusColor != 4))
+
+                    if ((transparentAnimatedFuck.animation == 1 && bonusColor == 0) || (transparentAnimatedFuck.animation == 2 && bonusColor == 1) || (transparentAnimatedFuck.animation == 3 && bonusColor == 2) || (transparentAnimatedFuck.animation == 4 && bonusColor == 3))
                     {
-                        deinitializeBonusLevel();
+                        transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 4);
+                        transparentAnimatedFuck.Refresh();
+                        Controller.SetBonusSpawnTime(IDBonusCollection[ID], 15);
+                        Controller.AddScore(Controller.getUnit(IDBonusCollection[ID]).Point);
+                        UpdateScoreCross();
                     }
+                    else
+                        if ((transparentAnimatedFuck.animation == 1 && bonusColor != 1) || (transparentAnimatedFuck.animation == 2 && bonusColor != 2) || (transparentAnimatedFuck.animation == 3 && bonusColor != 3) || (transparentAnimatedFuck.animation == 4 && bonusColor != 4))
+                        {
+                            deinitializeBonusLevel();
+                        }
+                }
             }
         }
 
@@ -624,6 +695,8 @@ namespace GUI
                 n++;
             }
             moleImages.Clear();
+            IDCollection.Clear();
+            PicBNextLevel.Visible = true;
         }
 
         public void StartLevel()
@@ -655,7 +728,7 @@ namespace GUI
             {
                 AddMoleData(moleImages[n]);
                 moleImages[n].Click += new EventHandler(MoleDie);
-                Controller.NewMole();
+                IDCollection.Add(255);
 
                 this.Controls.Add(moleImages[n]);
                 moleImages[n].BringToFront();
@@ -663,6 +736,7 @@ namespace GUI
             }
 
             bonusSpawned = false;
+            PicBNextLevel.Visible = false;
         }
 
         // The following functions are all thread callbacks, to
@@ -686,35 +760,37 @@ namespace GUI
             }
             else
             {
-                if (transparentAnimatedFuck.animation == 3 || transparentAnimatedFuck.animation == 2)
+                int ID = 255;
+                int n = 0;
+                switch (transparentAnimatedFuck.animation)
                 {
-
-                    if (transparentAnimatedFuck.animation == 3)
-                    {
-                        int ID = 255;
-                        int n = 0;
-                        while (n < moleImages.Count && ID==255)
+                    case 3:
+                    case 2:
+                        if (transparentAnimatedFuck.animation == 3)
                         {
-                            if (transparentAnimatedFuck == moleImages[n])
-                                ID = n;
-                            n++;
+                            ID = 255;
+                            n = 0;
+                            while (n < moleImages.Count && ID == 255)
+                            {
+                                if (transparentAnimatedFuck == moleImages[n])
+                                    ID = n;
+                                n++;
+                            }
+                            health -= Controller.getUnit(IDCollection[ID]).Damage;
                         }
-                        health -= Controller.getUnit(ID).Damage;
-                    }
-                    transparentAnimatedFuck.SetAnimation(0);
-                    transparentAnimatedFuck.Refresh();
 
-                    if (levelEnded == false)
-                        if (Controller.SpawnDecrease())
-                        {
-                            EndLevel();
-                        }
-                }
-                else
-                    if (transparentAnimatedFuck.animation == 1)
-                    {
-                        int ID = 255;
-                        int n = 0;
+                        transparentAnimatedFuck.SetAnimation(0);
+                        transparentAnimatedFuck.Refresh();
+
+                        if (levelEnded == false)
+                            if (Controller.SpawnDecrease())
+                            {
+                                EndLevel();
+                            }
+                    break;
+                    case 1:
+                        ID = 255;
+                        n = 0;
                         while (n < moleImages.Count && ID == 255)
                         {
                             if (transparentAnimatedFuck == moleImages[n])
@@ -722,12 +798,166 @@ namespace GUI
                             n++;
                         }
 
-                        Controller.SetSpawnTime(ID, 20);
+                        Controller.SetSpawnTime(IDCollection[ID], 20);
 
 
                         transparentAnimatedFuck.SetAnimation(3);
                         transparentAnimatedFuck.Refresh();
-                    }
+                    break;
+                    case 4:
+                        ID = 255;
+                        n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+
+                        Controller.SetSpawnTime(IDCollection[ID], 5);
+
+
+                        transparentAnimatedFuck.SetAnimation(6);
+                        transparentAnimatedFuck.Refresh();
+                    break;
+                    case 5:
+                        ID = 255;
+                        n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+
+                        Controller.SubstractScore(Controller.getUnit(IDCollection[ID]).Point);
+                        UpdateScoreCross();
+
+                        transparentAnimatedFuck.SetAnimation(0);
+                        transparentAnimatedFuck.Refresh();
+
+                        if (levelEnded == false)
+                            if (Controller.SpawnDecrease())
+                            {
+                                EndLevel();
+                            }
+                    break;
+                    case 6:
+                        ID = 255;
+                        n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+
+                        transparentAnimatedFuck.SetAnimation(0);
+                        transparentAnimatedFuck.Refresh();
+
+                        if (levelEnded == false)
+                            if (Controller.SpawnDecrease())
+                            {
+                                EndLevel();
+                            }
+                        break;
+                    case 7:
+                        ID = 255;
+                        n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+
+                        Controller.SetSpawnTime(IDCollection[ID], 20);
+
+
+                        transparentAnimatedFuck.SetAnimation(9);
+                        transparentAnimatedFuck.Refresh();
+                    break;
+                    case 8:
+                        UpdateScoreCross();
+
+                        transparentAnimatedFuck.SetAnimation(0);
+                        transparentAnimatedFuck.Refresh();
+
+                        if (levelEnded == false)
+                            if (Controller.SpawnDecrease())
+                            {
+                                EndLevel();
+                            }
+                    break;
+                    case 9:
+                        ID = 255;
+                        n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+                        health -= Controller.getUnit(IDCollection[ID]).Damage;
+
+                        transparentAnimatedFuck.SetAnimation(0);
+                        transparentAnimatedFuck.Refresh();
+
+                        if (levelEnded == false)
+                            if (Controller.SpawnDecrease())
+                            {
+                                EndLevel();
+                            }
+                        break;
+                    case 10:
+                        ID = 255;
+                        n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+
+                        Controller.SetSpawnTime(IDCollection[ID], 20);
+
+
+                        transparentAnimatedFuck.SetAnimation(12);
+                        transparentAnimatedFuck.Refresh();
+                        break;
+                    case 11:
+                        UpdateScoreCross();
+
+                        transparentAnimatedFuck.SetAnimation(0);
+                        transparentAnimatedFuck.Refresh();
+
+                        if (levelEnded == false)
+                            if (Controller.SpawnDecrease())
+                            {
+                                EndLevel();
+                            }
+                        break;
+                    case 12:
+                        ID = 255;
+                        n = 0;
+                        while (n < moleImages.Count && ID == 255)
+                        {
+                            if (transparentAnimatedFuck == moleImages[n])
+                                ID = n;
+                            n++;
+                        }
+                        health -= Controller.getUnit(IDCollection[ID]).Damage;
+
+                        transparentAnimatedFuck.SetAnimation(0);
+                        transparentAnimatedFuck.Refresh();
+
+                        if (levelEnded == false)
+                            if (Controller.SpawnDecrease())
+                            {
+                                EndLevel();
+                            }
+                        break;
+                }
             }
         }
 
