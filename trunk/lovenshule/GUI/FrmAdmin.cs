@@ -27,14 +27,15 @@ namespace GUI
 
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
+
             //Makes the winform run in fullscreen.
             //this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
 
             //Hides the curser
             //Commented out until it's needed.
-            //Cursor.Hide();
+            Cursor.Hide();
 
             listView1.Hide();
 

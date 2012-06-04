@@ -34,14 +34,15 @@ namespace GUI
             InitializeComponent();
             this.controller = controller;
 
+
             //Makes the winform run in fullscreen.
-            this.TopMost = true;
+            //this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
 
             //Hides the curser
             //Commented out until it's needed.
-            //Cursor.Hide();
+            Cursor.Hide();
         }
 
         private void FrmWebcam_Load(object sender, EventArgs e)

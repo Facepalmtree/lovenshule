@@ -31,7 +31,7 @@ namespace GUI
 
             //Hides the curser
             //Commented out until it's needed.
-            //Cursor.Hide();
+            Cursor.Hide();
         }
 
         public void UpdateGui()
