@@ -170,10 +170,11 @@ namespace Model
 
         public void Sort()
         {
-            if (entries.Count > 1)
-            {
-                QuickSort(0, entries.Count - 1);
-            }
+            BubbleSort();
+            //if (entries.Count > 1)
+            //{
+            //    QuickSort(0, entries.Count - 1);
+            //}
         }
         private void QuickSort(int left, int right)
         {
