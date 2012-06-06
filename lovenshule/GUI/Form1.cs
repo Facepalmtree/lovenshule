@@ -667,7 +667,7 @@ namespace GUI
                         if (transparentAnimatedFuck.animation == 1 || transparentAnimatedFuck.animation == 7 || transparentAnimatedFuck.animation == 10)
                         {
                             //First, there's a 2% chance to to spawn the lion head, giving entrance to the bonus level.
-                            if (random.NextDouble() * 100 <= 2 && bonusSpawned == false)
+                            if (random.NextDouble() * 100 <= 4 && bonusSpawned == false)
                             {
                                 pictureBox1.Visible = true;
                                 bonusSpawned = true;
