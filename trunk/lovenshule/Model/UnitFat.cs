@@ -14,7 +14,7 @@ namespace Model
             //this.MaxFrame =
             this.Point = 2500;
             this.Lives = 10;
-            this.Damage = 50;
+            this.Damage = 30;
             this.SpawnTime = 30*10;
         }
     }
