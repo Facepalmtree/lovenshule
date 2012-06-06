@@ -28,7 +28,6 @@ namespace GUI
         List<int> IDCollection = new List<int>();
         List<int> IDBonusCollection = new List<int>();
         Thread main;          // Kick off a new thread
-        int health = 100;
         bool bonus = false;
         int bonusColor = 0;
         int bonusTimer;
@@ -43,14 +42,17 @@ namespace GUI
 
         ModelController Controller;
 
+        //The form constructor.
         public Form1(ModelController Controller)
         {
             InitializeComponent();
             this.Controller = Controller;
 
+            //This list is made to temporarely get the possible X and Y coordinates for the holes.
             List<int> xCoordinates = new List<int>();
             List<int> yCoordinates = new List<int>();
 
+            //here we actually add some values to them.
             int n = 0;
             while (n < Controller.GetCoordinatesSize())
             {
@@ -60,6 +62,7 @@ namespace GUI
                 n++;
             }
 
+            //here we create new holes, and add random positions to them. These positions are found the the array earlier talked about
             int position;
             n = 0;
             Random random = new Random();
@@ -75,6 +78,10 @@ namespace GUI
                 n++;
             }
 
+            /*Here we do the stuff, that needs to be done to each hole, like adding them to the actual form
+             * and setting up the id collection list, which will remember the unit ID of the unit in the hole
+             * This needs to be reworked into the actual hoel class having these variables.
+             */
             n = 0;
             while (n < moleImages.Count)
             {
@@ -89,7 +96,7 @@ namespace GUI
 
 
             
-
+            //here we start the thread, which will be responsible for the main loop.
             main = new Thread(MainLoop);
             main.Start();
         }
@@ -284,11 +291,13 @@ namespace GUI
             transparentAnimatedFuck.AddImage(Properties.Resources.moleanimationgreendefeated);
         }
 
+        //Pauses the main thrread.
         public void Pause()
         {
             _pauseEvent.Reset();
         }
 
+        //Resumes the main thread.
         public void Resume()
         {
             _pauseEvent.Set();
@@ -302,7 +311,7 @@ namespace GUI
 
 
 
-
+        //The function which is used as the main thread.
         public void MainLoop()
         {
             bool play = true;
@@ -314,6 +323,7 @@ namespace GUI
 
             while (play)
             {
+                //This is used to pause the thread (Which can be important when we need to add new objects to a list).
                 _pauseEvent.WaitOne(Timeout.Infinite);
 
                 if (_shutdownEvent.WaitOne(0))
@@ -334,6 +344,7 @@ namespace GUI
                             if (moleImages[n].animation == 1 || moleImages[n].animation == 2 || moleImages[n].animation == 3 || moleImages[n].animation == 4 || moleImages[n].animation == 5 || moleImages[n].animation == 6 || moleImages[n].animation == 7 || moleImages[n].animation == 8 || moleImages[n].animation == 9 || moleImages[n].animation == 10 || moleImages[n].animation == 11 || moleImages[n].animation == 12)
                                 if (Controller.UpdateSpawnTime(IDCollection[n]))
                                 {
+                                    //If the Update function returns true, Despawn the mole.
                                     MoleDespawnCross(moleImages[n]);
                                 }
                             n++;
@@ -345,6 +356,7 @@ namespace GUI
                         {
                             bonusDecay -= 1;
                             if (bonusDecay <= 0)
+                                //If the bonus icon's count down timer reaches 0 before it is clicked, despawn it again.
                                 BonusVisibleCross(false);
                         }
 
@@ -353,12 +365,20 @@ namespace GUI
                         //Spawn new Moles
                         if (random.NextDouble() * 100 < (double)Controller.GetSpawnFrequency() && levelEnded == false)
                         {
+                            //Find a random hole
                             Hole = random.Next(0, moleImages.Count);
+                            //Find a random type (This is a roll between 0 and 100, the level class has presets as to what the
+                            //Percentage chance of each mole is).
                             int type = random.Next(0, 101);
+                            //If the chosen hole is empty.
                             if (moleImages[Hole].animation == 0)
                             {
+                                //All the if and else functions check to see which kind of mole should be spawned.
+                                //This is more functional with of/then/else, than with switch, seeing as we need all
+                                //The elses for this to work properly.
                                 if (type <= Controller.GetCurrentPlayer().GetChanceNormal())
                                 {
+                                    //Spawn a normal mole, and add the appropriate data.
                                     Controller.NewUnit(1);
                                     IDCollection[Hole] = Controller.GetUnitCount() - 1;
                                     Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime );
@@ -367,6 +387,7 @@ namespace GUI
                                 else
                                     if (type <= Controller.GetCurrentPlayer().GetChanceNormal() + Controller.GetCurrentPlayer().GetChanceBomb())
                                     {
+                                        //Spawn a bomb, and add the appropriate data.
                                         Controller.NewUnit(2);
                                         IDCollection[Hole] = Controller.GetUnitCount() - 1;
                                         Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime);
@@ -375,6 +396,7 @@ namespace GUI
                                     else
                                         if (type <= Controller.GetCurrentPlayer().GetChanceNormal() + Controller.GetCurrentPlayer().GetChanceBomb() + Controller.GetCurrentPlayer().GetChanceStrong())
                                         {
+                                            //Spawn a strong mole, and add the appropriate data.
                                             Controller.NewUnit(3);
                                             IDCollection[Hole] = Controller.GetUnitCount() - 1;
                                             Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime);
@@ -383,6 +405,7 @@ namespace GUI
                                         else
                                             if (type <= Controller.GetCurrentPlayer().GetChanceNormal() + Controller.GetCurrentPlayer().GetChanceBomb() + Controller.GetCurrentPlayer().GetChanceStrong() + Controller.GetCurrentPlayer().GetChanceFat())
                                             {
+                                                //Spawn a fat mole, and add the appropriate data.
                                                 Controller.NewUnit(4);
                                                 IDCollection[Hole] = Controller.GetUnitCount() - 1;
                                                 Controller.SetSpawnTime(IDCollection[Hole], Controller.getUnit(IDCollection[Hole]).SpawnTime);
@@ -391,12 +414,13 @@ namespace GUI
                             }
                         }
                         else
+                            //The following logic is for when the level has ended.
                             if (levelEnded == true)
                             {
                                 n = 0;
                                 bool ok = true;
 
-                                //Mole logic
+                                //Check if every hole is empty (We don't want to go to the next level before all the holes are empty.
                                 while (n < moleImages.Count)
                                 {
                                     if (moleImages[n].animation != 0)
@@ -404,17 +428,20 @@ namespace GUI
                                     n++;
                                 }
 
+                                //if they are
                                 if (ok == true)
                                 {
+                                    //Update the timer and check if enough time has passed.
                                     nextLevelWait -= 1;
                                     if (nextLevelWait <= 0)
                                     {
+                                        //If true, start the next level.
                                         StartLevelCross();
                                     }
                                 }
                             }
-
-                        UpdateHealthCross(health);
+                        //Update the health visually.
+                        UpdateHealthCross(Controller.GetCurrentPlayer().health);
                     }
 
 
@@ -445,10 +472,13 @@ namespace GUI
                         //Spawn new Moles
                         if (random.NextDouble() * 100 < 5)
                         {
+                            //Choose a random hole, and a random coloured mole
                             Hole = random.Next(0, moleBonusImages.Count);
                             Mole = random.Next(0, 4);
+                            //If the chosen hole is empty
                             if (moleBonusImages[Hole].animation == 0)
                             {
+                                //Make a bonus unit, and assign the correct attributes.
                                 Controller.NewUnit(5);
                                 IDBonusCollection[Hole] = Controller.GetBonusUnitCount()-1;
 
@@ -497,7 +527,7 @@ namespace GUI
                 pictureBox1.Image = Properties.Resources.TexGreen;
         }
 
-
+        //A function that initializes the bonus level.
         public void initializeBonusLevel()
         {
             //Pause the thread (When deleting and creating new objects, deadlocks can easily occour).
@@ -508,6 +538,7 @@ namespace GUI
 
             bonus = true;
             
+            //For each mole:
             int n = 0;
             while (n < moleImages.Count)
             {
@@ -517,9 +548,11 @@ namespace GUI
                 n++;
             }
 
+            //A temporarily list. to store the possible X and Y values for holes.
             List<int> xCoordinates = new List<int>();
             List<int> yCoordinates = new List<int>();
 
+            //Add the appropriate data to the list.
             n = 0;
             while (n < Controller.GetCoordinatesSize())
             {
@@ -529,6 +562,7 @@ namespace GUI
                 n++;
             }
 
+            //Add the holes, to random chosen X and Y values, based on the previous list.
             int position;
             n = 0;
             Random random = new Random();
@@ -544,6 +578,7 @@ namespace GUI
                 n++;
             }
 
+            //Do what needs to be done with the holes, like add them to the form and, adding an entry in the IDcollection.
             n = 0;
             while (n < moleBonusImages.Count)
             {
@@ -561,6 +596,7 @@ namespace GUI
             Resume();
         }
 
+        //Function to deinitialize a bonus level.
         public void deinitializeBonusLevel()
         {
             //Pause the thread (When deleting and creating new objects, deadlocks can easily occour).
@@ -568,6 +604,7 @@ namespace GUI
 
             bonus = false;
 
+            //Revert the picturebox back to the logo, so that once it needs to be made visible again, the sprite is already buffered.
             pictureBox1.Image = Properties.Resources.Star_løve1_small;
             pictureBox1.Visible = false;
 
@@ -596,12 +633,13 @@ namespace GUI
 
 
 
-
+        //Make sure that if the window is closed in a non-optimal manner, the thread is also terminated.
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             main.Abort();
         }
 
+        //Function called whenever a mole dies.
         private void MoleDie(object sender, EventArgs e)
         {
                 TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
@@ -615,7 +653,6 @@ namespace GUI
                     int ID = 255;
 
                     //We need the id of the mole, rather than the instance.
-
                     int n = 0;
                     while (n < moleImages.Count && ID == 255)
                     {
@@ -623,39 +660,38 @@ namespace GUI
                             ID = n;
                         n++;
                     }
+                    //Reduce the health of the mole, and if it's out of health, run some code.
                     if (Controller.reduceHealth(IDCollection[ID]))
                     {
-
-                    if (transparentAnimatedFuck.animation == 1 || transparentAnimatedFuck.animation == 7 || transparentAnimatedFuck.animation == 10)
-                    {
-                        if (random.NextDouble() * 100 <= 2 && bonusSpawned == false)
+                        //If it's one of the moles to add points
+                        if (transparentAnimatedFuck.animation == 1 || transparentAnimatedFuck.animation == 7 || transparentAnimatedFuck.animation == 10)
                         {
-                            pictureBox1.Visible = true;
-                            bonusSpawned = true;
-                            bonusDecay = 45;
-                        }
-
-                        transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 1);
-                        transparentAnimatedFuck.Refresh();
-                        Controller.SetSpawnTime(IDCollection[ID], 15);
-                        Controller.AddScore(Controller.getUnit(IDCollection[ID]).Point);
-                        UpdateScoreCross();
-                    }
-                    else
-                        if (transparentAnimatedFuck.animation == 4)
-                        {
-                            if (random.NextDouble() * 100 <= 200 && bonusSpawned == false)
+                            //First, there's a 2% chance to to spawn the lion head, giving entrance to the bonus level.
+                            if (random.NextDouble() * 100 <= 2 && bonusSpawned == false)
                             {
                                 pictureBox1.Visible = true;
                                 bonusSpawned = true;
                                 bonusDecay = 45;
                             }
 
-                            transparentAnimatedFuck.SetAnimation(5);
+                            //Set the animation to the death animation
+                            transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 1);
                             transparentAnimatedFuck.Refresh();
                             Controller.SetSpawnTime(IDCollection[ID], 15);
+
+                            //Add the score, and update the label.
+                            Controller.AddScore(Controller.getUnit(IDCollection[ID]).Point);
                             UpdateScoreCross();
                         }
+                        else
+                            //If it's a bomb, do some other logic:
+                            if (transparentAnimatedFuck.animation == 4)
+                            {
+                                //Chance the animation
+                                transparentAnimatedFuck.SetAnimation(5);
+                                transparentAnimatedFuck.Refresh();
+                                Controller.SetSpawnTime(IDCollection[ID], 15);
+                            }
                 }
             }
         }
@@ -681,18 +717,23 @@ namespace GUI
                     n++;
                 }
 
+                //Reduce the health of the bonus mole, and, if it's out of health, proceed to the next code.
                 if (Controller.reduceHealthBonus(IDBonusCollection[ID]))
                 {
-
+                    //First, check if it was the correct mole we hit.
                     if ((transparentAnimatedFuck.animation == 1 && bonusColor == 0) || (transparentAnimatedFuck.animation == 2 && bonusColor == 1) || (transparentAnimatedFuck.animation == 3 && bonusColor == 2) || (transparentAnimatedFuck.animation == 4 && bonusColor == 3))
                     {
+                        //If yes change the animation.
                         transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 4);
                         transparentAnimatedFuck.Refresh();
                         Controller.SetBonusSpawnTime(IDBonusCollection[ID], 15);
+
+                        //And add the points.
                         Controller.AddScore(Controller.getUnit(IDBonusCollection[ID]).Point);
                         UpdateScoreCross();
                     }
                     else
+                        //If not, deinitialize the level.
                         if ((transparentAnimatedFuck.animation == 1 && bonusColor != 1) || (transparentAnimatedFuck.animation == 2 && bonusColor != 2) || (transparentAnimatedFuck.animation == 3 && bonusColor != 3) || (transparentAnimatedFuck.animation == 4 && bonusColor != 4))
                         {
                             deinitializeBonusLevel();
@@ -701,30 +742,37 @@ namespace GUI
             }
         }
 
+        //Function to end the level.
         public void EndLevel()
         {
             levelEnded = true;
             nextLevelWait = 5 * 30;
 
+            //Remove all holes from the form.
             int n = 0;
             while (n < moleImages.Count)
             {
                 this.Controls.Remove(moleImages[n]);
                 n++;
             }
+
+            //Clear all the data to free the RAM.
             moleImages.Clear();
             IDCollection.Clear();
             PicBNextLevel.Visible = true;
         }
 
+        //Function to start the level.
         public void StartLevel()
         {
             levelEnded = false;
             Controller.Nextlevel();
 
+            //Make two new lists to hold the X and Y variables for the holes.
             List<int> xCoordinates = new List<int>();
             List<int> yCoordinates = new List<int>();
 
+            //Add the appropriate variables to the lists.
             int n = 0;
             while (n < Controller.GetCoordinatesSize())
             {
@@ -734,6 +782,7 @@ namespace GUI
                 n++;
             }
 
+            //Choose some random positions, and spawn holes there, based on the before mentioned lists.
             int position;
             n = 0;
             Random random = new Random();
@@ -749,7 +798,7 @@ namespace GUI
                 n++;
             }
 
-
+            //Do the needed procedures to the holes, like adding them to the form and seting up the appropriate data.
             n = 0;
             while (n < moleImages.Count)
             {
@@ -789,6 +838,10 @@ namespace GUI
             {
                 int ID = 255;
                 int n = 0;
+                //When despawning the mole, we need to do some logic, based on the actual mole, and animation.
+                //Mole numbers: 1, 4, 7, 10 means that the mole should begin the attack.
+                //Mole numbers: 2, 5, 8, 11 means that the mole should just be despawned (if it's a bomb (number 5) it should also substract score).
+                //Mole numbers: 3, 6, 9, 12 means that the mole should first deal damage, then despawn.
                 switch (transparentAnimatedFuck.animation)
                 {
                     case 3:
@@ -803,7 +856,7 @@ namespace GUI
                                     ID = n;
                                 n++;
                             }
-                            health -= Controller.getUnit(IDCollection[ID]).Damage;
+                            Controller.LoseHealth(Controller.getUnit(IDCollection[ID]).Damage);
                         }
 
                         transparentAnimatedFuck.SetAnimation(0);
@@ -925,7 +978,7 @@ namespace GUI
                                 ID = n;
                             n++;
                         }
-                        health -= Controller.getUnit(IDCollection[ID]).Damage;
+                        Controller.LoseHealth(Controller.getUnit(IDCollection[ID]).Damage);
 
                         transparentAnimatedFuck.SetAnimation(0);
                         transparentAnimatedFuck.Refresh();
@@ -973,7 +1026,7 @@ namespace GUI
                                 ID = n;
                             n++;
                         }
-                        health -= Controller.getUnit(IDCollection[ID]).Damage;
+                        Controller.LoseHealth(Controller.getUnit(IDCollection[ID]).Damage);
 
                         transparentAnimatedFuck.SetAnimation(0);
                         transparentAnimatedFuck.Refresh();
