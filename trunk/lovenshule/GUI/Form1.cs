@@ -729,7 +729,7 @@ namespace GUI
                         Controller.SetBonusSpawnTime(IDBonusCollection[ID], 15);
 
                         //And add the points.
-                        Controller.AddScore(Controller.getUnit(IDBonusCollection[ID]).Point);
+                        Controller.AddScore(Controller.getBonusUnit(IDBonusCollection[ID]).Point);
                         UpdateScoreCross();
                     }
                     else
@@ -910,6 +910,7 @@ namespace GUI
                             n++;
                         }
 
+                        Controller.LoseHealth(Controller.getUnit(IDCollection[ID]).Damage);
                         Controller.SubstractScore(Controller.getUnit(IDCollection[ID]).Point);
                         UpdateScoreCross();
 
