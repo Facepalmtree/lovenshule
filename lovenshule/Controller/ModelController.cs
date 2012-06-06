@@ -49,31 +49,37 @@ namespace Controller
             return currentPlayer.SpawnDecrease();
         }
 
+        //Returns the amount of holes, this level should have.
         public int GetHoleCount()
         {
             return currentPlayer.GetHoleCount();
         }
 
+        //return the spawn frequency this level should use.
         public decimal GetSpawnFrequency()
         {
             return currentPlayer.GetSpawnFrequency();
         }
 
+        //Go to the next level.
         public void Nextlevel()
         {
             currentPlayer.Nextlevel();
         }
 
+        //Return a possible x coordinate.
         public int GetXCoordinates(int ID)
         {
             return currentPlayer.GetXCoordinates(ID);
         }
 
+        //return a possible y coordinate.
         public int GetYCoordinates(int ID)
         {
             return currentPlayer.GetYCoordinates(ID);
         }
 
+        //Return how many different coordinate positions there are.
         public int GetCoordinatesSize()
         {
             return currentPlayer.GetCoordinateSize();
@@ -87,11 +93,13 @@ namespace Controller
             return (IUnit)units[ID];
         }
 
+        //Return a bonus unit, so we can read it's attributes.
         public IUnit getBonusUnit(int ID)
         {
             return (IUnit)bonusUnits[ID];
         }
 
+        //Reduce the health of a mole, return true if it dies, and false if not.
         public bool reduceHealth(int ID)
         {
             units[ID].Lives -= 1;
@@ -99,6 +107,8 @@ namespace Controller
             else return false;
         }
 
+
+        //Reduce the health of a bonusmole, return true if it dies, and false if not.
         public bool reduceHealthBonus(int ID)
         {
             bonusUnits[ID].Lives -= 1;
@@ -106,6 +116,7 @@ namespace Controller
             else return false;
         }
 
+        //Updates the spawntimer of a mole, return true if spawnTime has ended.
         public bool UpdateSpawnTime(int ID)
         {
             if (units[ID].SpawnTime!=0)
@@ -113,6 +124,8 @@ namespace Controller
             if (units[ID].SpawnTime <= 0) return true; else return false;
         }
 
+
+        //Updates the spawntimer of a bonusmole, return true if spawnTime has ended.
         public bool UpdateBonusSpawnTime(int ID)
         {
             if (bonusUnits[ID].SpawnTime != 0)
@@ -132,6 +145,7 @@ namespace Controller
             bonusUnits[ID].SpawnTime = time;
         }
 
+        //Spawn a new unit.
         public void NewUnit(int Type)
         {
             //Creates a new mole.
@@ -181,12 +195,6 @@ namespace Controller
         public void ResetPlayer()
         {
             currentPlayer = null;
-        }
-
-        //methods
-        public void HitMole(/*id på hul*/)
-        {
-
         }
 
         public void AddEntry()

@@ -26,7 +26,7 @@ namespace Model
             this.image = image;
             this.time = 0;            
             this.levelCount = 1;
-            this.health = 10;
+            this.health = 100;
             
             //create a level which will be used to keep track of the game's difficulty.
             level = new Level(1);
