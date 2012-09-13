@@ -761,22 +761,22 @@ namespace GUI
             if (ok == true)
             {
 
-                levelEnded = true;
-                nextLevelWait = 5 * 30;
+            levelEnded = true;
+            nextLevelWait = 5 * 30;
 
-                //Remove all holes from the form.
-                n = 0;
-                while (n < moleImages.Count)
-                {
-                    this.Controls.Remove(moleImages[n]);
-                    n++;
-                }
-
-                //Clear all the data to free the RAM.
-                moleImages.Clear();
-                IDCollection.Clear();
-                PicBNextLevel.Visible = true;
+            //Remove all holes from the form.
+            n = 0;
+            while (n < moleImages.Count)
+            {
+                this.Controls.Remove(moleImages[n]);
+                n++;
             }
+
+            //Clear all the data to free the RAM.
+            moleImages.Clear();
+            IDCollection.Clear();
+            PicBNextLevel.Visible = true;
+                }
         }
 
         //Function to start the level.
