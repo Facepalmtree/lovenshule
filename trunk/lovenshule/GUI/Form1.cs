@@ -37,6 +37,9 @@ namespace GUI
         bool bonusSpawned = false;
         int bonusDecay;
 
+        bool flagIn = false;
+        bool flagOut = false;
+
         ManualResetEvent _shutdownEvent = new ManualResetEvent(false);
         ManualResetEvent _pauseEvent = new ManualResetEvent(true);
 
@@ -417,27 +420,13 @@ namespace GUI
                             //The following logic is for when the level has ended.
                             if (levelEnded == true)
                             {
-                                n = 0;
-                                bool ok = true;
-
-                                //Check if every hole is empty (We don't want to go to the next level before all the holes are empty.
-                                while (n < moleImages.Count)
+                                
+                                //Update the timer and check if enough time has passed.
+                                nextLevelWait -= 1;
+                                if (nextLevelWait <= 0)
                                 {
-                                    if (moleImages[n].animation != 0)
-                                        ok = false;
-                                    n++;
-                                }
-
-                                //if they are
-                                if (ok == true)
-                                {
-                                    //Update the timer and check if enough time has passed.
-                                    nextLevelWait -= 1;
-                                    if (nextLevelWait <= 0)
-                                    {
-                                        //If true, start the next level.
-                                        StartLevelCross();
-                                    }
+                                    //If true, start the next level.
+                                    StartLevelCross();
                                 }
                             }
                         //Update the health visually.
@@ -530,6 +519,7 @@ namespace GUI
         //A function that initializes the bonus level.
         public void initializeBonusLevel()
         {
+            flagIn = true;
             //Pause the thread (When deleting and creating new objects, deadlocks can easily occour).
             Pause();
 
@@ -592,6 +582,7 @@ namespace GUI
             }
 
             lblBonusCount.Visible = true;
+            flagIn = false;
 
             Resume();
         }
@@ -602,6 +593,7 @@ namespace GUI
             //Pause the thread (When deleting and creating new objects, deadlocks can easily occour).
             Pause();
 
+            flagOut = true;
             bonus = false;
 
             //Revert the picturebox back to the logo, so that once it needs to be made visible again, the sprite is already buffered.
@@ -627,6 +619,8 @@ namespace GUI
 
             lblBonusCount.Visible = false;
             IDBonusCollection.Clear();
+            flagOut = false;
+
             Resume();
         }
 
@@ -642,6 +636,8 @@ namespace GUI
         //Function called whenever a mole dies.
         private void MoleDie(object sender, EventArgs e)
         {
+            if (flagIn == false)
+            {
                 TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
 
                 //Make sure they are uninteractable, when invisible.
@@ -667,7 +663,7 @@ namespace GUI
                         if (transparentAnimatedFuck.animation == 1 || transparentAnimatedFuck.animation == 7 || transparentAnimatedFuck.animation == 10)
                         {
                             //First, there's a 2% chance to to spawn the lion head, giving entrance to the bonus level.
-                            if (random.NextDouble() * 100 <= 4 && bonusSpawned == false)
+                            if (random.NextDouble() * 100 <= 400 && bonusSpawned == false)
                             {
                                 pictureBox1.Visible = true;
                                 bonusSpawned = true;
@@ -692,6 +688,7 @@ namespace GUI
                                 transparentAnimatedFuck.Refresh();
                                 Controller.SetSpawnTime(IDCollection[ID], 15);
                             }
+                    }
                 }
             }
         }
@@ -699,45 +696,49 @@ namespace GUI
 
         private void MoleDieBonus(object sender, EventArgs e)
         {
-            TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
-            //Set the value to 255, because we know that this value will never be sued (As there can be no more than 10 holes)
-            //And int cannot be null.
-
-            //Make sure they are uninteractable, when invisible.
-            if (transparentAnimatedFuck.Visible)
+            if (flagOut == false)
             {
-                int ID = 255;
+                TransparentAnimatedFuck transparentAnimatedFuck = (TransparentAnimatedFuck)sender;
+                //Set the value to 255, because we know that this value will never be sued (As there can be no more than 10 holes)
+                //And int cannot be null.
 
-                //We need the id of the mole, rather than the instance.
-                int n = 0;
-                while (n < moleBonusImages.Count && ID == 255)
+                //Make sure they are uninteractable, when invisible.
+                if (transparentAnimatedFuck.Visible)
                 {
-                    if (transparentAnimatedFuck == moleBonusImages[n])
-                        ID = n;
-                    n++;
-                }
+                    int ID = 255;
 
-                //Reduce the health of the bonus mole, and, if it's out of health, proceed to the next code.
-                if (Controller.reduceHealthBonus(IDBonusCollection[ID]))
-                {
-                    //First, check if it was the correct mole we hit.
-                    if ((transparentAnimatedFuck.animation == 1 && bonusColor == 0) || (transparentAnimatedFuck.animation == 2 && bonusColor == 1) || (transparentAnimatedFuck.animation == 3 && bonusColor == 2) || (transparentAnimatedFuck.animation == 4 && bonusColor == 3))
+                    //We need the id of the mole, rather than the instance.
+                    int n = 0;
+                    while (n < moleBonusImages.Count && ID == 255)
                     {
-                        //If yes change the animation.
-                        transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 4);
-                        transparentAnimatedFuck.Refresh();
-                        Controller.SetBonusSpawnTime(IDBonusCollection[ID], 15);
-
-                        //And add the points.
-                        Controller.AddScore(Controller.getBonusUnit(IDBonusCollection[ID]).Point);
-                        UpdateScoreCross();
+                        if (transparentAnimatedFuck == moleBonusImages[n])
+                            ID = n;
+                        n++;
                     }
-                    else
-                        //If not, deinitialize the level.
-                        if ((transparentAnimatedFuck.animation == 1 && bonusColor != 1) || (transparentAnimatedFuck.animation == 2 && bonusColor != 2) || (transparentAnimatedFuck.animation == 3 && bonusColor != 3) || (transparentAnimatedFuck.animation == 4 && bonusColor != 4))
+
+                    //Reduce the health of the bonus mole, and, if it's out of health, proceed to the next code.
+                    if (Controller.reduceHealthBonus(IDBonusCollection[ID]))
+                    {
+                        //First, check if it was the correct mole we hit.
+                        if ((transparentAnimatedFuck.animation == 1 && bonusColor == 0) || (transparentAnimatedFuck.animation == 2 && bonusColor == 1) || (transparentAnimatedFuck.animation == 3 && bonusColor == 2) || (transparentAnimatedFuck.animation == 4 && bonusColor == 3))
                         {
-                            deinitializeBonusLevel();
+                            //If yes change the animation.
+                            transparentAnimatedFuck.SetAnimation(transparentAnimatedFuck.animation + 4);
+                            transparentAnimatedFuck.Refresh();
+                            Controller.SetBonusSpawnTime(IDBonusCollection[ID], 15);
+
+                            //And add the points.
+                            Controller.AddScore(Controller.getBonusUnit(IDBonusCollection[ID]).Point);
+                            UpdateScoreCross();
                         }
+                        else
+                            //If not, deinitialize the level.
+                            if ((transparentAnimatedFuck.animation == 1 && bonusColor != 1) || (transparentAnimatedFuck.animation == 2 && bonusColor != 2) || (transparentAnimatedFuck.animation == 3 && bonusColor != 3) || (transparentAnimatedFuck.animation == 4 && bonusColor != 4))
+                            {
+                                if (flagOut == false)
+                                    deinitializeBonusLevel();
+                            }
+                    }
                 }
             }
         }
@@ -745,21 +746,37 @@ namespace GUI
         //Function to end the level.
         public void EndLevel()
         {
-            levelEnded = true;
-            nextLevelWait = 5 * 30;
-
-            //Remove all holes from the form.
             int n = 0;
+            bool ok = true;
+
+            //Check if every hole is empty (We don't want to go to the next level before all the holes are empty.
             while (n < moleImages.Count)
             {
-                this.Controls.Remove(moleImages[n]);
+                if (moleImages[n].animation != 0)
+                    ok = false;
                 n++;
             }
 
-            //Clear all the data to free the RAM.
-            moleImages.Clear();
-            IDCollection.Clear();
-            PicBNextLevel.Visible = true;
+            //if they are
+            if (ok == true)
+            {
+
+                levelEnded = true;
+                nextLevelWait = 5 * 30;
+
+                //Remove all holes from the form.
+                n = 0;
+                while (n < moleImages.Count)
+                {
+                    this.Controls.Remove(moleImages[n]);
+                    n++;
+                }
+
+                //Clear all the data to free the RAM.
+                moleImages.Clear();
+                IDCollection.Clear();
+                PicBNextLevel.Visible = true;
+            }
         }
 
         //Function to start the level.
@@ -1065,6 +1082,7 @@ namespace GUI
             }
             else
             {
+                if (flagOut==false)
                 deinitializeBonusLevel();
             }
         }
@@ -1183,6 +1201,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (flagOut==false)
             deinitializeBonusLevel();
         }
 
@@ -1190,6 +1209,7 @@ namespace GUI
         {
             if (pictureBox1.Visible == true)
             {
+                if (flagIn == false)
                 initializeBonusLevel();
             }
         }
