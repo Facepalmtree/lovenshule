@@ -656,7 +656,9 @@ namespace GUI
                             ID = n;
                         n++;
                     }
+
                     //Reduce the health of the mole, and if it's out of health, run some code.
+                    if (transparentAnimatedFuck.animation!=0)
                     if (Controller.reduceHealth(IDCollection[ID]))
                     {
                         //If it's one of the moles to add points
@@ -1207,7 +1209,7 @@ namespace GUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Visible == true)
+            if (pictureBox1.Visible == true && bonus==false)
             {
                 if (flagIn == false)
                 initializeBonusLevel();
