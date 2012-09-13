@@ -109,7 +109,7 @@ namespace GUI
             }
             catch
             {
-                MessageBox.Show("Kunne ikke oprette forbindelse til webcam", "Fejl");
+                 //HAHA FUCK YOU!
             }
         }
 
